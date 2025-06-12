@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format Converter - Convert JPG, PNG, WebP, GIF | Multi-Tool Hub</title>
+    <meta name="description" content="Free online image format converter. Convert between JPG, PNG, WebP, and GIF formats instantly. Maintain quality while optimizing file size. No registration required.">
+    <meta name="keywords" content="image format converter, JPG to PNG, PNG to WebP, WebP converter, GIF converter, image conversion tool, online converter">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/format-converter">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Format Converter - Convert JPG, PNG, WebP, GIF">
+    <meta property="og:description" content="Free online image format converter. Convert between JPG, PNG, WebP, and GIF formats instantly with quality control.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/format-converter">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Format Converter - Convert JPG, PNG, WebP, GIF">
+    <meta name="twitter:description" content="Free online image format converter. Convert between JPG, PNG, WebP, and GIF formats instantly.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="nav-link">Image</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="../index.html#tools">Tools</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Format Converter</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div>
+                    <h1 class="tool-title">Format Converter</h1>
+                    <p class="tool-subtitle">Convert between JPG, PNG, WebP, and GIF formats with quality control</p>
+                </div>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </label>
+                        <div class="file-upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or click to browse</p>
+                                <small>Supports JPG, PNG, WebP, GIF (max 10MB)</small>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Format Selection -->
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-file-image"></i>
+                            Output Format
+                        </label>
+                        <div class="format-buttons">
+                            <button class="format-btn" data-format="jpeg">
+                                <i class="fas fa-file-image"></i>
+                                <span>JPG</span>
+                                <small>Best for photos</small>
+                            </button>
+                            <button class="format-btn" data-format="png">
+                                <i class="fas fa-file-image"></i>
+                                <span>PNG</span>
+                                <small>Supports transparency</small>
+                            </button>
+                            <button class="format-btn" data-format="webp">
+                                <i class="fas fa-file-image"></i>
+                                <span>WebP</span>
+                                <small>Modern format</small>
+                            </button>
+                            <button class="format-btn" data-format="gif">
+                                <i class="fas fa-file-image"></i>
+                                <span>GIF</span>
+                                <small>For animations</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quality Control -->
+                    <div class="input-group" id="qualityControl" style="display: none;">
+                        <label class="input-label">
+                            <i class="fas fa-sliders-h"></i>
+                            Quality: <span id="qualityValue">90</span>%
+                        </label>
+                        <div class="quality-slider-container">
+                            <input type="range" id="qualitySlider" class="quality-slider" min="10" max="100" value="90">
+                            <div class="quality-labels">
+                                <span>Lower Size</span>
+                                <span>Higher Quality</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="convertBtn" disabled>
+                            <i class="fas fa-magic"></i>
+                            Convert Image
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-redo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Conversion Results
+                    </h3>
+                    
+                    <div id="noImageState" class="no-content">
+                        <i class="fas fa-image"></i>
+                        <p>Upload an image to see conversion results</p>
+                    </div>
+
+                    <div id="imagePreviewContainer" class="image-preview-container" style="display: none;">
+                        <div class="preview-section">
+                            <h4>Original</h4>
+                            <div class="image-preview">
+                                <img id="originalImage" alt="Original image">
+                                <div class="image-info" id="originalInfo"></div>
+                            </div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Converted</h4>
+                            <div class="image-preview">
+                                <img id="convertedImage" alt="Converted image">
+                                <div class="image-info" id="convertedInfo"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="downloadSection" class="download-section" style="display: none;">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download Converted Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <h2>Professional Image Format Converter</h2>
+
+                <p>Transform your images between different formats effortlessly with our advanced format converter. Whether you need to convert JPG to PNG for transparency, optimize images with WebP, or create GIFs for animations, our tool handles all major image formats with precision and quality control.</p>
+
+                <h3>Supported Image Formats</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4><i class="fas fa-file-image"></i> JPEG/JPG</h4>
+                        <p>Perfect for photographs and images with many colors. Offers excellent compression with adjustable quality settings.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-file-image"></i> PNG</h4>
+                        <p>Ideal for images requiring transparency, logos, and graphics with sharp edges. Lossless compression maintains perfect quality.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-file-image"></i> WebP</h4>
+                        <p>Modern format offering superior compression and quality. Perfect for web optimization and faster loading times.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-file-image"></i> GIF</h4>
+                        <p>Classic format supporting animations and transparency. Great for simple graphics and animated content.</p>
+                    </div>
+                </div>
+
+                <h3>How to Convert Image Formats</h3>
+                <ol class="process-list">
+                    <li><strong>Upload Your Image:</strong> Drag and drop your image file or click to browse. Supports files up to 10MB.</li>
+                    <li><strong>Choose Output Format:</strong> Select your desired format from JPG, PNG, WebP, or GIF options.</li>
+                    <li><strong>Adjust Quality:</strong> For lossy formats like JPG and WebP, fine-tune the quality slider to balance file size and image quality.</li>
+                    <li><strong>Convert & Preview:</strong> Click convert to process your image and preview the results side-by-side.</li>
+                    <li><strong>Download:</strong> Save your converted image with the new format and optimized settings.</li>
+                </ol>
+
+                <h3>Key Features & Benefits</h3>
+                <div class="benefits-list">
+                    <ul>
+                        <li><strong>Multiple Format Support:</strong> Convert between JPG, PNG, WebP, and GIF formats</li>
+                        <li><strong>Quality Control:</strong> Adjustable compression settings for optimal file size</li>
+                        <li><strong>Instant Preview:</strong> See before and after comparison in real-time</li>
+                        <li><strong>Batch Processing:</strong> Convert multiple images efficiently</li>
+                        <li><strong>Privacy Focused:</strong> All processing happens locally in your browser</li>
+                        <li><strong>No Registration:</strong> Use the tool immediately without creating an account</li>
+                        <li><strong>Mobile Friendly:</strong> Works perfectly on all devices and screen sizes</li>
+                        <li><strong>Free Forever:</strong> No hidden costs or premium features</li>
+                    </ul>
+                </div>
+
+                <h3>When to Use Different Formats</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario">
+                        <h4>Use JPG When:</h4>
+                        <ul>
+                            <li>Working with photographs</li>
+                            <li>Need smaller file sizes</li>
+                            <li>Transparency not required</li>
+                            <li>Sharing on social media</li>
+                        </ul>
+                    </div>
+                    <div class="scenario">
+                        <h4>Use PNG When:</h4>
+                        <ul>
+                            <li>Need transparent backgrounds</li>
+                            <li>Working with logos or graphics</li>
+                            <li>Require lossless quality</li>
+                            <li>Sharp edges and text</li>
+                        </ul>
+                    </div>
+                    <div class="scenario">
+                        <h4>Use WebP When:</h4>
+                        <ul>
+                            <li>Optimizing for web performance</li>
+                            <li>Need modern compression</li>
+                            <li>Want smaller file sizes</li>
+                            <li>Supporting modern browsers</li>
+                        </ul>
+                    </div>
+                    <div class="scenario">
+                        <h4>Use GIF When:</h4>
+                        <ul>
+                            <li>Creating simple animations</li>
+                            <li>Need wide compatibility</li>
+                            <li>Working with limited colors</li>
+                            <li>Sharing animated content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h4>What's the maximum file size I can convert?</h4>
+                        <p>Our converter supports images up to 10MB in size. This covers most use cases while ensuring fast processing times.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Will converting reduce image quality?</h4>
+                        <p>Quality depends on the format and settings. PNG conversion is lossless, while JPG and WebP allow quality adjustment. Our tool preserves maximum quality by default.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can I convert animated GIFs to other formats?</h4>
+                        <p>Yes, but only the first frame will be converted to static formats like JPG or PNG. To maintain animation, keep the GIF format or convert to WebP.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Is my data safe when using this converter?</h4>
+                        <p>Absolutely! All image processing happens locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="format-converter.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

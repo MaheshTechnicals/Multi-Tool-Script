@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker - Extract Colors from Images | Multi-Tool Hub</title>
+    <meta name="description" content="Extract colors from images with our advanced color picker tool. Get HEX, RGB, HSL color codes instantly. Perfect for designers, developers, and artists.">
+    <meta name="keywords" content="color picker, extract colors, image color picker, hex color, rgb color, hsl color, color palette, design tool">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/color-picker">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Color Picker - Extract Colors from Images">
+    <meta property="og:description" content="Extract colors from images with our advanced color picker tool. Get HEX, RGB, HSL color codes instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/color-picker">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Picker - Extract Colors from Images">
+    <meta name="twitter:description" content="Extract colors from images with our advanced color picker tool. Get HEX, RGB, HSL color codes instantly.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="nav-link">Image</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="../index.html#tools">Tools</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Color Picker</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div>
+                    <h1 class="tool-title">Color Picker</h1>
+                    <p class="tool-subtitle">Extract colors from images and get HEX, RGB, HSL values</p>
+                </div>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </label>
+                        <div class="file-upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or click to browse</p>
+                                <small>Supports JPG, PNG, WebP, GIF (max 10MB)</small>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Color Canvas -->
+                    <div class="input-group" id="canvasContainer" style="display: none;">
+                        <label class="input-label">
+                            <i class="fas fa-crosshairs"></i>
+                            Click on image to pick colors
+                        </label>
+                        <div class="color-canvas-container">
+                            <div class="color-canvas-wrapper">
+                                <canvas id="colorCanvas"></canvas>
+                                <div class="color-crosshair" id="colorCrosshair" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="extractPaletteBtn" disabled>
+                            <i class="fas fa-palette"></i>
+                            Extract Color Palette
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-redo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-eye-dropper"></i>
+                        Color Information
+                    </h3>
+                    
+                    <div id="noImageState" class="no-content">
+                        <i class="fas fa-palette"></i>
+                        <p>Upload an image to start picking colors</p>
+                    </div>
+
+                    <div id="colorInfoContainer" style="display: none;">
+                        <!-- Current Color Display -->
+                        <div class="color-info-grid">
+                            <div class="color-info-card">
+                                <div class="color-preview" id="currentColorPreview"></div>
+                                <div class="color-format-label">HEX</div>
+                                <div class="color-value" id="hexValue">#000000</div>
+                                <button class="copy-color-btn" onclick="copyColor('hexValue')">
+                                    <i class="fas fa-copy"></i> Copy HEX
+                                </button>
+                            </div>
+                            <div class="color-info-card">
+                                <div class="color-preview" id="rgbColorPreview"></div>
+                                <div class="color-format-label">RGB</div>
+                                <div class="color-value" id="rgbValue">rgb(0, 0, 0)</div>
+                                <button class="copy-color-btn" onclick="copyColor('rgbValue')">
+                                    <i class="fas fa-copy"></i> Copy RGB
+                                </button>
+                            </div>
+                            <div class="color-info-card">
+                                <div class="color-preview" id="hslColorPreview"></div>
+                                <div class="color-format-label">HSL</div>
+                                <div class="color-value" id="hslValue">hsl(0, 0%, 0%)</div>
+                                <button class="copy-color-btn" onclick="copyColor('hslValue')">
+                                    <i class="fas fa-copy"></i> Copy HSL
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Color Palette -->
+                        <div class="color-palette" id="colorPalette" style="display: none;">
+                            <div class="palette-title">
+                                <i class="fas fa-swatchbook"></i>
+                                Extracted Color Palette
+                            </div>
+                            <div class="palette-colors" id="paletteColors">
+                                <!-- Palette colors will be added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <h2>Professional Color Picker Tool</h2>
+
+                <p>Extract precise colors from any image with our advanced color picker tool. Perfect for designers, developers, and artists who need accurate color values for their projects. Get instant HEX, RGB, and HSL color codes with a simple click, plus generate beautiful color palettes from your images.</p>
+
+                <h3>Key Features</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4><i class="fas fa-crosshairs"></i> Precise Color Picking</h4>
+                        <p>Click anywhere on your image to get exact color values with pixel-perfect accuracy.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-palette"></i> Multiple Color Formats</h4>
+                        <p>Get color values in HEX, RGB, and HSL formats for maximum compatibility with design tools.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-swatchbook"></i> Color Palette Extraction</h4>
+                        <p>Automatically extract dominant colors from your image to create beautiful color palettes.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4><i class="fas fa-copy"></i> One-Click Copy</h4>
+                        <p>Copy color values to clipboard instantly for use in your design software or code.</p>
+                    </div>
+                </div>
+
+                <h3>How to Use the Color Picker</h3>
+                <ol class="process-list">
+                    <li><strong>Upload Your Image:</strong> Drag and drop or click to select any image file (JPG, PNG, WebP, GIF).</li>
+                    <li><strong>Click to Pick Colors:</strong> Click anywhere on the image to extract the color at that exact pixel.</li>
+                    <li><strong>View Color Values:</strong> See the color displayed in HEX, RGB, and HSL formats instantly.</li>
+                    <li><strong>Extract Color Palette:</strong> Generate a palette of dominant colors from the entire image.</li>
+                    <li><strong>Copy & Use:</strong> Copy any color value to your clipboard for use in your projects.</li>
+                </ol>
+
+                <h3>Color Format Guide</h3>
+                <div class="technical-info">
+                    <div class="tech-item">
+                        <h4>HEX Colors</h4>
+                        <p>Hexadecimal color codes (e.g., #FF5733) are widely used in web design and CSS. Perfect for HTML, CSS, and most design software.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>RGB Colors</h4>
+                        <p>Red, Green, Blue values (e.g., rgb(255, 87, 51)) are ideal for digital displays and programming. Used in CSS, JavaScript, and image editing.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>HSL Colors</h4>
+                        <p>Hue, Saturation, Lightness (e.g., hsl(14, 100%, 60%)) provides intuitive color manipulation. Great for creating color variations and themes.</p>
+                    </div>
+                </div>
+
+                <h3>Professional Applications</h3>
+                <div class="applications-grid">
+                    <div class="application">
+                        <h4>Web Design</h4>
+                        <p>Extract colors from inspiration images to create consistent color schemes for websites and applications.</p>
+                    </div>
+                    <div class="application">
+                        <h4>Brand Development</h4>
+                        <p>Analyze competitor colors or extract brand colors from logos and marketing materials.</p>
+                    </div>
+                    <div class="application">
+                        <h4>Digital Art</h4>
+                        <p>Sample colors from reference images to maintain color accuracy in digital paintings and illustrations.</p>
+                    </div>
+                    <div class="application">
+                        <h4>UI/UX Design</h4>
+                        <p>Create cohesive color palettes for user interfaces and ensure accessibility compliance.</p>
+                    </div>
+                    <div class="application">
+                        <h4>Print Design</h4>
+                        <p>Extract colors for print materials, ensuring color consistency across digital and physical media.</p>
+                    </div>
+                    <div class="application">
+                        <h4>Photography</h4>
+                        <p>Analyze color composition and extract color themes for photo editing and color grading.</p>
+                    </div>
+                </div>
+
+                <h3>Design Tips & Best Practices</h3>
+                <div class="tips-section">
+                    <div class="tip-item">
+                        <h4>Color Harmony</h4>
+                        <p>Use extracted colors to create harmonious color schemes. Consider complementary, analogous, or triadic color relationships.</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>Accessibility</h4>
+                        <p>Ensure sufficient contrast between text and background colors. Use tools to check WCAG compliance for web accessibility.</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>Brand Consistency</h4>
+                        <p>Document extracted brand colors in a style guide to maintain consistency across all design materials.</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>Color Psychology</h4>
+                        <p>Consider the emotional impact of colors when building palettes. Different colors evoke different feelings and associations.</p>
+                    </div>
+                </div>
+
+                <h3>Supported Image Formats</h3>
+                <div class="format-list">
+                    <ul>
+                        <li><strong>JPEG/JPG:</strong> Most common format for photographs and complex images</li>
+                        <li><strong>PNG:</strong> Perfect for images with transparency and sharp edges</li>
+                        <li><strong>WebP:</strong> Modern format with excellent compression and quality</li>
+                        <li><strong>GIF:</strong> Supports animation and limited color palettes</li>
+                        <li><strong>BMP:</strong> Uncompressed format with full color information</li>
+                        <li><strong>TIFF:</strong> High-quality format often used in professional photography</li>
+                    </ul>
+                </div>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h4>How accurate are the extracted colors?</h4>
+                        <p>Our color picker provides pixel-perfect accuracy, extracting the exact color value from the specific pixel you click on.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can I extract colors from any image format?</h4>
+                        <p>Yes, our tool supports all major image formats including JPG, PNG, WebP, GIF, BMP, and TIFF files.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How does the color palette extraction work?</h4>
+                        <p>Our algorithm analyzes the entire image to identify the most dominant and representative colors, creating a cohesive palette.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Are my images stored or processed on your servers?</h4>
+                        <p>No, all image processing happens locally in your browser. Your images never leave your device, ensuring complete privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="color-picker.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Copy color function
+        function copyColor(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.nextElementSibling;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
