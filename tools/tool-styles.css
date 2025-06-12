@@ -881,6 +881,472 @@
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+/* SEO Content Section Styles */
+.seo-content-section {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+.seo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.content-main h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.content-main h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem 0;
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: 0.5rem;
+}
+
+.content-main h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.content-main p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.feature-list, .best-practices {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.feature-list li, .best-practices li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.feature-list li:last-child, .best-practices li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li strong, .best-practices li strong {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.use-case {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.use-case:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-light);
+}
+
+.use-case h4 {
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.use-case p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.content-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.info-box h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-box h4::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+}
+
+.quick-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.stat-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.how-to-list, .supported-list, .tips-list, .charset-list, .recommended-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.how-to-list {
+    counter-reset: step-counter;
+}
+
+.how-to-list li {
+    counter-increment: step-counter;
+    padding: 0.75rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.how-to-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 24px;
+    height: 24px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.supported-list li, .tips-list li, .charset-list li, .recommended-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.supported-list li::before, .tips-list li::before, .charset-list li::before, .recommended-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+/* Case Converter Specific Content Styles */
+.conversion-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.conversion-type {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.conversion-type:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-light);
+}
+
+.conversion-type h4 {
+    color: var(--accent-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.conversion-type .example {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-top: 1rem;
+}
+
+/* Password Generator Specific Content Styles */
+.security-features {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.security-feature {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.security-feature h4 {
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+}
+
+.security-feature code {
+    background: var(--bg-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+}
+
+.length-guide {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.length-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.length-item h4 {
+    color: var(--accent-primary);
+    font-size: 1rem;
+    margin: 0;
+    min-width: 120px;
+}
+
+.length-item p {
+    margin: 0;
+    flex: 1;
+}
+
+.attack-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.attack-type {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.attack-type:hover {
+    transform: translateY(-2px);
+    border-color: #ff6b6b;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
+}
+
+.attack-type h4 {
+    color: #ff6b6b;
+    margin-bottom: 0.75rem;
+}
+
+.security-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.strength-levels {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.strength-levels li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.strength-indicator {
+    width: 20px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.strength-indicator.very-weak { background: #ff4757; }
+.strength-indicator.weak { background: #ff6b6b; }
+.strength-indicator.medium { background: #ffa500; }
+.strength-indicator.strong { background: #4a9eff; }
+.strength-indicator.very-strong { background: #00d4aa; }
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-light);
+}
+
+.faq-item h4 {
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive Design for SEO Content */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .conversion-types, .use-cases, .attack-types {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .length-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .length-item h4 {
+        min-width: auto;
+    }
+
+    .content-main h2 {
+        font-size: 1.6rem;
+    }
+
+    .content-main h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .seo-content-section {
+        padding: 2rem 0;
+    }
+
+    .info-box, .use-case, .conversion-type, .security-feature, .attack-type, .faq-item {
+        padding: 1rem;
+    }
+
+    .content-main h2 {
+        font-size: 1.4rem;
+    }
+
+    .content-main h3 {
+        font-size: 1.2rem;
+    }
+}
     display: flex;
     align-items: center;
     gap: 0.5rem;
