@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Image Resizer - Resize Photos to Any Dimension | Multi-Tool Hub</title>
+    <meta name="description" content="Resize images online for free! Change photo dimensions for social media, web, print. Supports JPG, PNG, WebP. Preset sizes for Instagram, Facebook, Twitter. Maintain aspect ratio or custom dimensions.">
+    <meta name="keywords" content="image resizer, resize images online, photo resizer, change image size, resize photos, image dimensions, social media image sizes, Instagram image size, Facebook cover photo, resize pictures">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/image-resizer.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Online Image Resizer - Resize Photos to Any Dimension">
+    <meta property="og:description" content="Resize images online for free! Change photo dimensions for social media, web, print. Preset sizes for Instagram, Facebook, Twitter.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/image-resizer.html">
+    <meta property="og:image" content="https://multi-tool-hub.com/images/image-resizer-preview.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Image Resizer - Resize Photos to Any Dimension">
+    <meta name="twitter:description" content="Resize images online for free! Change photo dimensions for social media, web, print.">
+    <meta name="twitter:image" content="https://multi-tool-hub.com/images/image-resizer-preview.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer",
+        "description": "Free online image resizing tool for changing photo dimensions and optimizing images for different platforms",
+        "url": "https://multi-tool-hub.com/tools/image-resizer.html",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Resize images to custom dimensions",
+            "Preset sizes for social media platforms",
+            "Maintain or unlock aspect ratio",
+            "Support for JPG, PNG, WebP formats",
+            "Batch processing capabilities"
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="nav-link">Image</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="../index.html#tools">Tools</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Image Resizer</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Image Resizer</h1>
+                    <p class="tool-subtitle">Resize images to custom dimensions or preset sizes. Perfect for social media, web, and print.</p>
+                </div>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or click to browse</p>
+                                <small>Supports JPG, PNG, WebP (Max: 10MB)</small>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="resizeControls" style="display: none;">
+                        <label class="input-label">
+                            <i class="fas fa-cog"></i>
+                            Resize Options
+                        </label>
+                        
+                        <div class="preset-buttons">
+                            <button class="preset-btn" data-width="1920" data-height="1080">
+                                <i class="fas fa-desktop"></i>
+                                Full HD<br><small>1920×1080</small>
+                            </button>
+                            <button class="preset-btn" data-width="1080" data-height="1080">
+                                <i class="fab fa-instagram"></i>
+                                Instagram<br><small>1080×1080</small>
+                            </button>
+                            <button class="preset-btn" data-width="1200" data-height="630">
+                                <i class="fab fa-facebook"></i>
+                                Facebook<br><small>1200×630</small>
+                            </button>
+                            <button class="preset-btn" data-width="800" data-height="600">
+                                <i class="fas fa-globe"></i>
+                                Web<br><small>800×600</small>
+                            </button>
+                        </div>
+
+                        <div class="dimension-inputs">
+                            <div class="input-row">
+                                <div class="dimension-input">
+                                    <label>Width (px)</label>
+                                    <input type="number" id="widthInput" min="1" max="5000">
+                                </div>
+                                <div class="aspect-ratio-lock">
+                                    <button id="aspectRatioBtn" class="aspect-btn active" title="Lock aspect ratio">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                                <div class="dimension-input">
+                                    <label>Height (px)</label>
+                                    <input type="number" id="heightInput" min="1" max="5000">
+                                </div>
+                            </div>
+                            <div class="original-dimensions">
+                                Original: <span id="originalDimensions">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons" id="actionButtons" style="display: none;">
+                        <button class="btn btn-outline" id="resizeBtn">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            Resize Image
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-image"></i>
+                        Resize Preview
+                    </h3>
+                    
+                    <div id="noImageMessage" class="no-content">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                        <p>Upload an image to see resize preview</p>
+                    </div>
+
+                    <div id="resultsContent" style="display: none;">
+                        <div class="image-preview-container">
+                            <div class="preview-section">
+                                <h4>Original</h4>
+                                <div class="image-preview">
+                                    <img id="originalPreview" alt="Original image">
+                                    <div class="image-info">
+                                        <span id="originalInfo">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-section">
+                                <h4>Resized</h4>
+                                <div class="image-preview">
+                                    <img id="resizedPreview" alt="Resized image">
+                                    <div class="image-info">
+                                        <span id="resizedInfo">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="scaleRatio">-</div>
+                                    <div class="stat-label">Scale Ratio</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-file-archive"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="fileSizeChange">-</div>
+                                    <div class="stat-label">File Size</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="download-section" id="downloadSection" style="display: none;">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download Resized Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div class="seo-content-section">
+                <div class="seo-content">
+                    <h2>Professional Image Resizing for Every Need</h2>
+                    <p>Transform your images with our <strong>free online image resizer</strong> - the most versatile tool for changing photo dimensions. Whether you're preparing images for social media, optimizing photos for your website, or creating print materials, our advanced resizing technology ensures perfect results every time.</p>
+
+                    <h3>Why Our Image Resizer Stands Out</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4><i class="fas fa-expand-arrows-alt"></i> Precise Control</h4>
+                            <p>Set exact pixel dimensions or choose from preset sizes. Lock aspect ratio to prevent distortion or unlock for custom proportions.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-share-alt"></i> Social Media Ready</h4>
+                            <p>One-click presets for Instagram posts, Facebook covers, Twitter headers, and more. Perfect dimensions every time.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-eye"></i> Live Preview</h4>
+                            <p>See exactly how your resized image will look before downloading. Compare original and resized versions side by side.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-download"></i> High Quality Output</h4>
+                            <p>Advanced resampling algorithms ensure your resized images maintain maximum quality and sharpness.</p>
+                        </div>
+                    </div>
+
+                    <h3>Popular Image Sizes and Use Cases</h3>
+                    <div class="sizes-grid">
+                        <div class="size-category">
+                            <h4>Social Media Dimensions</h4>
+                            <ul>
+                                <li><strong>Instagram Post:</strong> 1080×1080 (Square format for feed posts)</li>
+                                <li><strong>Instagram Story:</strong> 1080×1920 (Vertical format for stories)</li>
+                                <li><strong>Facebook Cover:</strong> 1200×630 (Optimal for cover photos)</li>
+                                <li><strong>Twitter Header:</strong> 1500×500 (Perfect for profile headers)</li>
+                                <li><strong>LinkedIn Banner:</strong> 1584×396 (Professional profile banner)</li>
+                            </ul>
+                        </div>
+                        <div class="size-category">
+                            <h4>Web and Digital</h4>
+                            <ul>
+                                <li><strong>Full HD:</strong> 1920×1080 (Standard high-definition display)</li>
+                                <li><strong>Web Thumbnail:</strong> 300×300 (Perfect for product images)</li>
+                                <li><strong>Blog Header:</strong> 1200×600 (Ideal for article headers)</li>
+                                <li><strong>Email Newsletter:</strong> 600×400 (Optimized for email clients)</li>
+                                <li><strong>Website Banner:</strong> 1920×400 (Full-width website headers)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Advanced Resizing Features</h3>
+                    <div class="advanced-features">
+                        <div class="feature-detail">
+                            <h4>Aspect Ratio Control</h4>
+                            <p>Our intelligent aspect ratio lock ensures your images maintain their original proportions, preventing unwanted stretching or squashing. Toggle the lock to create custom dimensions when needed.</p>
+                        </div>
+                        <div class="feature-detail">
+                            <h4>Smart Scaling Algorithms</h4>
+                            <p>We use advanced interpolation methods including bicubic and Lanczos resampling to ensure your resized images look crisp and professional, whether scaling up or down.</p>
+                        </div>
+                        <div class="feature-detail">
+                            <h4>Batch Processing Workflow</h4>
+                            <p>While processing one image at a time, our fast processing speed allows you to quickly resize multiple images with consistent settings and quality.</p>
+                        </div>
+                    </div>
+
+                    <h3>Image Resizing Best Practices</h3>
+                    <div class="best-practices">
+                        <div class="practice-item">
+                            <h4>Scaling Down vs. Scaling Up</h4>
+                            <p><strong>Scaling Down:</strong> Generally produces excellent results with minimal quality loss. Perfect for web optimization and file size reduction.</p>
+                            <p><strong>Scaling Up:</strong> Use sparingly and avoid extreme enlargements. Our algorithms minimize pixelation, but original resolution limits apply.</p>
+                        </div>
+                        <div class="practice-item">
+                            <h4>Choosing the Right Dimensions</h4>
+                            <p>• Consider your final use case (web, print, social media)<br>
+                            • Maintain aspect ratio for natural-looking results<br>
+                            • Use platform-specific presets for social media<br>
+                            • Test different sizes to find the optimal balance</p>
+                        </div>
+                    </div>
+
+                    <h3>Professional Applications</h3>
+                    <div class="applications-grid">
+                        <div class="application">
+                            <h4>Web Development</h4>
+                            <p>Optimize images for faster loading times, create responsive image sets, and ensure consistent sizing across your website.</p>
+                        </div>
+                        <div class="application">
+                            <h4>Digital Marketing</h4>
+                            <p>Create perfectly sized images for ad campaigns, social media posts, email newsletters, and marketing materials.</p>
+                        </div>
+                        <div class="application">
+                            <h4>E-commerce</h4>
+                            <p>Standardize product photos, create thumbnail galleries, and optimize images for mobile shopping experiences.</p>
+                        </div>
+                        <div class="application">
+                            <h4>Content Creation</h4>
+                            <p>Prepare images for blogs, presentations, portfolios, and multimedia projects with precise dimension control.</p>
+                        </div>
+                    </div>
+
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h4>What image formats can I resize?</h4>
+                            <p>Our image resizer supports JPG, PNG, and WebP formats. These cover virtually all common image types used on the web and in digital media.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Will resizing affect image quality?</h4>
+                            <p>Scaling down typically maintains excellent quality. Scaling up may introduce some softness, but our advanced algorithms minimize quality loss compared to basic resizing tools.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I resize images for print?</h4>
+                            <p>Yes! Set custom dimensions in pixels and ensure your source image has sufficient resolution (typically 300 DPI for print quality).</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I maintain image proportions?</h4>
+                            <p>Use the aspect ratio lock feature (chain link icon) to automatically adjust height when you change width, or vice versa, maintaining natural proportions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="image-resizer.js"></script>
+</body>
+</html>

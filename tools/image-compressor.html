@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Image Compressor - Reduce File Size Without Quality Loss | Multi-Tool Hub</title>
+    <meta name="description" content="Compress images online for free! Reduce JPG, PNG, WebP file sizes by up to 90% while maintaining quality. Perfect for web optimization, email attachments, and storage savings. No registration required.">
+    <meta name="keywords" content="image compressor, compress images online, reduce image size, optimize images, image optimization, JPG compressor, PNG compressor, WebP compressor, free image compression, online image tool">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/image-compressor.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Online Image Compressor - Reduce File Size Without Quality Loss">
+    <meta property="og:description" content="Compress images online for free! Reduce JPG, PNG, WebP file sizes by up to 90% while maintaining quality. Perfect for web optimization and storage savings.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/image-compressor.html">
+    <meta property="og:image" content="https://multi-tool-hub.com/images/image-compressor-preview.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Image Compressor - Reduce File Size Without Quality Loss">
+    <meta name="twitter:description" content="Compress images online for free! Reduce JPG, PNG, WebP file sizes by up to 90% while maintaining quality.">
+    <meta name="twitter:image" content="https://multi-tool-hub.com/images/image-compressor-preview.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Compressor",
+        "description": "Free online image compression tool that reduces file sizes while maintaining quality",
+        "url": "https://multi-tool-hub.com/tools/image-compressor.html",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Compress JPG, PNG, WebP images",
+            "Adjustable quality settings",
+            "Batch image processing",
+            "No file size limits",
+            "Privacy-focused processing"
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="nav-link">Image</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="../index.html#tools">Tools</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Image Compressor</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-compress-alt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Image Compressor</h1>
+                    <p class="tool-subtitle">Reduce image file size while maintaining quality. Perfect for web optimization and storage savings.</p>
+                </div>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or click to browse</p>
+                                <small>Supports JPG, PNG, WebP (Max: 10MB)</small>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="compressionControls" style="display: none;">
+                        <label class="input-label">
+                            <i class="fas fa-sliders-h"></i>
+                            Compression Quality: <span id="qualityValue">80</span>%
+                        </label>
+                        <div class="quality-slider-container">
+                            <input type="range" id="qualitySlider" min="10" max="100" value="80" class="quality-slider">
+                            <div class="quality-labels">
+                                <span>High Compression</span>
+                                <span>High Quality</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons" id="actionButtons" style="display: none;">
+                        <button class="btn btn-outline" id="compressBtn">
+                            <i class="fas fa-compress"></i>
+                            Compress Image
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Compression Results
+                    </h3>
+                    
+                    <div id="noImageMessage" class="no-content">
+                        <i class="fas fa-image"></i>
+                        <p>Upload an image to see compression results</p>
+                    </div>
+
+                    <div id="resultsContent" style="display: none;">
+                        <div class="image-preview-container">
+                            <div class="preview-section">
+                                <h4>Original</h4>
+                                <div class="image-preview">
+                                    <img id="originalPreview" alt="Original image">
+                                    <div class="image-info">
+                                        <span id="originalSize">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-section">
+                                <h4>Compressed</h4>
+                                <div class="image-preview">
+                                    <img id="compressedPreview" alt="Compressed image">
+                                    <div class="image-info">
+                                        <span id="compressedSize">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-file-archive"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="compressionRatio">-</div>
+                                    <div class="stat-label">Compression Ratio</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="sizeSaved">-</div>
+                                    <div class="stat-label">Size Reduction</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="download-section" id="downloadSection" style="display: none;">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download Compressed Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div class="seo-content-section">
+                <div class="seo-content">
+                    <h2>Professional Image Compression Made Simple</h2>
+                    <p>Our <strong>free online image compressor</strong> is the ultimate solution for reducing image file sizes without compromising visual quality. Whether you're optimizing images for your website, preparing photos for email attachments, or simply saving storage space, our advanced compression algorithm delivers exceptional results every time.</p>
+
+                    <h3>Why Choose Our Image Compressor?</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4><i class="fas fa-shield-alt"></i> Privacy First</h4>
+                            <p>All image processing happens locally in your browser. Your photos never leave your device, ensuring complete privacy and security.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-magic"></i> Smart Compression</h4>
+                            <p>Our intelligent algorithm analyzes each image to apply optimal compression while preserving important visual details and color accuracy.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-bolt"></i> Lightning Fast</h4>
+                            <p>Process images instantly with our optimized compression engine. No waiting, no queues - just immediate results.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-mobile-alt"></i> Works Everywhere</h4>
+                            <p>Compatible with all devices and browsers. Compress images on desktop, tablet, or mobile with the same great experience.</p>
+                        </div>
+                    </div>
+
+                    <h3>Supported Image Formats</h3>
+                    <p>Our image compressor supports all major image formats including:</p>
+                    <ul class="format-list">
+                        <li><strong>JPEG/JPG</strong> - Perfect for photographs and complex images with many colors</li>
+                        <li><strong>PNG</strong> - Ideal for images with transparency, logos, and graphics with sharp edges</li>
+                        <li><strong>WebP</strong> - Modern format offering superior compression for web use</li>
+                    </ul>
+
+                    <h3>How Image Compression Works</h3>
+                    <p>Image compression reduces file size by removing redundant data and optimizing color information. Our tool uses advanced algorithms to:</p>
+                    <ol class="process-list">
+                        <li>Analyze the image content and identify areas for optimization</li>
+                        <li>Apply lossy or lossless compression based on the selected quality level</li>
+                        <li>Optimize color palettes and remove unnecessary metadata</li>
+                        <li>Generate a compressed image that maintains visual fidelity</li>
+                    </ol>
+
+                    <h3>Perfect for Web Optimization</h3>
+                    <p>Large image files can significantly slow down your website, affecting user experience and search engine rankings. Our image compressor helps you:</p>
+                    <ul class="benefits-list">
+                        <li>Reduce page load times by up to 70%</li>
+                        <li>Improve SEO rankings with faster site performance</li>
+                        <li>Save bandwidth costs for you and your visitors</li>
+                        <li>Enhance mobile user experience with optimized images</li>
+                        <li>Meet Google's Core Web Vitals requirements</li>
+                    </ul>
+
+                    <h3>Professional Tips for Image Compression</h3>
+                    <div class="tips-section">
+                        <div class="tip-item">
+                            <h4>Quality Settings Guide</h4>
+                            <p><strong>90-100%:</strong> Minimal compression, best for print or archival purposes<br>
+                            <strong>70-90%:</strong> Excellent quality for web use, good balance of size and quality<br>
+                            <strong>50-70%:</strong> Good quality for thumbnails and preview images<br>
+                            <strong>Below 50%:</strong> High compression for very small file sizes</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>Best Practices</h4>
+                            <p>• Always keep a backup of your original images<br>
+                            • Test different quality settings to find the optimal balance<br>
+                            • Consider your use case: web, print, or storage<br>
+                            • Use WebP format for modern browsers when possible</p>
+                        </div>
+                    </div>
+
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h4>Is this image compressor really free?</h4>
+                            <p>Yes, our image compressor is completely free to use with no hidden costs, registration requirements, or usage limits.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the maximum file size I can compress?</h4>
+                            <p>You can compress images up to 10MB in size. This covers most use cases including high-resolution photos and graphics.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Will compressing images reduce their quality?</h4>
+                            <p>Our smart compression algorithm minimizes quality loss while significantly reducing file size. You can adjust the quality slider to control the balance between compression and visual fidelity.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I compress multiple images at once?</h4>
+                            <p>Currently, you can compress one image at a time. However, the process is very fast, allowing you to quickly process multiple images sequentially.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="image-compressor.js"></script>
+</body>
+</html>

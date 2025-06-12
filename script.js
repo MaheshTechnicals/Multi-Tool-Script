@@ -315,7 +315,8 @@ function openTool(toolId) {
     const tool = toolsData.find(t => t.id === toolId);
     if (tool) {
         // Check if the tool page exists, otherwise show coming soon message
-        if (toolId === 'word-counter') {
+        const implementedTools = ['word-counter', 'image-compressor', 'image-resizer', 'image-cropper'];
+        if (implementedTools.includes(toolId)) {
             window.location.href = tool.page;
         } else {
             // Show coming soon modal for other tools

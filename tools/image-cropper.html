@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Image Cropper - Crop Photos with Precision | Multi-Tool Hub</title>
+    <meta name="description" content="Crop images online for free! Professional photo cropping tool with preset aspect ratios, grid overlay, and precise selection. Perfect for social media, profile pictures, and photo editing.">
+    <meta name="keywords" content="image cropper, crop images online, photo cropper, crop photos, image editing, photo editing, crop tool, aspect ratio crop, square crop, profile picture crop, social media crop">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/image-cropper.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Online Image Cropper - Crop Photos with Precision">
+    <meta property="og:description" content="Crop images online for free! Professional photo cropping tool with preset aspect ratios, grid overlay, and precise selection.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/image-cropper.html">
+    <meta property="og:image" content="https://multi-tool-hub.com/images/image-cropper-preview.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Image Cropper - Crop Photos with Precision">
+    <meta name="twitter:description" content="Crop images online for free! Professional photo cropping tool with preset aspect ratios and grid overlay.">
+    <meta name="twitter:image" content="https://multi-tool-hub.com/images/image-cropper-preview.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Cropper",
+        "description": "Professional online image cropping tool with preset aspect ratios and precise selection controls",
+        "url": "https://multi-tool-hub.com/tools/image-cropper.html",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Interactive crop selection",
+            "Preset aspect ratios (1:1, 4:3, 16:9)",
+            "Grid overlay for alignment",
+            "Precise crop area control",
+            "Support for JPG, PNG, WebP"
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="nav-link">Image</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="../index.html#tools">Tools</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Image Cropper</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-crop-alt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Image Cropper</h1>
+                    <p class="tool-subtitle">Crop images to focus on specific areas with precise control and preset aspect ratios.</p>
+                </div>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or click to browse</p>
+                                <small>Supports JPG, PNG, WebP (Max: 10MB)</small>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="cropControls" style="display: none;">
+                        <label class="input-label">
+                            <i class="fas fa-crop"></i>
+                            Aspect Ratio
+                        </label>
+                        
+                        <div class="aspect-ratio-buttons">
+                            <button class="aspect-btn active" data-ratio="free">
+                                <i class="fas fa-expand"></i>
+                                Free
+                            </button>
+                            <button class="aspect-btn" data-ratio="1:1">
+                                <i class="fas fa-square"></i>
+                                1:1
+                            </button>
+                            <button class="aspect-btn" data-ratio="4:3">
+                                <i class="fas fa-tv"></i>
+                                4:3
+                            </button>
+                            <button class="aspect-btn" data-ratio="16:9">
+                                <i class="fas fa-desktop"></i>
+                                16:9
+                            </button>
+                            <button class="aspect-btn" data-ratio="3:2">
+                                <i class="fas fa-camera"></i>
+                                3:2
+                            </button>
+                        </div>
+
+                        <div class="crop-options">
+                            <div class="option-row">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="showGrid" checked>
+                                    <span class="checkmark"></span>
+                                    Show Grid
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="centerCrop">
+                                    <span class="checkmark"></span>
+                                    Center Crop
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons" id="actionButtons" style="display: none;">
+                        <button class="btn btn-outline" id="cropBtn">
+                            <i class="fas fa-crop-alt"></i>
+                            Crop Image
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-crop"></i>
+                        Crop Preview
+                    </h3>
+                    
+                    <div id="noImageMessage" class="no-content">
+                        <i class="fas fa-crop-alt"></i>
+                        <p>Upload an image to start cropping</p>
+                    </div>
+
+                    <div id="resultsContent" style="display: none;">
+                        <!-- Crop Canvas Container -->
+                        <div class="crop-container" id="cropContainer">
+                            <div class="crop-canvas-wrapper">
+                                <canvas id="cropCanvas"></canvas>
+                                <div class="crop-overlay" id="cropOverlay">
+                                    <div class="crop-selection" id="cropSelection">
+                                        <div class="crop-handle nw"></div>
+                                        <div class="crop-handle ne"></div>
+                                        <div class="crop-handle sw"></div>
+                                        <div class="crop-handle se"></div>
+                                        <div class="crop-handle n"></div>
+                                        <div class="crop-handle s"></div>
+                                        <div class="crop-handle w"></div>
+                                        <div class="crop-handle e"></div>
+                                        <div class="crop-grid" id="cropGrid">
+                                            <div class="grid-line grid-v1"></div>
+                                            <div class="grid-line grid-v2"></div>
+                                            <div class="grid-line grid-h1"></div>
+                                            <div class="grid-line grid-h2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Crop Info -->
+                        <div class="crop-info">
+                            <div class="info-item">
+                                <span class="info-label">Selection:</span>
+                                <span id="selectionInfo">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Original:</span>
+                                <span id="originalInfo">-</span>
+                            </div>
+                        </div>
+
+                        <div class="download-section" id="downloadSection" style="display: none;">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download Cropped Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div class="seo-content-section">
+                <div class="seo-content">
+                    <h2>Professional Image Cropping Made Easy</h2>
+                    <p>Master the art of photo composition with our <strong>free online image cropper</strong>. Whether you're creating the perfect profile picture, preparing images for social media, or focusing on specific details in your photos, our advanced cropping tool provides the precision and control you need for professional results.</p>
+
+                    <h3>Advanced Cropping Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4><i class="fas fa-crosshairs"></i> Precision Selection</h4>
+                            <p>Interactive crop handles allow pixel-perfect selection. Drag corners and edges to define your exact crop area with professional accuracy.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-th"></i> Grid Overlay</h4>
+                            <p>Rule of thirds grid helps you compose better photos. Align subjects and horizons for more visually appealing results.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-expand"></i> Aspect Ratio Presets</h4>
+                            <p>One-click aspect ratios for common formats: square (1:1), landscape (16:9), portrait (4:3), and photography standard (3:2).</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-eye"></i> Real-time Preview</h4>
+                            <p>See your crop selection instantly. What you see is exactly what you'll get in your final cropped image.</p>
+                        </div>
+                    </div>
+
+                    <h3>Perfect Crops for Every Platform</h3>
+                    <div class="platform-guide">
+                        <div class="platform-section">
+                            <h4>Social Media Cropping</h4>
+                            <div class="platform-grid">
+                                <div class="platform-item">
+                                    <strong>Instagram Posts (1:1)</strong>
+                                    <p>Square format perfect for feed posts. Center your subject and maintain balanced composition.</p>
+                                </div>
+                                <div class="platform-item">
+                                    <strong>Facebook Cover (16:9)</strong>
+                                    <p>Wide landscape format ideal for cover photos and banner images with horizontal emphasis.</p>
+                                </div>
+                                <div class="platform-item">
+                                    <strong>Profile Pictures (1:1)</strong>
+                                    <p>Square crop focusing on faces or logos. Ensure important elements stay within the safe area.</p>
+                                </div>
+                                <div class="platform-item">
+                                    <strong>Stories (9:16)</strong>
+                                    <p>Vertical format for Instagram and Facebook stories. Perfect for mobile-first content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Photography Composition Techniques</h3>
+                    <div class="composition-guide">
+                        <div class="technique">
+                            <h4>Rule of Thirds</h4>
+                            <p>Place important subjects along the grid lines or at intersection points. This creates more dynamic and visually interesting compositions than centering everything.</p>
+                        </div>
+                        <div class="technique">
+                            <h4>Leading Lines</h4>
+                            <p>Use crop boundaries to emphasize lines that lead the viewer's eye to your main subject. Roads, fences, and architectural elements work well.</p>
+                        </div>
+                        <div class="technique">
+                            <h4>Negative Space</h4>
+                            <p>Don't be afraid to include empty space around your subject. This can create powerful, minimalist compositions that draw attention to your focal point.</p>
+                        </div>
+                        <div class="technique">
+                            <h4>Aspect Ratio Psychology</h4>
+                            <p>Square crops feel stable and balanced. Horizontal crops suggest movement and landscape. Vertical crops create intimacy and portrait appeal.</p>
+                        </div>
+                    </div>
+
+                    <h3>Professional Cropping Workflow</h3>
+                    <div class="workflow-steps">
+                        <div class="step">
+                            <h4>Step 1: Analyze Your Image</h4>
+                            <p>Identify the main subject and supporting elements. Consider what story you want to tell and what emotions you want to evoke.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Step 2: Choose Your Aspect Ratio</h4>
+                            <p>Select based on your intended use. Social media has specific requirements, while artistic projects offer more freedom.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Step 3: Apply Composition Rules</h4>
+                            <p>Use the grid overlay to apply the rule of thirds or other composition techniques. Experiment with different positions.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Step 4: Fine-tune and Export</h4>
+                            <p>Make final adjustments to your crop selection, then download your perfectly cropped image.</p>
+                        </div>
+                    </div>
+
+                    <h3>Common Cropping Scenarios</h3>
+                    <div class="scenarios-grid">
+                        <div class="scenario">
+                            <h4>Portrait Photography</h4>
+                            <p>Focus on the subject's face and expression. Use vertical crops to emphasize height and create intimacy. Leave some breathing room around the subject.</p>
+                        </div>
+                        <div class="scenario">
+                            <h4>Landscape Photography</h4>
+                            <p>Emphasize the horizon and sky. Use horizontal crops to capture the breadth of the scene. Consider foreground elements for depth.</p>
+                        </div>
+                        <div class="scenario">
+                            <h4>Product Photography</h4>
+                            <p>Center the product with minimal distractions. Square crops work well for e-commerce. Ensure the product fills the frame appropriately.</p>
+                        </div>
+                        <div class="scenario">
+                            <h4>Event Photography</h4>
+                            <p>Capture the action and emotion. Crop to remove distracting elements while preserving the story and context of the moment.</p>
+                        </div>
+                    </div>
+
+                    <h3>Technical Considerations</h3>
+                    <div class="technical-info">
+                        <div class="tech-item">
+                            <h4>Resolution and Quality</h4>
+                            <p>Cropping reduces the total pixel count of your image. Start with high-resolution originals when possible to maintain quality after cropping.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>File Format Preservation</h4>
+                            <p>Our cropper maintains the original image quality and supports all major formats including JPG, PNG, and WebP.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Metadata Handling</h4>
+                            <p>EXIF data and other metadata are preserved where possible, maintaining important information about your photos.</p>
+                        </div>
+                    </div>
+
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h4>Can I undo a crop after downloading?</h4>
+                            <p>Cropping permanently removes pixels from your image. Always keep a backup of your original image before cropping.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the difference between cropping and resizing?</h4>
+                            <p>Cropping removes parts of an image to change composition, while resizing changes the overall dimensions without removing content.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I crop for multiple social media platforms?</h4>
+                            <p>Create separate crops for each platform using our preset aspect ratios. Start with the largest required size and crop down for smaller formats.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I crop images for print?</h4>
+                            <p>Yes! Use custom aspect ratios that match your print dimensions. Remember that print typically requires higher resolution than web use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="image-cropper.js"></script>
+</body>
+</html>
