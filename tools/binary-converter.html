@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter - Convert Text to Binary & Binary to Text | Multi-Tool Hub</title>
+    <meta name="description" content="Free online binary converter tool to convert text to binary code and binary to text. Perfect for programming, computer science education, and data encoding/decoding tasks.">
+    <meta name="keywords" content="binary converter, text to binary, binary to text, binary code, binary translator, ASCII converter, programming tools, computer science, data encoding">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Binary Converter - Convert Text to Binary & Binary to Text">
+    <meta property="og:description" content="Free online binary converter tool to convert text to binary code and binary to text. Perfect for programming, computer science education, and data encoding/decoding tasks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/binary-converter.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Binary Converter - Convert Text to Binary & Binary to Text">
+    <meta name="twitter:description" content="Free online binary converter tool to convert text to binary code and binary to text. Perfect for programming, computer science education, and data encoding/decoding tasks.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/binary-converter.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Binary Converter Tool",
+        "description": "Free online binary converter tool to convert text to binary code and binary to text. Perfect for programming, computer science education, and data encoding/decoding tasks.",
+        "url": "https://multi-tool-hub.com/tools/binary-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text Tools</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#text-tools">Text Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Binary Converter</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Binary Converter</h1>
+                    <p class="tool-subtitle">Convert between text and binary code instantly</p>
+                    <div class="tool-description">
+                        <p>Our advanced binary converter tool allows you to seamlessly convert text to binary code and binary code back to text. Perfect for programming, computer science education, data encoding, and understanding how computers process information at the fundamental level.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="converter-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-exchange-alt"></i>
+                            Conversion Mode
+                        </h3>
+                        
+                        <div class="mode-tabs">
+                            <button class="tab-btn active" data-mode="text-to-binary">
+                                <i class="fas fa-font"></i>
+                                Text to Binary
+                            </button>
+                            <button class="tab-btn" data-mode="binary-to-text">
+                                <i class="fas fa-code"></i>
+                                Binary to Text
+                            </button>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="inputText" class="input-label" id="inputLabel">
+                                <i class="fas fa-edit"></i>
+                                Enter text to convert to binary
+                            </label>
+                            <textarea 
+                                id="inputText" 
+                                class="text-input" 
+                                placeholder="Type your text here..."
+                                rows="8"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="conversion-options">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeSpaces" checked>
+                                <label for="includeSpaces">
+                                    <i class="fas fa-space-shuttle"></i>
+                                    Include spaces between binary groups
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="showAscii">
+                                <label for="showAscii">
+                                    <i class="fas fa-list-ol"></i>
+                                    Show ASCII values
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="convertBtn" class="btn btn-primary">
+                                <i class="fas fa-sync-alt"></i>
+                                Convert
+                            </button>
+                            <button id="clearBtn" class="btn btn-secondary">
+                                <i class="fas fa-trash"></i>
+                                Clear
+                            </button>
+                            <button id="sampleBtn" class="btn btn-outline">
+                                <i class="fas fa-file-text"></i>
+                                Load Sample
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-terminal"></i>
+                        Conversion Result
+                    </h3>
+                    
+                    <div class="binary-results" id="binaryResults">
+                        <div class="no-content">
+                            <i class="fas fa-code"></i>
+                            <p>Enter text or binary code to see the conversion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Professional Binary Converter - Text to Binary & Binary to Text</h2>
+                        <p>Understanding binary code is fundamental to computer science and programming. Our binary converter tool provides an easy way to convert between human-readable text and machine-readable binary code, helping students, developers, and technology enthusiasts understand how computers process and store information at the most basic level.</p>
+                        
+                        <h3>What is Binary Code?</h3>
+                        <p>Binary code is a system of representing text, computer processor instructions, or other data using a two-symbol system, typically 0 and 1. Each digit in binary is called a "bit" (binary digit), and computers use binary because digital circuits can easily represent two states: on (1) or off (0). Every character, number, and symbol you see on your computer is ultimately stored and processed as binary code.</p>
+
+                        <h3>How Binary Conversion Works</h3>
+                        <div class="conversion-process">
+                            <div class="process-step">
+                                <h4>Text to Binary Conversion</h4>
+                                <p>Each character in text is converted to its ASCII (American Standard Code for Information Interchange) value, which is then converted to an 8-bit binary representation. For example, the letter 'A' has an ASCII value of 65, which converts to 01000001 in binary.</p>
+                            </div>
+                            <div class="process-step">
+                                <h4>Binary to Text Conversion</h4>
+                                <p>Binary code is grouped into 8-bit segments (bytes), each representing one character. Each 8-bit binary number is converted back to its decimal ASCII value, which corresponds to a specific character in the ASCII table.</p>
+                            </div>
+                        </div>
+
+                        <h3>Educational Applications</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Computer Science Education</h4>
+                                <p>Students learning about computer fundamentals can visualize how text is stored and processed in computers, understanding the bridge between human language and machine language.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Programming Concepts</h4>
+                                <p>Developers can better understand data types, character encoding, and low-level programming concepts by seeing the binary representation of text data.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Data Encoding Projects</h4>
+                                <p>Perfect for projects involving data transmission, encryption basics, or understanding how different encoding schemes work in computer systems.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Digital Literacy</h4>
+                                <p>Helps anyone interested in technology understand the fundamental language that all digital devices use to process information.</p>
+                            </div>
+                        </div>
+
+                        <h3>ASCII Character Set</h3>
+                        <p>Our binary converter uses the standard ASCII character set, which includes:</p>
+                        <ul class="ascii-list">
+                            <li><strong>Control Characters (0-31):</strong> Non-printable characters used for text formatting and control</li>
+                            <li><strong>Printable Characters (32-126):</strong> Letters, numbers, punctuation, and symbols</li>
+                            <li><strong>Extended ASCII (128-255):</strong> Additional characters for international languages and special symbols</li>
+                        </ul>
+
+                        <h3>Binary Number System Basics</h3>
+                        <div class="binary-basics">
+                            <div class="basic-concept">
+                                <h4>Base-2 System</h4>
+                                <p>Binary uses base-2, meaning each position represents a power of 2. From right to left: 2⁰, 2¹, 2², 2³, 2⁴, 2⁵, 2⁶, 2⁷ (1, 2, 4, 8, 16, 32, 64, 128).</p>
+                            </div>
+                            <div class="basic-concept">
+                                <h4>8-Bit Representation</h4>
+                                <p>Standard ASCII uses 8 bits (1 byte) per character, allowing for 256 different possible values (2⁸ = 256), covering all standard ASCII characters.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Converter Features</h4>
+                            <ul class="feature-list">
+                                <li>Bidirectional conversion (text ↔ binary)</li>
+                                <li>Real-time conversion as you type</li>
+                                <li>ASCII value display option</li>
+                                <li>Customizable spacing for readability</li>
+                                <li>Copy results with one click</li>
+                                <li>Sample text for testing</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Common Binary Values</h4>
+                            <div class="binary-examples">
+                                <div class="binary-example">
+                                    <span class="char">A</span>
+                                    <span class="binary">01000001</span>
+                                    <span class="ascii">65</span>
+                                </div>
+                                <div class="binary-example">
+                                    <span class="char">a</span>
+                                    <span class="binary">01100001</span>
+                                    <span class="ascii">97</span>
+                                </div>
+                                <div class="binary-example">
+                                    <span class="char">0</span>
+                                    <span class="binary">00110000</span>
+                                    <span class="ascii">48</span>
+                                </div>
+                                <div class="binary-example">
+                                    <span class="char">Space</span>
+                                    <span class="binary">00100000</span>
+                                    <span class="ascii">32</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Quick Tips</h4>
+                            <ul class="tips-list">
+                                <li>Each character = 8 bits (1 byte)</li>
+                                <li>Binary groups are read right to left</li>
+                                <li>Spaces help readability but aren't required</li>
+                                <li>ASCII values 65-90 are uppercase letters</li>
+                                <li>ASCII values 97-122 are lowercase letters</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>Why do computers use binary?</h4>
+                            <p>Computers use binary because digital circuits can easily represent two states: on (1) or off (0). This makes binary the most reliable and efficient way for electronic devices to process and store information.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the difference between ASCII and Unicode?</h4>
+                            <p>ASCII uses 7-8 bits and covers basic English characters. Unicode is a more comprehensive standard that can represent characters from all languages worldwide, using variable-length encoding.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I convert special characters and symbols?</h4>
+                            <p>Yes, our converter handles all standard ASCII characters including letters, numbers, punctuation, and special symbols. Each has a unique binary representation.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I read binary numbers?</h4>
+                            <p>Binary is read from right to left, with each position representing a power of 2. Add up the values where there's a 1. For example: 01000001 = 64 + 1 = 65 (ASCII for 'A').</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="binary-converter.js"></script>
+</body>
+</html>

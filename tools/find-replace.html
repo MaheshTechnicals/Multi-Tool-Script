@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find & Replace Tool - Search and Replace Text Online | Multi-Tool Hub</title>
+    <meta name="description" content="Free online find and replace tool for bulk text editing. Search and replace words, phrases, or patterns with advanced options like case sensitivity, whole words, and regex support.">
+    <meta name="keywords" content="find and replace, text editor, bulk replace, search replace, text manipulation, regex replace, case sensitive search, text processing">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Find & Replace Tool - Search and Replace Text Online">
+    <meta property="og:description" content="Free online find and replace tool for bulk text editing. Search and replace words, phrases, or patterns with advanced options like case sensitivity, whole words, and regex support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/find-replace.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Find & Replace Tool - Search and Replace Text Online">
+    <meta name="twitter:description" content="Free online find and replace tool for bulk text editing. Search and replace words, phrases, or patterns with advanced options like case sensitivity, whole words, and regex support.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/find-replace.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Find & Replace Tool",
+        "description": "Free online find and replace tool for bulk text editing. Search and replace words, phrases, or patterns with advanced options like case sensitivity, whole words, and regex support.",
+        "url": "https://multi-tool-hub.com/tools/find-replace.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text Tools</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#text-tools">Text Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Find & Replace</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Find & Replace</h1>
+                    <p class="tool-subtitle">Search and replace text with advanced options and bulk editing</p>
+                    <div class="tool-description">
+                        <p>Our powerful find and replace tool enables efficient bulk text editing with advanced search options. Perfect for content editing, data cleaning, code refactoring, and document processing with support for case sensitivity, whole word matching, and regular expressions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="search-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-cog"></i>
+                            Search & Replace Options
+                        </h3>
+                        
+                        <div class="search-inputs">
+                            <div class="input-group">
+                                <label for="findText" class="input-label">
+                                    <i class="fas fa-search"></i>
+                                    Find (search for)
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="findText" 
+                                    class="search-input" 
+                                    placeholder="Enter text to find..."
+                                >
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="replaceText" class="input-label">
+                                    <i class="fas fa-edit"></i>
+                                    Replace with
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="replaceText" 
+                                    class="search-input" 
+                                    placeholder="Enter replacement text..."
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="search-settings">
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="caseSensitive">
+                                    <label for="caseSensitive">
+                                        <i class="fas fa-font"></i>
+                                        Case sensitive
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="wholeWords">
+                                    <label for="wholeWords">
+                                        <i class="fas fa-quote-left"></i>
+                                        Match whole words only
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="useRegex">
+                                    <label for="useRegex">
+                                        <i class="fas fa-code"></i>
+                                        Use regular expressions
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="findBtn" class="btn btn-outline">
+                                <i class="fas fa-search"></i>
+                                Find All
+                            </button>
+                            <button id="replaceBtn" class="btn btn-primary">
+                                <i class="fas fa-sync-alt"></i>
+                                Replace All
+                            </button>
+                            <button id="clearBtn" class="btn btn-secondary">
+                                <i class="fas fa-trash"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-input-section">
+                        <div class="input-group">
+                            <label for="inputText" class="input-label">
+                                <i class="fas fa-file-text"></i>
+                                Text to process
+                            </label>
+                            <textarea 
+                                id="inputText" 
+                                class="text-input" 
+                                placeholder="Paste or type your text here..."
+                                rows="12"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="text-actions">
+                            <button id="sampleBtn" class="btn btn-outline">
+                                <i class="fas fa-file-text"></i>
+                                Load Sample
+                            </button>
+                            <button id="copyResultBtn" class="btn btn-outline" style="display: none;">
+                                <i class="fas fa-copy"></i>
+                                Copy Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-list-alt"></i>
+                        Search Results
+                    </h3>
+                    
+                    <div class="find-results" id="findResults">
+                        <div class="no-content">
+                            <i class="fas fa-search-plus"></i>
+                            <p>Enter search text and click "Find All" to see matches</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Advanced Find & Replace Tool for Efficient Text Editing</h2>
+                        <p>Our comprehensive find and replace tool streamlines text editing workflows for writers, developers, content creators, and data analysts. With powerful search capabilities including regular expressions, case sensitivity options, and whole word matching, you can perform complex text transformations quickly and accurately.</p>
+                        
+                        <h3>Key Features and Capabilities</h3>
+                        <div class="feature-highlights">
+                            <div class="feature-highlight">
+                                <h4>Case Sensitivity Control</h4>
+                                <p>Choose whether your search should distinguish between uppercase and lowercase letters, giving you precise control over what gets matched and replaced.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4>Whole Word Matching</h4>
+                                <p>Ensure your search only matches complete words, preventing partial matches that could lead to unintended replacements in your text.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4>Regular Expression Support</h4>
+                                <p>Use powerful regex patterns for complex search and replace operations, enabling advanced text manipulation and pattern matching.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4>Real-time Preview</h4>
+                                <p>See all matches highlighted before performing replacements, ensuring you understand exactly what will be changed in your text.</p>
+                            </div>
+                        </div>
+
+                        <h3>Professional Use Cases</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Content Editing & Publishing</h4>
+                                <p>Quickly update brand names, correct spelling errors, or standardize terminology across large documents, articles, or website content.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Code Refactoring</h4>
+                                <p>Rename variables, update function names, or modify code patterns across multiple files or large codebases efficiently.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Data Cleaning</h4>
+                                <p>Standardize data formats, remove unwanted characters, or transform data patterns in CSV files, logs, or database exports.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Document Processing</h4>
+                                <p>Update contact information, replace outdated terms, or modify formatting across legal documents, contracts, or technical documentation.</p>
+                            </div>
+                        </div>
+
+                        <h3>Regular Expression Examples</h3>
+                        <div class="regex-examples">
+                            <div class="regex-example">
+                                <h4>Email Address Validation</h4>
+                                <code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code>
+                                <p>Matches valid email address patterns for data validation or extraction.</p>
+                            </div>
+                            <div class="regex-example">
+                                <h4>Phone Number Formatting</h4>
+                                <code>\b\d{3}-\d{3}-\d{4}\b</code>
+                                <p>Matches phone numbers in XXX-XXX-XXXX format for standardization.</p>
+                            </div>
+                            <div class="regex-example">
+                                <h4>URL Pattern Matching</h4>
+                                <code>https?://[^\s]+</code>
+                                <p>Matches HTTP and HTTPS URLs for link extraction or replacement.</p>
+                            </div>
+                            <div class="regex-example">
+                                <h4>Whitespace Cleanup</h4>
+                                <code>\s+</code>
+                                <p>Matches multiple whitespace characters for cleaning up formatting.</p>
+                            </div>
+                        </div>
+
+                        <h3>Best Practices for Find & Replace</h3>
+                        <ul class="best-practices">
+                            <li><strong>Always Preview First:</strong> Use "Find All" to see what will be matched before performing replacements</li>
+                            <li><strong>Use Whole Word Matching:</strong> When replacing common words, enable whole word matching to avoid partial replacements</li>
+                            <li><strong>Test Regex Patterns:</strong> Start with simple patterns and test thoroughly before applying complex regular expressions</li>
+                            <li><strong>Backup Important Text:</strong> Keep a copy of original text before performing bulk replacements</li>
+                            <li><strong>Case Sensitivity Awareness:</strong> Consider whether case matters for your specific use case</li>
+                            <li><strong>Escape Special Characters:</strong> When using regex, remember to escape special characters like . * + ? ^ $ { } ( ) | [ ] \</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Tool Features</h4>
+                            <ul class="feature-list">
+                                <li>Case sensitive/insensitive search</li>
+                                <li>Whole word matching option</li>
+                                <li>Regular expression support</li>
+                                <li>Real-time match highlighting</li>
+                                <li>Bulk replace functionality</li>
+                                <li>Match count display</li>
+                                <li>Copy results with one click</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Common Regex Patterns</h4>
+                            <div class="regex-patterns">
+                                <div class="pattern-item">
+                                    <code>\d+</code>
+                                    <span>Any number</span>
+                                </div>
+                                <div class="pattern-item">
+                                    <code>\w+</code>
+                                    <span>Any word</span>
+                                </div>
+                                <div class="pattern-item">
+                                    <code>\s+</code>
+                                    <span>Whitespace</span>
+                                </div>
+                                <div class="pattern-item">
+                                    <code>^</code>
+                                    <span>Start of line</span>
+                                </div>
+                                <div class="pattern-item">
+                                    <code>$</code>
+                                    <span>End of line</span>
+                                </div>
+                                <div class="pattern-item">
+                                    <code>.</code>
+                                    <span>Any character</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Quick Tips</h4>
+                            <ul class="tips-list">
+                                <li>Use \n for line breaks in replacements</li>
+                                <li>Empty replace field removes found text</li>
+                                <li>Test regex patterns on small samples first</li>
+                                <li>Case sensitivity affects regex matching</li>
+                                <li>Whole words prevent partial matches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>What are regular expressions and when should I use them?</h4>
+                            <p>Regular expressions (regex) are powerful pattern-matching tools that allow you to search for complex patterns in text. Use them for advanced searches like finding email addresses, phone numbers, or specific formatting patterns.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the difference between case sensitive and case insensitive search?</h4>
+                            <p>Case sensitive search distinguishes between uppercase and lowercase letters (e.g., "Hello" ≠ "hello"), while case insensitive treats them as the same (e.g., "Hello" = "hello").</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>When should I use "whole words only" option?</h4>
+                            <p>Use whole words only when you want to avoid partial matches. For example, searching for "cat" with whole words only won't match "category" or "concatenate".</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I undo a replace operation?</h4>
+                            <p>The tool doesn't have an undo function, so we recommend copying your original text before performing replacements, or using "Find All" to preview matches first.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="find-replace.js"></script>
+</body>
+</html>

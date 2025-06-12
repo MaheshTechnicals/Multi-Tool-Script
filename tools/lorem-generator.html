@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator - Create Placeholder Text for Design & Development | Multi-Tool Hub</title>
+    <meta name="description" content="Generate Lorem Ipsum placeholder text for web design, graphic design, and development projects. Customize paragraphs, words, and sentences. Perfect for mockups, prototypes, and layouts.">
+    <meta name="keywords" content="lorem ipsum generator, placeholder text, dummy text, filler text, design mockup, web development, graphic design, prototype text, layout text">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Lorem Ipsum Generator - Create Placeholder Text for Design & Development">
+    <meta property="og:description" content="Generate Lorem Ipsum placeholder text for web design, graphic design, and development projects. Customize paragraphs, words, and sentences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/lorem-generator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lorem Ipsum Generator - Create Placeholder Text for Design & Development">
+    <meta name="twitter:description" content="Generate Lorem Ipsum placeholder text for web design, graphic design, and development projects. Customize paragraphs, words, and sentences.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/lorem-generator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Lorem Ipsum Generator Tool",
+        "description": "Generate Lorem Ipsum placeholder text for web design, graphic design, and development projects. Customize paragraphs, words, and sentences.",
+        "url": "https://multi-tool-hub.com/tools/lorem-generator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="nav-link">Text Tools</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#text-tools">Text Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Lorem Ipsum Generator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-paragraph"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Lorem Ipsum Generator</h1>
+                    <p class="tool-subtitle">Generate placeholder text for design and development projects</p>
+                    <div class="tool-description">
+                        <p>Create professional Lorem Ipsum placeholder text for web design, graphic design, and development projects. Our generator provides customizable options for paragraphs, words, and sentences, perfect for mockups, prototypes, and layout testing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="generator-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-cog"></i>
+                            Generation Options
+                        </h3>
+                        
+                        <div class="option-tabs">
+                            <button class="tab-btn active" data-type="paragraphs">
+                                <i class="fas fa-paragraph"></i>
+                                Paragraphs
+                            </button>
+                            <button class="tab-btn" data-type="words">
+                                <i class="fas fa-font"></i>
+                                Words
+                            </button>
+                            <button class="tab-btn" data-type="sentences">
+                                <i class="fas fa-list"></i>
+                                Sentences
+                            </button>
+                        </div>
+                        
+                        <div class="option-content">
+                            <div class="option-group" id="paragraphsOption">
+                                <label for="paragraphCount" class="option-label">
+                                    Number of Paragraphs: <span id="paragraphValue">3</span>
+                                </label>
+                                <input type="range" id="paragraphCount" class="count-slider" min="1" max="20" value="3">
+                                <div class="count-labels">
+                                    <span>1</span>
+                                    <span>20</span>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group" id="wordsOption" style="display: none;">
+                                <label for="wordCount" class="option-label">
+                                    Number of Words: <span id="wordValue">50</span>
+                                </label>
+                                <input type="range" id="wordCount" class="count-slider" min="5" max="500" value="50">
+                                <div class="count-labels">
+                                    <span>5</span>
+                                    <span>500</span>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group" id="sentencesOption" style="display: none;">
+                                <label for="sentenceCount" class="option-label">
+                                    Number of Sentences: <span id="sentenceValue">10</span>
+                                </label>
+                                <input type="range" id="sentenceCount" class="count-slider" min="1" max="50" value="10">
+                                <div class="count-labels">
+                                    <span>1</span>
+                                    <span>50</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="additional-options">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="startWithLorem" checked>
+                                <label for="startWithLorem">
+                                    <i class="fas fa-play"></i>
+                                    Start with "Lorem ipsum dolor sit amet..."
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="generateBtn" class="btn btn-primary">
+                                <i class="fas fa-magic"></i>
+                                Generate Lorem Ipsum
+                            </button>
+                            <button id="copyAllBtn" class="btn btn-outline" style="display: none;">
+                                <i class="fas fa-copy"></i>
+                                Copy All Text
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-file-text"></i>
+                        Generated Text
+                    </h3>
+                    
+                    <div class="lorem-results" id="loremResults">
+                        <div class="no-content">
+                            <i class="fas fa-paragraph"></i>
+                            <p>Click "Generate Lorem Ipsum" to create placeholder text</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Professional Lorem Ipsum Generator for Design & Development</h2>
+                        <p>Lorem Ipsum has been the industry standard placeholder text since the 1500s, providing designers and developers with neutral content that doesn't distract from layout and design elements. Our advanced Lorem Ipsum generator offers flexible options to create the perfect amount of placeholder text for any project, from simple mockups to complex web applications.</p>
+                        
+                        <h3>What is Lorem Ipsum?</h3>
+                        <p>Lorem Ipsum is scrambled Latin text derived from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This classical Latin literature has been used as placeholder text since the 1960s and remains the industry standard for design and typesetting.</p>
+
+                        <h3>Why Use Lorem Ipsum?</h3>
+                        <div class="benefits">
+                            <div class="benefit-item">
+                                <h4>Neutral Content</h4>
+                                <p>Lorem Ipsum provides meaningless text that doesn't distract viewers from design elements, allowing them to focus on layout, typography, and visual hierarchy.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>Realistic Text Distribution</h4>
+                                <p>The text has a natural distribution of letters and word lengths, making it ideal for testing how real content will look in your design.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>Industry Standard</h4>
+                                <p>Recognized worldwide by designers, developers, and clients as professional placeholder text, eliminating confusion about content intentions.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h4>Prevents Content Bias</h4>
+                                <p>Using meaningless text prevents stakeholders from getting distracted by content and allows them to focus on design and functionality.</p>
+                            </div>
+                        </div>
+
+                        <h3>Perfect for Multiple Use Cases</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Web Design & Development</h4>
+                                <p>Test layouts, typography, and responsive design with realistic text content before final copy is available.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Graphic Design</h4>
+                                <p>Fill brochures, posters, and marketing materials with placeholder text to showcase design concepts.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Print Design</h4>
+                                <p>Create magazine layouts, book designs, and print advertisements with professional placeholder content.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Prototyping</h4>
+                                <p>Build wireframes and prototypes with realistic text content to demonstrate user experience and information architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Generator Features</h4>
+                            <ul class="feature-list">
+                                <li>Generate by paragraphs, words, or sentences</li>
+                                <li>Customizable quantity (1-500 words)</li>
+                                <li>Option to start with classic Lorem Ipsum</li>
+                                <li>One-click copy functionality</li>
+                                <li>Instant generation</li>
+                                <li>Mobile-friendly interface</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Common Uses</h4>
+                            <ul class="supported-list">
+                                <li>Website mockups and wireframes</li>
+                                <li>Print design layouts</li>
+                                <li>Mobile app prototypes</li>
+                                <li>Email template design</li>
+                                <li>Presentation slides</li>
+                                <li>Typography testing</li>
+                                <li>Content management systems</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Quick Tips</h4>
+                            <ul class="tips-list">
+                                <li>Use 2-3 paragraphs for typical web pages</li>
+                                <li>50-100 words work well for short descriptions</li>
+                                <li>Start with Lorem Ipsum for authenticity</li>
+                                <li>Test different text lengths for responsive design</li>
+                                <li>Replace with real content before launch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>What does Lorem Ipsum mean?</h4>
+                            <p>Lorem Ipsum is scrambled Latin text that doesn't have a direct translation. It's derived from classical Latin literature but has been altered to be nonsensical, making it perfect as placeholder text.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Why not just use "test text" or random words?</h4>
+                            <p>Lorem Ipsum has a natural distribution of letters and word lengths that closely resembles real text, making it ideal for testing layouts and typography. Random words or repeated phrases don't provide realistic text flow.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How much Lorem Ipsum should I use?</h4>
+                            <p>The amount depends on your project. For web pages, 2-3 paragraphs are typical. For headlines, 5-10 words work well. For body content, 50-200 words per section is common.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Is it okay to use Lorem Ipsum in client presentations?</h4>
+                            <p>Yes, Lorem Ipsum is widely recognized as professional placeholder text. It helps clients focus on design and layout rather than getting distracted by content that isn't final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="lorem-generator.js"></script>
+</body>
+</html>
