@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Calculate Body Mass Index & Health Status | Multi-Tool Hub</title>
+    <meta name="description" content="Calculate your Body Mass Index (BMI) and determine your health status. Get detailed analysis, ideal weight range, and health recommendations based on WHO standards with our comprehensive BMI calculator.">
+    <meta name="keywords" content="BMI calculator, body mass index, health calculator, weight status, ideal weight, obesity calculator, health assessment, BMI chart">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="BMI Calculator - Calculate Body Mass Index & Health Status">
+    <meta property="og:description" content="Calculate your Body Mass Index (BMI) and determine your health status. Get detailed analysis, ideal weight range, and health recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/bmi-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BMI Calculator - Calculate Body Mass Index & Health Status">
+    <meta name="twitter:description" content="Calculate your Body Mass Index (BMI) and determine your health status. Get detailed analysis, ideal weight range, and health recommendations.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/bmi-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "BMI Calculator Tool",
+        "description": "Calculate your Body Mass Index (BMI) and determine your health status. Get detailed analysis, ideal weight range, and health recommendations.",
+        "url": "https://multi-tool-hub.com/tools/bmi-calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#calculators">Calculators</a>
+                <span class="separator">/</span>
+                <span class="current">BMI Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-weight"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">BMI Calculator</h1>
+                    <p class="tool-subtitle">Calculate your Body Mass Index and assess your health status</p>
+                    <div class="tool-description">
+                        <p>Calculate your Body Mass Index (BMI) to assess your weight status and overall health. Our comprehensive BMI calculator provides detailed analysis based on WHO standards, including your health category, ideal weight range, and personalized recommendations for maintaining optimal health.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="bmi-input-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-user-md"></i>
+                            Enter Your Measurements
+                        </h3>
+                        
+                        <div class="unit-toggle">
+                            <label class="toggle-label">
+                                <input type="radio" name="units" value="metric" checked>
+                                <span>Metric (kg/cm)</span>
+                            </label>
+                            <label class="toggle-label">
+                                <input type="radio" name="units" value="imperial">
+                                <span>Imperial (lbs/ft)</span>
+                            </label>
+                        </div>
+
+                        <div class="measurement-inputs" id="metricInputs">
+                            <div class="input-group">
+                                <label for="weightKg" class="input-label">
+                                    <i class="fas fa-weight-hanging"></i>
+                                    Weight (kg)
+                                </label>
+                                <input type="number" id="weightKg" class="number-input" placeholder="70" min="1" max="500" step="0.1">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="heightCm" class="input-label">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                    Height (cm)
+                                </label>
+                                <input type="number" id="heightCm" class="number-input" placeholder="175" min="50" max="300" step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="measurement-inputs" id="imperialInputs" style="display: none;">
+                            <div class="input-group">
+                                <label for="weightLbs" class="input-label">
+                                    <i class="fas fa-weight-hanging"></i>
+                                    Weight (lbs)
+                                </label>
+                                <input type="number" id="weightLbs" class="number-input" placeholder="154" min="1" max="1000" step="0.1">
+                            </div>
+                            
+                            <div class="height-imperial">
+                                <label class="input-label">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                    Height
+                                </label>
+                                <div class="height-inputs">
+                                    <input type="number" id="heightFt" class="number-input" placeholder="5" min="1" max="10" step="1">
+                                    <span class="unit-label">ft</span>
+                                    <input type="number" id="heightIn" class="number-input" placeholder="9" min="0" max="11" step="1">
+                                    <span class="unit-label">in</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="additional-options">
+                            <div class="input-group">
+                                <label for="age" class="input-label">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Age (optional)
+                                </label>
+                                <input type="number" id="age" class="number-input" placeholder="25" min="1" max="120">
+                            </div>
+                            
+                            <div class="gender-selection">
+                                <label class="input-label">
+                                    <i class="fas fa-venus-mars"></i>
+                                    Gender (optional)
+                                </label>
+                                <div class="gender-options">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male">
+                                        <span>Male</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female">
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="calculateBmiBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate BMI
+                            </button>
+                            <button id="clearBmiBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-bar"></i>
+                        BMI Results
+                    </h3>
+                    
+                    <div class="bmi-results" id="bmiResults">
+                        <div class="no-content">
+                            <i class="fas fa-weight"></i>
+                            <p>Enter your weight and height to calculate your BMI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive BMI Calculator - Understand Your Health Status</h2>
+                        <p>Body Mass Index (BMI) is a widely used screening tool that helps assess whether your weight is appropriate for your height. Our advanced BMI calculator not only computes your BMI value but also provides detailed health insights, ideal weight ranges, and personalized recommendations based on established medical guidelines from the World Health Organization (WHO) and other health authorities.</p>
+
+                        <h3>Understanding BMI and Its Importance</h3>
+                        <p>BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). While BMI doesn't directly measure body fat, it provides a reliable indicator for most people to identify potential weight-related health risks. Our calculator supports both metric and imperial units, making it accessible for users worldwide.</p>
+
+                        <h3>BMI Categories and Health Implications</h3>
+                        <div class="bmi-categories">
+                            <div class="category-item">
+                                <h4>Underweight (BMI < 18.5)</h4>
+                                <p>May indicate malnutrition, eating disorders, or other health issues. Consider consulting a healthcare provider for proper evaluation and guidance on healthy weight gain strategies.</p>
+                            </div>
+                            <div class="category-item">
+                                <h4>Normal Weight (BMI 18.5-24.9)</h4>
+                                <p>Indicates a healthy weight range associated with the lowest risk of weight-related health problems. Maintain this range through balanced diet and regular physical activity.</p>
+                            </div>
+                            <div class="category-item">
+                                <h4>Overweight (BMI 25-29.9)</h4>
+                                <p>Suggests excess weight that may increase risk of health problems. Consider lifestyle modifications including diet improvements and increased physical activity.</p>
+                            </div>
+                            <div class="category-item">
+                                <h4>Obese (BMI ≥ 30)</h4>
+                                <p>Indicates significantly increased risk of serious health conditions including diabetes, heart disease, and stroke. Professional medical guidance is recommended.</p>
+                            </div>
+                        </div>
+
+                        <h3>Factors That Affect BMI Interpretation</h3>
+                        <div class="bmi-factors">
+                            <div class="factor-item">
+                                <h4>Age Considerations</h4>
+                                <p>BMI interpretation may vary with age. Older adults may have a slightly higher healthy BMI range, while children and teenagers require age-specific BMI percentiles.</p>
+                            </div>
+                            <div class="factor-item">
+                                <h4>Gender Differences</h4>
+                                <p>Men and women may have different body compositions at the same BMI. Women typically have more body fat, while men have more muscle mass.</p>
+                            </div>
+                            <div class="factor-item">
+                                <h4>Muscle Mass</h4>
+                                <p>Athletes and individuals with high muscle mass may have elevated BMI despite low body fat. BMI doesn't distinguish between muscle and fat weight.</p>
+                            </div>
+                            <div class="factor-item">
+                                <h4>Ethnicity</h4>
+                                <p>Different ethnic groups may have varying health risks at the same BMI levels. Some populations may need adjusted BMI thresholds for accurate health assessment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>BMI Quick Reference</h4>
+                            <div class="bmi-chart">
+                                <div class="chart-item underweight">
+                                    <span class="range">< 18.5</span>
+                                    <span class="category">Underweight</span>
+                                </div>
+                                <div class="chart-item normal">
+                                    <span class="range">18.5 - 24.9</span>
+                                    <span class="category">Normal</span>
+                                </div>
+                                <div class="chart-item overweight">
+                                    <span class="range">25.0 - 29.9</span>
+                                    <span class="category">Overweight</span>
+                                </div>
+                                <div class="chart-item obese">
+                                    <span class="range">≥ 30.0</span>
+                                    <span class="category">Obese</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Health Tips</h4>
+                            <ul class="health-tips">
+                                <li>Maintain a balanced diet with fruits and vegetables</li>
+                                <li>Exercise regularly (150 minutes moderate activity per week)</li>
+                                <li>Stay hydrated and get adequate sleep</li>
+                                <li>Monitor your weight regularly</li>
+                                <li>Consult healthcare providers for personalized advice</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>When to Seek Medical Advice</h4>
+                            <ul class="medical-advice">
+                                <li>BMI outside normal range</li>
+                                <li>Rapid weight changes</li>
+                                <li>Family history of obesity-related diseases</li>
+                                <li>Concerns about eating habits</li>
+                                <li>Need for personalized weight management plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="bmi-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - Calculate Percentages, Increases & Decreases | Multi-Tool Hub</title>
+    <meta name="description" content="Calculate percentages, percentage increases, decreases, and ratios with our comprehensive percentage calculator. Perfect for discounts, tips, taxes, grades, and financial calculations.">
+    <meta name="keywords" content="percentage calculator, percent calculator, percentage increase, percentage decrease, discount calculator, tip calculator, tax calculator, grade calculator">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Percentage Calculator - Calculate Percentages, Increases & Decreases">
+    <meta property="og:description" content="Calculate percentages, percentage increases, decreases, and ratios with our comprehensive percentage calculator. Perfect for discounts, tips, taxes, and grades.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/percentage-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Percentage Calculator - Calculate Percentages, Increases & Decreases">
+    <meta name="twitter:description" content="Calculate percentages, percentage increases, decreases, and ratios with our comprehensive percentage calculator. Perfect for discounts, tips, taxes, and grades.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/percentage-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Percentage Calculator Tool",
+        "description": "Calculate percentages, percentage increases, decreases, and ratios with our comprehensive percentage calculator. Perfect for discounts, tips, taxes, and grades.",
+        "url": "https://multi-tool-hub.com/tools/percentage-calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#calculators">Calculators</a>
+                <span class="separator">/</span>
+                <span class="current">Percentage Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-percent"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Percentage Calculator</h1>
+                    <p class="tool-subtitle">Calculate percentages, increases, decreases, and ratios with ease</p>
+                    <div class="tool-description">
+                        <p>Perform various percentage calculations including basic percentages, percentage increases and decreases, discounts, tips, taxes, and grade calculations. Our comprehensive percentage calculator handles all your mathematical needs with instant, accurate results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="percentage-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-calculator"></i>
+                            Calculation Type
+                        </h3>
+                        
+                        <div class="calculation-tabs">
+                            <button class="tab-btn active" data-tab="basic">
+                                <i class="fas fa-percent"></i>
+                                Basic Percentage
+                            </button>
+                            <button class="tab-btn" data-tab="increase">
+                                <i class="fas fa-arrow-up"></i>
+                                Percentage Increase
+                            </button>
+                            <button class="tab-btn" data-tab="decrease">
+                                <i class="fas fa-arrow-down"></i>
+                                Percentage Decrease
+                            </button>
+                            <button class="tab-btn" data-tab="change">
+                                <i class="fas fa-exchange-alt"></i>
+                                Percentage Change
+                            </button>
+                        </div>
+
+                        <!-- Basic Percentage Tab -->
+                        <div class="tab-content active" id="basic-tab">
+                            <h4>What is X% of Y?</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Percentage (%)</label>
+                                    <input type="number" id="basicPercent" class="number-input" placeholder="25" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>Of Value</label>
+                                    <input type="number" id="basicValue" class="number-input" placeholder="200" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="basicFormula">25% of 200 = ?</span>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Increase Tab -->
+                        <div class="tab-content" id="increase-tab">
+                            <h4>Increase a value by X%</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Original Value</label>
+                                    <input type="number" id="increaseOriginal" class="number-input" placeholder="100" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>Increase (%)</label>
+                                    <input type="number" id="increasePercent" class="number-input" placeholder="20" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="increaseFormula">100 + 20% = ?</span>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Decrease Tab -->
+                        <div class="tab-content" id="decrease-tab">
+                            <h4>Decrease a value by X%</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Original Value</label>
+                                    <input type="number" id="decreaseOriginal" class="number-input" placeholder="100" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>Decrease (%)</label>
+                                    <input type="number" id="decreasePercent" class="number-input" placeholder="15" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="decreaseFormula">100 - 15% = ?</span>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Change Tab -->
+                        <div class="tab-content" id="change-tab">
+                            <h4>What is the percentage change from X to Y?</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Original Value</label>
+                                    <input type="number" id="changeOriginal" class="number-input" placeholder="50" step="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>New Value</label>
+                                    <input type="number" id="changeNew" class="number-input" placeholder="75" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="changeFormula">Change from 50 to 75 = ?</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="calculatePercentBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                            <button id="clearPercentBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-pie"></i>
+                        Calculation Results
+                    </h3>
+                    
+                    <div class="percentage-results" id="percentageResults">
+                        <div class="no-content">
+                            <i class="fas fa-percent"></i>
+                            <p>Select a calculation type and enter values to see results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Percentage Calculator - Master All Percentage Calculations</h2>
+                        <p>Percentages are fundamental to many aspects of daily life, from calculating discounts and tips to analyzing financial data and academic grades. Our advanced percentage calculator provides multiple calculation modes to handle any percentage-related problem you encounter, whether you're shopping, studying, working, or managing finances.</p>
+
+                        <h3>Types of Percentage Calculations</h3>
+                        <div class="calculation-types">
+                            <div class="calc-type">
+                                <h4>Basic Percentage (X% of Y)</h4>
+                                <p>Calculate what percentage of a number equals. Perfect for finding discounts, tips, taxes, or any portion of a whole. Formula: (Percentage ÷ 100) × Value</p>
+                                <div class="example">Example: 25% of 200 = (25 ÷ 100) × 200 = 50</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Percentage Increase</h4>
+                                <p>Add a percentage to an original value. Commonly used for calculating price increases, salary raises, or growth rates. Formula: Original + (Original × Percentage ÷ 100)</p>
+                                <div class="example">Example: 100 + 20% = 100 + (100 × 20 ÷ 100) = 120</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Percentage Decrease</h4>
+                                <p>Subtract a percentage from an original value. Used for discounts, depreciation, or reduction calculations. Formula: Original - (Original × Percentage ÷ 100)</p>
+                                <div class="example">Example: 100 - 15% = 100 - (100 × 15 ÷ 100) = 85</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Percentage Change</h4>
+                                <p>Calculate the percentage difference between two values. Essential for analyzing growth, decline, or comparison. Formula: ((New - Original) ÷ Original) × 100</p>
+                                <div class="example">Example: Change from 50 to 75 = ((75 - 50) ÷ 50) × 100 = 50%</div>
+                            </div>
+                        </div>
+
+                        <h3>Common Applications</h3>
+                        <div class="applications">
+                            <div class="app-category">
+                                <h4>Shopping & Finance</h4>
+                                <ul>
+                                    <li>Calculate sale discounts and final prices</li>
+                                    <li>Determine tip amounts at restaurants</li>
+                                    <li>Compute sales tax on purchases</li>
+                                    <li>Analyze investment returns and losses</li>
+                                    <li>Calculate loan interest and fees</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Education & Academics</h4>
+                                <ul>
+                                    <li>Convert test scores to percentages</li>
+                                    <li>Calculate grade point averages</li>
+                                    <li>Determine pass/fail thresholds</li>
+                                    <li>Analyze statistical data</li>
+                                    <li>Compare performance metrics</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Business & Analytics</h4>
+                                <ul>
+                                    <li>Track sales growth and decline</li>
+                                    <li>Calculate profit margins</li>
+                                    <li>Analyze market share changes</li>
+                                    <li>Determine commission rates</li>
+                                    <li>Evaluate performance improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Quick Reference</h4>
+                            <div class="quick-formulas">
+                                <div class="formula-item">
+                                    <strong>Basic:</strong> (% ÷ 100) × Value
+                                </div>
+                                <div class="formula-item">
+                                    <strong>Increase:</strong> Value × (1 + % ÷ 100)
+                                </div>
+                                <div class="formula-item">
+                                    <strong>Decrease:</strong> Value × (1 - % ÷ 100)
+                                </div>
+                                <div class="formula-item">
+                                    <strong>Change:</strong> ((New - Old) ÷ Old) × 100
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Common Percentages</h4>
+                            <div class="common-percentages">
+                                <div class="percent-item">
+                                    <span class="percent">10%</span>
+                                    <span class="decimal">= 0.1</span>
+                                </div>
+                                <div class="percent-item">
+                                    <span class="percent">25%</span>
+                                    <span class="decimal">= 0.25</span>
+                                </div>
+                                <div class="percent-item">
+                                    <span class="percent">50%</span>
+                                    <span class="decimal">= 0.5</span>
+                                </div>
+                                <div class="percent-item">
+                                    <span class="percent">75%</span>
+                                    <span class="decimal">= 0.75</span>
+                                </div>
+                                <div class="percent-item">
+                                    <span class="percent">100%</span>
+                                    <span class="decimal">= 1.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Tips & Tricks</h4>
+                            <ul class="tips-list">
+                                <li>To find 10%, move decimal point left one place</li>
+                                <li>50% is always half of the number</li>
+                                <li>25% is one quarter of the number</li>
+                                <li>To find 1%, divide by 100</li>
+                                <li>Percentage increase + decrease ≠ original value</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="percentage-calculator.js"></script>
+</body>
+</html>
