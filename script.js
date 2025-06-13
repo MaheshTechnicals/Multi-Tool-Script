@@ -185,7 +185,7 @@ const toolsData = [
     }
 ];
 
-// DOM elements
+// DOM elements - with null checks for individual tool pages
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const toolSearch = document.getElementById('toolSearch');
@@ -194,11 +194,25 @@ const toolsGrid = document.getElementById('toolsGrid');
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeNavigation();
+    // Only initialize homepage-specific features if elements exist
+    if (toolsGrid) {
+        renderTools(toolsData);
+    }
+    
+    if (toolSearch) {
+        initializeSearch();
+    }
+    
+    if (filterButtons.length > 0) {
+        initializeFilters();
+    }
+    
+    // Initialize features that work on all pages
+    if (navToggle && navMenu) {
+        initializeNavigation();
+    }
+    
     initializeHeroAnimations();
-    renderTools(toolsData);
-    initializeSearch();
-    initializeFilters();
     initializeSmoothScrolling();
     initializeScrollAnimations();
     initializeRippleEffect();
@@ -366,6 +380,11 @@ function initializeHeroAnimations() {
 
 // Render tools grid
 function renderTools(tools) {
+    if (!toolsGrid) {
+        console.warn('toolsGrid element not found - this function should only be called on the homepage');
+        return;
+    }
+    
     toolsGrid.innerHTML = '';
     
     tools.forEach((tool, index) => {

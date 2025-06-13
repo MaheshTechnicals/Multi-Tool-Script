@@ -317,7 +317,8 @@
     <!-- Footer Component Container -->
     <div id="footer-container"></div>
 
-    <script src="../script.js"></script>
+    <!-- Scripts -->
+    <script src="tool-navigation.js"></script>
     <script src="../components/footer.js"></script>
     <script src="image-compressor.js"></script>
     <script>
@@ -325,6 +326,9 @@
         FooterComponent.init({
             isHomePage: false
         });
+        
+        // Initialize the image compressor
+        const imageCompressor = new ImageCompressor();
     </script>
 </body>
 </html>
