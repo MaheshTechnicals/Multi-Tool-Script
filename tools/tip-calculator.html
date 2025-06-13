@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator - Calculate Tips, Split Bills & Per-Person Amounts | Multi-Tool Hub</title>
+    <meta name="description" content="Free online tip calculator for restaurants, delivery, rideshare & all services. Calculate tips with custom percentages, split bills among groups, determine per-person amounts & get service-specific recommendations. Features include pre-tax calculations, tip presets (15%, 18%, 20%, 25%), group bill splitting & tipping etiquette guides for perfect gratuity calculations.">
+    <meta name="keywords" content="tip calculator, restaurant tip calculator, bill splitter, gratuity calculator, dining tip calculator, service tip calculator, bill split calculator, group dining calculator, delivery tip calculator, rideshare tip calculator, tipping guide, tip percentage calculator, restaurant bill splitter, group tip calculator, service gratuity calculator, dining etiquette calculator"
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Tip Calculator - Calculate Tips, Split Bills & Per-Person Amounts">
+    <meta property="og:description" content="Calculate tips, split restaurant bills, and determine per-person amounts with our comprehensive tip calculator. Perfect for dining out and service gratuities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/tip-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tip Calculator - Calculate Tips, Split Bills & Per-Person Amounts">
+    <meta name="twitter:description" content="Calculate tips, split restaurant bills, and determine per-person amounts with our comprehensive tip calculator. Perfect for dining out and service gratuities.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/tip-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tip Calculator Tool",
+        "description": "Calculate tips, split restaurant bills, and determine per-person amounts with our comprehensive tip calculator. Perfect for dining out, delivery orders, and service gratuities.",
+        "url": "https://multi-tool-hub.com/tools/tip-calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#calculators">Calculators</a>
+                <span class="separator">/</span>
+                <span class="current">Tip Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-receipt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Tip Calculator</h1>
+                    <p class="tool-subtitle">Calculate tips, split bills, and determine per-person amounts for dining and services</p>
+                    <div class="tool-description">
+                        <p>Calculate accurate tips and split restaurant bills effortlessly with our comprehensive tip calculator. Perfect for dining out, delivery orders, and service gratuities with customizable tip percentages and bill splitting options.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="tip-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-utensils"></i>
+                            Bill Details
+                        </h3>
+                        
+                        <div class="calculation-tabs">
+                            <button class="tab-btn active" data-tab="basic">
+                                <i class="fas fa-receipt"></i>
+                                Basic Tip
+                            </button>
+                            <button class="tab-btn" data-tab="split">
+                                <i class="fas fa-users"></i>
+                                Split Bill
+                            </button>
+                            <button class="tab-btn" data-tab="custom">
+                                <i class="fas fa-cog"></i>
+                                Custom Service
+                            </button>
+                        </div>
+
+                        <!-- Basic Tip Tab -->
+                        <div class="tab-content active" id="basic-tab">
+                            <h4>Calculate Tip Amount</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Bill Amount ($)</label>
+                                    <input type="number" id="billAmount" class="number-input" placeholder="50.00" step="0.01" min="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>Tip Percentage (%)</label>
+                                    <input type="number" id="tipPercentage" class="number-input" placeholder="18" step="0.5" min="0" max="100">
+                                </div>
+                            </div>
+                            
+                            <div class="tip-presets">
+                                <h5>Quick Tip Presets</h5>
+                                <div class="preset-buttons">
+                                    <button class="preset-btn" data-tip="15">15%</button>
+                                    <button class="preset-btn" data-tip="18">18%</button>
+                                    <button class="preset-btn" data-tip="20">20%</button>
+                                    <button class="preset-btn" data-tip="22">22%</button>
+                                    <button class="preset-btn" data-tip="25">25%</button>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>
+                                    <input type="checkbox" id="includeTax" class="checkbox-input">
+                                    Calculate tip on pre-tax amount
+                                </label>
+                                <div class="tax-input" id="taxInputGroup" style="display: none;">
+                                    <label>Tax Amount ($)</label>
+                                    <input type="number" id="taxAmount" class="number-input" placeholder="4.50" step="0.01" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Split Bill Tab -->
+                        <div class="tab-content" id="split-tab">
+                            <h4>Split Bill Among People</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Total Bill Amount ($)</label>
+                                    <input type="number" id="splitBillAmount" class="number-input" placeholder="120.00" step="0.01" min="0.01">
+                                </div>
+                                <div class="input-group">
+                                    <label>Number of People</label>
+                                    <input type="number" id="numberOfPeople" class="number-input" placeholder="4" step="1" min="1" max="50">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Tip Percentage (%)</label>
+                                    <input type="number" id="splitTipPercentage" class="number-input" placeholder="18" step="0.5" min="0" max="100">
+                                </div>
+                                <div class="input-group">
+                                    <label>Split Method</label>
+                                    <select id="splitMethod" class="select-input">
+                                        <option value="equal">Equal Split</option>
+                                        <option value="custom">Custom Amounts</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="custom-split-section" id="customSplitSection" style="display: none;">
+                                <h5>Individual Amounts</h5>
+                                <div id="customSplitInputs"></div>
+                            </div>
+                        </div>
+
+                        <!-- Custom Service Tab -->
+                        <div class="tab-content" id="custom-tab">
+                            <h4>Service-Specific Tip Calculator</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Service Type</label>
+                                    <select id="serviceType" class="select-input">
+                                        <option value="restaurant">Restaurant Dining</option>
+                                        <option value="delivery">Food Delivery</option>
+                                        <option value="taxi">Taxi/Rideshare</option>
+                                        <option value="hotel">Hotel Services</option>
+                                        <option value="salon">Hair/Beauty Salon</option>
+                                        <option value="bartender">Bar Service</option>
+                                        <option value="custom">Custom Service</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Service Amount ($)</label>
+                                    <input type="number" id="serviceAmount" class="number-input" placeholder="75.00" step="0.01" min="0.01">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Service Quality</label>
+                                    <select id="serviceQuality" class="select-input">
+                                        <option value="excellent">Excellent (20-25%)</option>
+                                        <option value="good">Good (18-20%)</option>
+                                        <option value="average">Average (15-18%)</option>
+                                        <option value="poor">Poor (10-15%)</option>
+                                        <option value="custom">Custom Percentage</option>
+                                    </select>
+                                </div>
+                                <div class="input-group" id="customTipGroup" style="display: none;">
+                                    <label>Custom Tip (%)</label>
+                                    <input type="number" id="customTipPercentage" class="number-input" placeholder="18" step="0.5" min="0" max="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="calculateTipBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                            <button id="clearTipBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-pie"></i>
+                        Tip Calculation Results
+                    </h3>
+                    
+                    <div class="tip-results" id="tipResults">
+                        <div class="no-content">
+                            <i class="fas fa-receipt"></i>
+                            <p>Enter bill details to calculate tip and total amounts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Tip Calculator - Master Tipping Etiquette and Bill Splitting</h2>
+                        <p>Tipping is an essential part of service culture in many countries, and calculating the right tip amount can sometimes be challenging. Our advanced tip calculator simplifies this process by providing accurate calculations for various service types, bill splitting options, and customizable tip percentages. Whether you're dining at a restaurant, ordering delivery, or using various services, our calculator ensures you tip appropriately while managing your expenses effectively.</p>
+
+                        <h3>Types of Tip Calculations</h3>
+                        <div class="calculation-types">
+                            <div class="calc-type">
+                                <h4>Basic Tip Calculation</h4>
+                                <p>Calculate standard tips based on bill amount and desired percentage. Includes options for pre-tax calculations and quick preset percentages for common tipping scenarios.</p>
+                                <div class="example">Example: $50 bill with 18% tip = $9.00 tip, $59.00 total</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Bill Splitting</h4>
+                                <p>Divide restaurant bills and tips among multiple people equally or with custom amounts. Perfect for group dining and ensuring everyone pays their fair share.</p>
+                                <div class="example">Example: $120 bill + 18% tip split 4 ways = $35.40 per person</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Service-Specific Tips</h4>
+                                <p>Calculate appropriate tips based on service type and quality. Different services have different tipping conventions and expected percentages.</p>
+                                <div class="example">Example: Excellent restaurant service typically warrants 20-25% tip</div>
+                            </div>
+                        </div>
+
+                        <h3>Tipping Guidelines by Service Type</h3>
+                        <div class="applications">
+                            <div class="app-category">
+                                <h4>Restaurant & Dining</h4>
+                                <ul>
+                                    <li>Full-service restaurants: 18-25% based on service quality</li>
+                                    <li>Fast-casual dining: 10-15% or round up to nearest dollar</li>
+                                    <li>Buffet restaurants: 10-15% for table service</li>
+                                    <li>Fine dining establishments: 20-25% for exceptional service</li>
+                                    <li>Coffee shops: $1-2 per drink or 15-20% for table service</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Delivery & Transportation</h4>
+                                <ul>
+                                    <li>Food delivery: 15-20% with $3-5 minimum</li>
+                                    <li>Taxi services: 15-20% of the fare</li>
+                                    <li>Rideshare (Uber/Lyft): 15-20% through the app</li>
+                                    <li>Airport shuttles: $2-5 per person</li>
+                                    <li>Grocery delivery: 15-20% or $5 minimum</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Personal Services</h4>
+                                <ul>
+                                    <li>Hair stylists: 18-25% of service cost</li>
+                                    <li>Nail technicians: 15-20% of service cost</li>
+                                    <li>Massage therapists: 15-20% of service cost</li>
+                                    <li>Hotel housekeeping: $2-5 per night</li>
+                                    <li>Bartenders: $1-2 per drink or 15-20% of tab</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Quick Tip Reference</h4>
+                            <div class="tip-reference">
+                                <div class="tip-item">
+                                    <span class="percentage">15%</span>
+                                    <span class="description">Standard/Average Service</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="percentage">18%</span>
+                                    <span class="description">Good Service</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="percentage">20%</span>
+                                    <span class="description">Great Service</span>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="percentage">22-25%</span>
+                                    <span class="description">Excellent Service</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Tipping Etiquette Tips</h4>
+                            <ul class="tips-list">
+                                <li>Tip on pre-tax amount when possible</li>
+                                <li>Round up to the nearest dollar for convenience</li>
+                                <li>Consider service quality when determining percentage</li>
+                                <li>Cash tips are often preferred by service workers</li>
+                                <li>Don't forget to tip on discounted meals</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>International Tipping</h4>
+                            <div class="international-tips">
+                                <div class="country-tip">
+                                    <span class="country">United States</span>
+                                    <span class="tip-range">18-25%</span>
+                                </div>
+                                <div class="country-tip">
+                                    <span class="country">Canada</span>
+                                    <span class="tip-range">15-20%</span>
+                                </div>
+                                <div class="country-tip">
+                                    <span class="country">United Kingdom</span>
+                                    <span class="tip-range">10-15%</span>
+                                </div>
+                                <div class="country-tip">
+                                    <span class="country">Australia</span>
+                                    <span class="tip-range">10% (Optional)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tipping-mastery-section">
+                    <h3>Advanced Tipping Strategies and Cultural Etiquette Mastery</h3>
+                    <div class="mastery-content">
+                        <h4>Understanding Tipping Psychology and Service Industry Economics</h4>
+                        <p>Tipping is more than just a mathematical calculation—it's a complex social and economic practice that varies significantly across cultures, industries, and service contexts. Understanding the psychology behind tipping, its impact on service workers' livelihoods, and the cultural expectations can help you navigate dining and service situations with confidence while ensuring fair compensation for quality service.</p>
+
+                        <div class="tipping-fundamentals">
+                            <h5>The Science and Psychology of Tipping</h5>
+                            <div class="concept-grid">
+                                <div class="concept-item">
+                                    <h6>Service Quality Assessment Framework</h6>
+                                    <p>Effective tipping requires objective evaluation of service quality across multiple dimensions: attentiveness, accuracy, friendliness, timing, and problem resolution. Develop a consistent framework for assessing service to ensure fair and appropriate tip amounts that reflect actual service quality rather than mood or arbitrary factors.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Economic Impact on Service Workers</h6>
+                                    <p>In many regions, service workers rely heavily on tips to achieve living wages, as base wages are often below standard minimum wage. Understanding this economic reality helps contextualize appropriate tip amounts and the significant impact your tipping decisions have on workers' financial well-being and quality of life.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Cultural Variations and Travel Considerations</h6>
+                                    <p>Tipping customs vary dramatically worldwide. While 18-25% is standard in the US, many European countries include service charges, and some Asian cultures consider tipping inappropriate. Research local customs when traveling to avoid cultural misunderstandings and ensure appropriate compensation practices.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Digital Payment and Modern Tipping</h6>
+                                    <p>Digital payment systems and point-of-sale terminals have transformed tipping practices, often suggesting tip amounts and making the process more visible. Understand how to navigate these systems while maintaining control over your tipping decisions and ensuring tips reach intended recipients.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Advanced Tipping Scenarios and Professional Strategies</h4>
+                        <div class="advanced-scenarios">
+                            <div class="scenario-category">
+                                <h5><i class="fas fa-utensils"></i> Fine Dining and Special Occasion Tipping</h5>
+                                <div class="scenario-examples">
+                                    <div class="example-item">
+                                        <h6>Multi-Course Fine Dining Protocol</h6>
+                                        <p>Fine dining establishments often involve multiple service staff including servers, sommeliers, and captains. Standard 20-25% tip is typically pooled among the team. For exceptional service or special occasions, consider additional tips for specific staff members who provided outstanding personal attention or expertise.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Wine Service and Sommelier Tipping</h6>
+                                        <p>When a sommelier provides wine recommendations and service, consider an additional 15-20% tip on the wine portion of your bill, separate from the food service tip. This recognizes their specialized expertise and the enhanced dining experience they provide through wine pairing and education.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Private Dining and Chef's Table Experiences</h6>
+                                        <p>Private dining rooms and chef's table experiences often involve dedicated staff and personalized service. Tip 20-25% of the total bill, and consider additional gratuity for the chef if they provided personal interaction and customized menu experiences during your meal.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="scenario-category">
+                                <h5><i class="fas fa-cocktail"></i> Bar Service and Beverage Tipping</h5>
+                                <div class="scenario-examples">
+                                    <div class="example-item">
+                                        <h6>Craft Cocktail and Mixology Appreciation</h6>
+                                        <p>Skilled bartenders creating craft cocktails deserve recognition for their artistry and expertise. Tip $2-3 per craft cocktail or 20-25% of the total bar tab. For exceptional creativity, technique, or personalized service, consider higher amounts to acknowledge their professional skill and creativity.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Happy Hour and Promotional Pricing</h6>
+                                        <p>When enjoying discounted drinks during happy hour or promotional periods, calculate tips based on the regular price, not the discounted amount. This ensures bartenders receive fair compensation despite reduced revenue from promotional pricing, maintaining service quality incentives.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Bar Tab Management and Group Tipping</h6>
+                                        <p>For group bar tabs, designate one person to manage payment and tipping to avoid confusion and ensure appropriate compensation. Calculate 20% of the total tab and add extra for complex orders, multiple rounds, or extended service periods that require sustained attention.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="scenario-category">
+                                <h5><i class="fas fa-car"></i> Transportation and Delivery Service Tipping</h5>
+                                <div class="scenario-examples">
+                                    <div class="example-item">
+                                        <h6>Rideshare and Taxi Service Standards</h6>
+                                        <p>Tip rideshare and taxi drivers 15-20% of the fare, with higher amounts for exceptional service, assistance with luggage, or challenging conditions like bad weather or heavy traffic. Consider the driver's professionalism, vehicle cleanliness, and route efficiency when determining tip amounts.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Food Delivery Optimization</h6>
+                                        <p>Food delivery drivers face unique challenges including traffic, weather, and multiple delivery coordination. Tip 15-20% with a $3-5 minimum, increasing for large orders, difficult delivery locations, or adverse weather conditions. Consider distance from restaurant and order complexity.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Airport and Hotel Transportation</h6>
+                                        <p>Airport shuttle drivers typically receive $2-3 per person or $5-10 for private transfers. Hotel courtesy shuttles warrant $1-2 per person. For luxury transportation or exceptional service, increase amounts proportionally to reflect the enhanced service level and vehicle quality.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bill-splitting-mastery">
+                    <h3>Professional Bill Splitting and Group Dining Management</h3>
+                    <div class="splitting-content">
+                        <h4>Advanced Group Dining Coordination and Payment Strategies</h4>
+                        <p>Managing group dining experiences requires careful coordination of orders, payments, and tip calculations to ensure fairness and avoid awkward situations. Developing systematic approaches to bill splitting and tip calculation helps maintain social harmony while ensuring appropriate service compensation.</p>
+
+                        <div class="splitting-strategies">
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-users"></i> Group Dynamics and Payment Psychology</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Pre-Meal Payment Agreement</h6>
+                                        <p>Establish payment and splitting arrangements before ordering to avoid post-meal confusion and potential conflicts. Discuss whether to split equally, pay individually, or use hybrid approaches based on group preferences and order complexity. Clear communication prevents misunderstandings and ensures smooth payment processing.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Technology-Assisted Splitting Solutions</h6>
+                                        <p>Utilize payment apps and bill-splitting tools to accurately calculate individual portions, taxes, and tips. Apps like Splitwise, Venmo, or built-in restaurant payment systems can eliminate calculation errors and provide transparent breakdowns for all participants, reducing disputes and confusion.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Handling Disparate Order Values</h6>
+                                        <p>When group members order significantly different priced items, consider itemized splitting rather than equal division. However, factor in shared items like appetizers, bread, and communal dishes. Develop fair allocation methods that account for both individual consumption and shared experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-calculator"></i> Advanced Calculation Techniques</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Tax and Tip Allocation Methods</h6>
+                                        <p>Calculate tax and tip proportionally based on individual order values rather than splitting equally. This ensures fair distribution when order amounts vary significantly. Use the formula: Individual Share = (Personal Order / Total Bill) × (Tax + Tip) for accurate allocation.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Shared Item Distribution</h6>
+                                        <p>For shared appetizers, desserts, or bottles of wine, divide costs equally among participants who consumed these items. Track shared item participation during ordering to ensure accurate post-meal allocation and avoid disputes over who consumed what items.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Rounding and Convenience Strategies</h6>
+                                        <p>Round individual amounts to convenient denominations to simplify payment while ensuring the total covers the full bill plus appropriate tip. Slight over-rounding can account for calculation discrepancies and provide additional service appreciation without significant individual cost increase.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tipping-faq-section">
+                    <h3>Frequently Asked Questions About Tipping Etiquette and Calculations</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>Should I tip on the pre-tax or post-tax amount?</h4>
+                            <p>Traditionally, tips are calculated on the pre-tax amount, as tax doesn't reflect service quality. However, many people now tip on the total amount for convenience. Both approaches are acceptable, but be consistent in your practice. If calculating on pre-tax amount, ensure you know the tax rate to determine the base amount accurately.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I handle poor service when tipping?</h4>
+                            <p>For genuinely poor service, you can reduce the tip to 10-15%, but consider speaking with management about service issues rather than just reducing the tip. Sometimes poor service results from kitchen delays or management issues beyond the server's control. Address systemic problems through proper channels while maintaining basic respect for service workers.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's appropriate for takeout and counter service?</h4>
+                            <p>Takeout typically warrants 10-15% tip, especially for complex orders or during busy periods. Counter service (coffee shops, casual dining) often has tip jars where $1-2 per transaction or 15-20% for table service is appropriate. Consider the level of service and preparation complexity when determining amounts.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I tip when using gift cards or discounts?</h4>
+                            <p>Calculate tips based on the original bill amount before discounts or gift card application. Service quality isn't reduced because you received a discount, so servers should receive tips based on the full value of service provided. This maintains fair compensation regardless of your payment method.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Should I tip differently for lunch versus dinner service?</h4>
+                            <p>Tip percentages should remain consistent regardless of meal time, as service standards and effort remain the same. However, lunch bills are typically smaller, so the absolute tip amount will naturally be lower. Maintain the same percentage standards (18-25%) across all meal periods for consistency and fairness.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I handle automatic gratuity charges?</h4>
+                            <p>Automatic gratuity (usually 18-20% for large groups) covers the standard tip expectation. You can add additional amounts for exceptional service, but it's not required. Review the automatic charge amount and service quality to determine if supplemental tipping is warranted for outstanding experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">9</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="tip-calculator.js"></script>
+</body>
+</html>

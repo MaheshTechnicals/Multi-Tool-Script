@@ -126,12 +126,12 @@ const toolsData = [
         page: 'tools/percentage-calculator.html'
     },
     {
-        id: 'loan-calculator',
+        id: 'loan-emi-calculator',
         name: 'Loan EMI Calculator',
         description: 'Calculate loan EMI and interest',
         category: 'calculator',
-        icon: 'fas fa-money-bill-wave',
-        page: 'tools/loan-calculator.html'
+        icon: 'fas fa-calculator',
+        page: 'tools/loan-emi-calculator.html'
     },
     {
         id: 'tip-calculator',
@@ -315,7 +315,7 @@ function openTool(toolId) {
     const tool = toolsData.find(t => t.id === toolId);
     if (tool) {
         // Check if the tool page exists, otherwise show coming soon message
-        const implementedTools = ['word-counter', 'case-converter', 'password-generator', 'lorem-generator', 'binary-converter', 'find-replace', 'image-compressor', 'image-resizer', 'image-cropper', 'format-converter', 'image-to-base64', 'color-picker', 'age-calculator', 'bmi-calculator', 'percentage-calculator'];
+        const implementedTools = ['word-counter', 'case-converter', 'password-generator', 'lorem-generator', 'binary-converter', 'find-replace', 'image-compressor', 'image-resizer', 'image-cropper', 'format-converter', 'image-to-base64', 'color-picker', 'age-calculator', 'bmi-calculator', 'percentage-calculator', 'loan-emi-calculator', 'tip-calculator', 'date-calculator'];
         if (implementedTools.includes(toolId)) {
             window.location.href = tool.page;
         } else {

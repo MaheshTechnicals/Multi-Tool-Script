@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calculator - Calculate Date Differences, Add/Subtract Days & Business Days | Multi-Tool Hub</title>
+    <meta name="description" content="Free online date calculator for precise date differences, business days, age calculations & date arithmetic. Calculate days between dates, add/subtract time periods, find working days excluding weekends & holidays, determine exact age with life statistics. Perfect for project planning, legal deadlines, contract management & personal milestone tracking.">
+    <meta name="keywords" content="date calculator, date difference calculator, business days calculator, age calculator, date math, days between dates, add days to date, subtract days from date, working days calculator, calendar calculator, time calculator, deadline calculator, project planning calculator, contract date calculator, milestone calculator, birthday calculator, anniversary calculator, legal deadline calculator"
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Date Calculator - Calculate Date Differences, Add/Subtract Days & Business Days">
+    <meta property="og:description" content="Calculate date differences, add or subtract days, find business days, and perform various date calculations with our comprehensive date calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/date-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Date Calculator - Calculate Date Differences, Add/Subtract Days & Business Days">
+    <meta name="twitter:description" content="Calculate date differences, add or subtract days, find business days, and perform various date calculations with our comprehensive date calculator.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/date-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Date Calculator Tool",
+        "description": "Calculate date differences, add or subtract days, find business days, and perform various date calculations with our comprehensive date calculator. Perfect for project planning and deadline management.",
+        "url": "https://multi-tool-hub.com/tools/date-calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#calculators">Calculators</a>
+                <span class="separator">/</span>
+                <span class="current">Date Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Date Calculator</h1>
+                    <p class="tool-subtitle">Calculate date differences, add/subtract days, and find business days with precision</p>
+                    <div class="tool-description">
+                        <p>Perform comprehensive date calculations including date differences, adding or subtracting days, business day calculations, and age computations. Perfect for project planning, deadline management, and various time-based calculations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="date-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-calendar-check"></i>
+                            Date Calculations
+                        </h3>
+                        
+                        <div class="calculation-tabs">
+                            <button class="tab-btn active" data-tab="difference">
+                                <i class="fas fa-minus"></i>
+                                Date Difference
+                            </button>
+                            <button class="tab-btn" data-tab="add-subtract">
+                                <i class="fas fa-plus"></i>
+                                Add/Subtract Days
+                            </button>
+                            <button class="tab-btn" data-tab="business">
+                                <i class="fas fa-briefcase"></i>
+                                Business Days
+                            </button>
+                            <button class="tab-btn" data-tab="age">
+                                <i class="fas fa-birthday-cake"></i>
+                                Age Calculator
+                            </button>
+                        </div>
+
+                        <!-- Date Difference Tab -->
+                        <div class="tab-content active" id="difference-tab">
+                            <h4>Calculate Difference Between Two Dates</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Start Date</label>
+                                    <input type="date" id="startDate" class="date-input">
+                                </div>
+                                <div class="input-group">
+                                    <label>End Date</label>
+                                    <input type="date" id="endDate" class="date-input">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>
+                                    <input type="checkbox" id="includeEndDate" class="checkbox-input">
+                                    Include end date in calculation
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Add/Subtract Days Tab -->
+                        <div class="tab-content" id="add-subtract-tab">
+                            <h4>Add or Subtract Days from a Date</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Starting Date</label>
+                                    <input type="date" id="baseDate" class="date-input">
+                                </div>
+                                <div class="input-group">
+                                    <label>Operation</label>
+                                    <select id="operation" class="select-input">
+                                        <option value="add">Add Days</option>
+                                        <option value="subtract">Subtract Days</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Number of Days</label>
+                                    <input type="number" id="daysToAddSubtract" class="number-input" placeholder="30" step="1" min="0">
+                                </div>
+                                <div class="input-group">
+                                    <label>Unit Type</label>
+                                    <select id="unitType" class="select-input">
+                                        <option value="days">Days</option>
+                                        <option value="weeks">Weeks</option>
+                                        <option value="months">Months</option>
+                                        <option value="years">Years</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Days Tab -->
+                        <div class="tab-content" id="business-tab">
+                            <h4>Business Days Calculator</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Start Date</label>
+                                    <input type="date" id="businessStartDate" class="date-input">
+                                </div>
+                                <div class="input-group">
+                                    <label>End Date</label>
+                                    <input type="date" id="businessEndDate" class="date-input">
+                                </div>
+                            </div>
+                            <div class="business-options">
+                                <h5>Exclude Days</h5>
+                                <div class="weekday-checkboxes">
+                                    <label><input type="checkbox" id="excludeSaturday" class="checkbox-input" checked> Saturday</label>
+                                    <label><input type="checkbox" id="excludeSunday" class="checkbox-input" checked> Sunday</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" id="excludeHolidays" class="checkbox-input">
+                                        Exclude common holidays (US)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Age Calculator Tab -->
+                        <div class="tab-content" id="age-tab">
+                            <h4>Calculate Age and Life Statistics</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Birth Date</label>
+                                    <input type="date" id="birthDate" class="date-input">
+                                </div>
+                                <div class="input-group">
+                                    <label>Calculate Age As Of</label>
+                                    <input type="date" id="ageAsOfDate" class="date-input">
+                                </div>
+                            </div>
+                            <div class="age-options">
+                                <h5>Additional Calculations</h5>
+                                <div class="age-checkboxes">
+                                    <label><input type="checkbox" id="showLifeStats" class="checkbox-input" checked> Show life statistics</label>
+                                    <label><input type="checkbox" id="showNextBirthday" class="checkbox-input" checked> Days until next birthday</label>
+                                    <label><input type="checkbox" id="showZodiac" class="checkbox-input"> Show zodiac sign</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="calculateDateBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                            <button id="clearDateBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                            <button id="todayBtn" class="btn btn-outline">
+                                <i class="fas fa-calendar-day"></i>
+                                Use Today
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Calculation Results
+                    </h3>
+                    
+                    <div class="date-results" id="dateResults">
+                        <div class="no-content">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Select dates and calculation type to see detailed results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Date Calculator - Master Date and Time Calculations</h2>
+                        <p>Date calculations are essential for project management, planning, legal deadlines, and personal milestones. Our advanced date calculator provides precise calculations for date differences, business days, age computations, and date arithmetic. Whether you're planning a project timeline, calculating contract deadlines, or determining someone's exact age, our calculator handles all date-related computations with accuracy and ease.</p>
+
+                        <h3>Types of Date Calculations</h3>
+                        <div class="calculation-types">
+                            <div class="calc-type">
+                                <h4>Date Difference</h4>
+                                <p>Calculate the exact difference between two dates in years, months, weeks, and days. Perfect for determining project durations, relationship anniversaries, or time elapsed since important events.</p>
+                                <div class="example">Example: From Jan 1, 2020 to Dec 31, 2023 = 3 years, 11 months, 30 days</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Add/Subtract Days</h4>
+                                <p>Add or subtract days, weeks, months, or years from any date to find future or past dates. Essential for deadline calculations and scheduling.</p>
+                                <div class="example">Example: 90 days after March 15, 2024 = June 13, 2024</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Business Days</h4>
+                                <p>Calculate working days between dates, excluding weekends and holidays. Crucial for business planning, contract deadlines, and project timelines.</p>
+                                <div class="example">Example: 30 calendar days might equal 22 business days (excluding weekends)</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Age Calculator</h4>
+                                <p>Determine exact age in years, months, and days, plus additional life statistics and milestones. Useful for legal documents, medical records, and personal tracking.</p>
+                                <div class="example">Example: Born Jan 15, 1990 = 34 years, 2 months, 10 days old (as of March 25, 2024)</div>
+                            </div>
+                        </div>
+
+                        <h3>Common Applications</h3>
+                        <div class="applications">
+                            <div class="app-category">
+                                <h4>Business & Legal</h4>
+                                <ul>
+                                    <li>Contract deadline calculations</li>
+                                    <li>Project timeline planning</li>
+                                    <li>Legal statute of limitations</li>
+                                    <li>Employee tenure calculations</li>
+                                    <li>Invoice payment terms</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Personal & Life Events</h4>
+                                <ul>
+                                    <li>Age calculations for documents</li>
+                                    <li>Anniversary and milestone tracking</li>
+                                    <li>Pregnancy due date calculations</li>
+                                    <li>Retirement planning timelines</li>
+                                    <li>Travel and vacation planning</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Academic & Research</h4>
+                                <ul>
+                                    <li>Academic semester planning</li>
+                                    <li>Research study durations</li>
+                                    <li>Historical date analysis</li>
+                                    <li>Data collection periods</li>
+                                    <li>Academic deadline tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Date Format Guide</h4>
+                            <div class="date-formats">
+                                <div class="format-item">
+                                    <span class="format">MM/DD/YYYY</span>
+                                    <span class="description">US Format</span>
+                                </div>
+                                <div class="format-item">
+                                    <span class="format">DD/MM/YYYY</span>
+                                    <span class="description">European Format</span>
+                                </div>
+                                <div class="format-item">
+                                    <span class="format">YYYY-MM-DD</span>
+                                    <span class="description">ISO Standard</span>
+                                </div>
+                                <div class="format-item">
+                                    <span class="format">Month DD, YYYY</span>
+                                    <span class="description">Long Format</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Business Days Info</h4>
+                            <ul class="tips-list">
+                                <li>Typically excludes Saturday and Sunday</li>
+                                <li>May exclude national holidays</li>
+                                <li>Varies by country and industry</li>
+                                <li>Important for legal deadlines</li>
+                                <li>Used in financial calculations</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Calendar Facts</h4>
+                            <div class="calendar-facts">
+                                <div class="fact-item">
+                                    <span class="fact-label">Leap Year:</span>
+                                    <span class="fact-value">Every 4 years (with exceptions)</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Days in Year:</span>
+                                    <span class="fact-value">365 (366 in leap years)</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Business Days/Year:</span>
+                                    <span class="fact-value">~250-260 days</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Weeks in Year:</span>
+                                    <span class="fact-value">52 weeks + 1-2 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="date-mastery-section">
+                    <h3>Advanced Date Calculation Strategies and Time Management Mastery</h3>
+                    <div class="mastery-content">
+                        <h4>Understanding Calendar Systems and Date Calculation Complexities</h4>
+                        <p>Date calculations involve complex considerations including leap years, varying month lengths, time zones, daylight saving time, and different calendar systems. Mastering these concepts enables precise project planning, legal deadline management, and accurate historical analysis. Understanding the intricacies of date arithmetic helps avoid costly errors in business, legal, and personal contexts.</p>
+
+                        <div class="date-fundamentals">
+                            <h5>Calendar Mathematics and Precision Date Calculations</h5>
+                            <div class="concept-grid">
+                                <div class="concept-item">
+                                    <h6>Leap Year Rules and Calculations</h6>
+                                    <p>Leap years occur every 4 years, except for years divisible by 100 (unless also divisible by 400). This means 1900 was not a leap year, but 2000 was. Understanding these rules is crucial for accurate long-term date calculations, especially in financial modeling, contract management, and historical analysis spanning multiple decades or centuries.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Business Day Calculations and Working Time</h6>
+                                    <p>Business day calculations must account for weekends, national holidays, regional observances, and industry-specific closures. Different countries and industries have varying business day definitions. Accurate business day calculation is essential for contract deadlines, project timelines, and financial settlement dates in global business operations.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Time Zone Considerations and Global Coordination</h6>
+                                    <p>Date calculations across time zones require careful consideration of UTC offsets, daylight saving time transitions, and local date boundaries. A date in one time zone may be different in another, affecting international business deadlines, event coordination, and legal compliance across multiple jurisdictions.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Age Calculations and Legal Implications</h6>
+                                    <p>Precise age calculations are crucial for legal documents, insurance policies, retirement planning, and eligibility determinations. Different jurisdictions may have varying rules for age calculation (some count the birth date, others don't), affecting legal rights, benefits eligibility, and contractual obligations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Professional Date Management and Strategic Planning</h4>
+                        <div class="advanced-strategies">
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-briefcase"></i> Business and Legal Date Management</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Contract Deadline Management Systems</h6>
+                                        <p>Develop systematic approaches for tracking contract deadlines, renewal dates, and compliance requirements. Use date calculations to establish reminder systems, escalation procedures, and buffer periods. Consider business day calculations for legal deadlines and account for holidays in different jurisdictions for international contracts.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Project Timeline Optimization</h6>
+                                        <p>Effective project management requires accurate date calculations for milestone planning, resource allocation, and deadline management. Factor in team availability, holiday schedules, and business day constraints when calculating project timelines. Build buffer periods for risk management and quality assurance activities.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Financial Planning and Date-Sensitive Calculations</h6>
+                                        <p>Financial planning involves numerous date-sensitive calculations including loan maturity dates, investment holding periods, tax deadline compliance, and retirement planning milestones. Accurate date calculations ensure optimal timing for financial decisions and regulatory compliance across multiple time horizons.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-calendar-check"></i> Personal Life Management and Milestone Tracking</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Health and Medical Appointment Scheduling</h6>
+                                        <p>Medical care requires precise date calculations for appointment scheduling, medication timing, treatment intervals, and follow-up care. Calculate optimal timing for preventive care, track vaccination schedules, and manage chronic condition monitoring intervals to maintain optimal health outcomes.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Educational and Career Milestone Planning</h6>
+                                        <p>Educational planning involves calculating application deadlines, semester planning, graduation timelines, and career transition periods. Factor in academic calendars, prerequisite completion times, and professional development requirements when planning educational and career advancement strategies.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Family and Relationship Milestone Tracking</h6>
+                                        <p>Track important family dates including anniversaries, birthdays, and significant life events. Calculate milestone anniversaries, plan celebration timing, and coordinate family schedules across multiple time zones for reunions and special occasions. Maintain family history with accurate date records.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-globe"></i> International and Cross-Cultural Date Management</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Global Business Coordination</h6>
+                                        <p>International business requires coordination across multiple time zones, calendar systems, and cultural observances. Calculate meeting times, deadline coordination, and project synchronization across global teams. Account for different weekend schedules, holiday calendars, and business practices in various countries.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Travel Planning and Itinerary Management</h6>
+                                        <p>International travel involves complex date calculations including time zone changes, flight schedules, visa requirements, and destination-specific considerations. Calculate optimal travel timing, account for jet lag recovery, and coordinate activities across multiple time zones and calendar systems.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Cultural and Religious Calendar Integration</h6>
+                                        <p>Different cultures and religions follow various calendar systems (Gregorian, lunar, solar, etc.) with unique holiday schedules and observances. Integrate multiple calendar systems for inclusive planning, respectful scheduling, and effective cross-cultural communication and coordination.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="date-applications-comprehensive">
+                    <h3>Comprehensive Applications and Industry-Specific Date Calculations</h3>
+                    <div class="applications-content">
+                        <h4>Legal and Compliance Date Management</h4>
+                        <p>Legal and regulatory compliance requires precise date calculations for statute of limitations, filing deadlines, contract terms, and regulatory reporting. Understanding legal date calculation rules, business day definitions, and jurisdiction-specific requirements is essential for avoiding costly compliance failures and legal disputes.</p>
+
+                        <div class="application-details">
+                            <div class="application-category">
+                                <h5><i class="fas fa-gavel"></i> Legal and Regulatory Applications</h5>
+                                <div class="detail-examples">
+                                    <div class="detail-item">
+                                        <h6>Statute of Limitations Calculations</h6>
+                                        <p>Legal action deadlines require precise date calculations from triggering events. Different types of legal claims have varying limitation periods, and calculation methods may differ by jurisdiction. Some count calendar days, others business days, and some exclude the triggering date. Accurate calculation is crucial for preserving legal rights and avoiding case dismissal.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Contract Term Management</h6>
+                                        <p>Contract management involves calculating performance deadlines, renewal dates, termination notice periods, and compliance milestones. Consider business day requirements, holiday exclusions, and grace periods specified in contract terms. Automated date tracking systems help ensure timely performance and avoid breach situations.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Regulatory Filing and Compliance Deadlines</h6>
+                                        <p>Regulatory compliance requires meeting specific filing deadlines, reporting periods, and renewal dates. Different agencies may have varying business day definitions and holiday schedules. Calculate deadlines with appropriate buffer periods and consider electronic filing cutoff times, especially for time-sensitive regulatory submissions.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="application-category">
+                                <h5><i class="fas fa-chart-line"></i> Financial and Investment Applications</h5>
+                                <div class="detail-examples">
+                                    <div class="detail-item">
+                                        <h6>Investment Holding Period Calculations</h6>
+                                        <p>Tax treatment of investment gains depends on precise holding period calculations. Long-term capital gains treatment requires holding assets for more than one year. Calculate purchase and sale dates carefully, considering settlement dates rather than trade dates for accurate tax planning and compliance.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Retirement Planning and Benefit Calculations</h6>
+                                        <p>Retirement planning involves calculating eligibility dates, vesting periods, required minimum distribution dates, and Social Security benefit optimization timing. Precise age calculations affect benefit amounts, penalty avoidance, and optimal claiming strategies for maximizing lifetime retirement income.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Loan and Credit Management</h6>
+                                        <p>Financial obligations require tracking payment due dates, grace periods, and penalty calculation dates. Calculate interest accrual periods, payment application dates, and payoff timing for optimal debt management. Consider business day adjustments for payment processing and avoid late fees through accurate date planning.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="application-category">
+                                <h5><i class="fas fa-graduation-cap"></i> Academic and Research Applications</h5>
+                                <div class="detail-examples">
+                                    <div class="detail-item">
+                                        <h6>Academic Calendar and Deadline Management</h6>
+                                        <p>Academic success requires managing application deadlines, registration periods, assignment due dates, and examination schedules. Calculate optimal course sequencing, prerequisite completion timing, and graduation requirements. Factor in academic calendar variations, holiday breaks, and summer session scheduling.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Research Study Duration and Data Collection</h6>
+                                        <p>Research projects require precise timing for data collection periods, participant recruitment, follow-up intervals, and analysis deadlines. Calculate study duration, seasonal effects, and participant availability. Consider institutional review board approval timelines and publication deadline coordination.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Grant and Funding Deadline Management</h6>
+                                        <p>Academic and research funding requires meeting strict application deadlines, reporting requirements, and spending periods. Calculate proposal preparation time, review periods, and project implementation timelines. Track multiple funding cycles and coordinate application strategies across different funding agencies.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="date-faq-section">
+                    <h3>Frequently Asked Questions About Date Calculations and Time Management</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>How do I calculate business days across different countries?</h4>
+                            <p>Business day calculations vary by country due to different weekend schedules and holiday calendars. Most Western countries observe Saturday-Sunday weekends, but some Middle Eastern countries observe Friday-Saturday. Research local business practices and holiday schedules for each relevant jurisdiction, and use country-specific business day calculators for accuracy.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the difference between calendar age and legal age?</h4>
+                            <p>Calendar age counts the exact time elapsed since birth, while legal age may have specific calculation rules varying by jurisdiction. Some legal systems count the birth date in age calculations, others don't. For legal documents, insurance, and official purposes, verify the specific age calculation method required in your jurisdiction.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do leap years affect long-term date calculations?</h4>
+                            <p>Leap years add complexity to multi-year calculations. Over long periods, the extra days accumulate significantly. For precise calculations spanning decades, account for leap year rules: years divisible by 4 are leap years, except century years (divisible by 100) unless also divisible by 400. This affects financial modeling, contract terms, and historical analysis.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I handle date calculations across time zones?</h4>
+                            <p>Cross-timezone date calculations require establishing a reference time zone (often UTC) and converting all dates to that standard before calculation. Consider daylight saving time transitions, which can affect date boundaries. For international business, specify time zones in all date-sensitive communications and contracts.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the most accurate way to calculate someone's exact age?</h4>
+                            <p>Calculate exact age by finding the difference between birth date and current date, accounting for whether the birthday has occurred this year. Use the formula: Age = Current Year - Birth Year, then subtract 1 if the birthday hasn't occurred yet this year. For precise calculations, include months and days for complete accuracy.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I calculate project deadlines with buffer time?</h4>
+                            <p>Add buffer time by calculating the ideal completion date, then adding additional days based on project complexity and risk factors. Typical buffers range from 10-25% of project duration. Consider team availability, holiday schedules, and potential delays. Work backward from hard deadlines to determine realistic start dates with adequate buffer periods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">9</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="date-calculator.js"></script>
+</body>
+</html>

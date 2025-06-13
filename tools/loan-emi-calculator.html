@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan EMI Calculator - Calculate Monthly EMI, Interest & Amortization | Multi-Tool Hub</title>
+    <meta name="description" content="Free online loan EMI calculator for home loans, personal loans, car loans & business loans. Calculate monthly EMI, total interest, amortization schedules, loan affordability & compare multiple loan options. Advanced features include prepayment analysis, step-up EMI planning & tax benefit calculations. Get instant results with detailed breakdowns for informed financial decisions.">
+    <meta name="keywords" content="loan EMI calculator, EMI calculator, loan calculator, home loan EMI, personal loan calculator, car loan EMI, interest calculator, amortization calculator, loan affordability calculator, EMI comparison tool, prepayment calculator, loan planning, mortgage calculator, finance calculator, loan interest calculator, monthly payment calculator, loan tenure calculator, debt calculator"
+    <meta name="author" content="Multi-Tool Hub">
+    <meta property="og:title" content="Loan EMI Calculator - Calculate Monthly EMI, Interest & Amortization">
+    <meta property="og:description" content="Calculate loan EMI, total interest, and payment schedules with our comprehensive loan calculator. Perfect for home loans, personal loans, and car loans.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/loan-emi-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Loan EMI Calculator - Calculate Monthly EMI, Interest & Amortization">
+    <meta name="twitter:description" content="Calculate loan EMI, total interest, and payment schedules with our comprehensive loan calculator. Perfect for home loans, personal loans, and car loans.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/loan-emi-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Loan EMI Calculator Tool",
+        "description": "Calculate loan EMI, total interest, and payment schedules with our comprehensive loan calculator. Perfect for home loans, personal loans, car loans, and business loans.",
+        "url": "https://multi-tool-hub.com/tools/loan-emi-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#calculators" class="nav-link">Calculators</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#calculators">Calculators</a>
+                <span class="separator">/</span>
+                <span class="current">Loan EMI Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Loan EMI Calculator</h1>
+                    <p class="tool-subtitle">Calculate monthly EMI, total interest, and payment schedules for all types of loans</p>
+                    <div class="tool-description">
+                        <p>Calculate your loan EMI (Equated Monthly Installment) with our comprehensive loan calculator. Get detailed breakdowns of principal, interest, total payments, and amortization schedules for home loans, personal loans, car loans, and business loans.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="loan-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Loan Details
+                        </h3>
+                        
+                        <div class="calculation-tabs">
+                            <button class="tab-btn active" data-tab="emi">
+                                <i class="fas fa-calculator"></i>
+                                EMI Calculator
+                            </button>
+                            <button class="tab-btn" data-tab="affordability">
+                                <i class="fas fa-chart-line"></i>
+                                Affordability
+                            </button>
+                            <button class="tab-btn" data-tab="comparison">
+                                <i class="fas fa-balance-scale"></i>
+                                Loan Comparison
+                            </button>
+                        </div>
+
+                        <!-- EMI Calculator Tab -->
+                        <div class="tab-content active" id="emi-tab">
+                            <h4>Calculate Monthly EMI</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Loan Amount ($)</label>
+                                    <input type="number" id="loanAmount" class="number-input" placeholder="100000" step="1000" min="1000">
+                                </div>
+                                <div class="input-group">
+                                    <label>Interest Rate (% per annum)</label>
+                                    <input type="number" id="interestRate" class="number-input" placeholder="7.5" step="0.1" min="0.1" max="50">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Loan Tenure</label>
+                                    <select id="tenureType" class="select-input">
+                                        <option value="years">Years</option>
+                                        <option value="months">Months</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Duration</label>
+                                    <input type="number" id="loanTenure" class="number-input" placeholder="20" step="1" min="1">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="emiFormula">EMI = P × r × (1+r)^n / ((1+r)^n - 1)</span>
+                            </div>
+                        </div>
+
+                        <!-- Affordability Tab -->
+                        <div class="tab-content" id="affordability-tab">
+                            <h4>How much loan can you afford?</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Monthly Income ($)</label>
+                                    <input type="number" id="monthlyIncome" class="number-input" placeholder="5000" step="100" min="100">
+                                </div>
+                                <div class="input-group">
+                                    <label>Affordable EMI (% of income)</label>
+                                    <input type="number" id="emiRatio" class="number-input" placeholder="40" step="5" min="10" max="80">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Interest Rate (% per annum)</label>
+                                    <input type="number" id="affordabilityRate" class="number-input" placeholder="7.5" step="0.1" min="0.1" max="50">
+                                </div>
+                                <div class="input-group">
+                                    <label>Loan Tenure (Years)</label>
+                                    <input type="number" id="affordabilityTenure" class="number-input" placeholder="20" step="1" min="1" max="50">
+                                </div>
+                            </div>
+                            <div class="formula-display">
+                                <span id="affordabilityFormula">Max Loan = Affordable EMI × ((1+r)^n - 1) / (r × (1+r)^n)</span>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Tab -->
+                        <div class="tab-content" id="comparison-tab">
+                            <h4>Compare Two Loan Options</h4>
+                            <div class="comparison-inputs">
+                                <div class="loan-option">
+                                    <h5>Loan Option 1</h5>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label>Amount ($)</label>
+                                            <input type="number" id="loan1Amount" class="number-input" placeholder="100000" step="1000">
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Rate (%)</label>
+                                            <input type="number" id="loan1Rate" class="number-input" placeholder="7.5" step="0.1">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Tenure (Years)</label>
+                                        <input type="number" id="loan1Tenure" class="number-input" placeholder="20" step="1">
+                                    </div>
+                                </div>
+                                <div class="loan-option">
+                                    <h5>Loan Option 2</h5>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label>Amount ($)</label>
+                                            <input type="number" id="loan2Amount" class="number-input" placeholder="100000" step="1000">
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Rate (%)</label>
+                                            <input type="number" id="loan2Rate" class="number-input" placeholder="8.0" step="0.1">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Tenure (Years)</label>
+                                        <input type="number" id="loan2Tenure" class="number-input" placeholder="20" step="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="calculateLoanBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                            <button id="clearLoanBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Calculation Results
+                    </h3>
+                    
+                    <div class="loan-results" id="loanResults">
+                        <div class="no-content">
+                            <i class="fas fa-calculator"></i>
+                            <p>Enter loan details to calculate EMI and view payment breakdown</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Loan EMI Calculator - Master Your Loan Planning</h2>
+                        <p>Understanding loan EMI calculations is crucial for making informed financial decisions. Our advanced loan EMI calculator provides comprehensive analysis for all types of loans including home loans, personal loans, car loans, and business loans. Whether you're planning to buy a house, finance a vehicle, or need personal funding, our calculator helps you understand the true cost of borrowing and plan your finances effectively.</p>
+
+                        <h3>Types of Loan Calculations</h3>
+                        <div class="calculation-types">
+                            <div class="calc-type">
+                                <h4>EMI Calculation</h4>
+                                <p>Calculate your monthly EMI based on loan amount, interest rate, and tenure. The EMI formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is principal, r is monthly interest rate, and n is number of months.</p>
+                                <div class="example">Example: $100,000 loan at 7.5% for 20 years = $805.59 monthly EMI</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Loan Affordability</h4>
+                                <p>Determine the maximum loan amount you can afford based on your income and desired EMI-to-income ratio. Financial experts recommend keeping EMI below 40% of monthly income.</p>
+                                <div class="example">Example: $5,000 income with 40% EMI ratio can afford $2,000 monthly EMI</div>
+                            </div>
+                            <div class="calc-type">
+                                <h4>Loan Comparison</h4>
+                                <p>Compare different loan options side-by-side to find the best deal. Consider EMI amount, total interest, and overall cost to make informed decisions.</p>
+                                <div class="example">Example: 7.5% vs 8.0% rate on $100K loan saves $13,000+ over 20 years</div>
+                            </div>
+                        </div>
+
+                        <h3>Common Loan Types</h3>
+                        <div class="applications">
+                            <div class="app-category">
+                                <h4>Home Loans</h4>
+                                <ul>
+                                    <li>Typically 15-30 year terms with lower interest rates</li>
+                                    <li>Largest loan amounts, often $100,000 to $1,000,000+</li>
+                                    <li>Tax benefits available on principal and interest</li>
+                                    <li>Fixed or variable interest rate options</li>
+                                    <li>Down payment requirements typically 10-20%</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Personal Loans</h4>
+                                <ul>
+                                    <li>Unsecured loans with higher interest rates</li>
+                                    <li>Shorter terms, typically 2-7 years</li>
+                                    <li>No collateral required, based on creditworthiness</li>
+                                    <li>Quick approval and disbursement</li>
+                                    <li>Used for debt consolidation, emergencies, or major purchases</li>
+                                </ul>
+                            </div>
+                            <div class="app-category">
+                                <h4>Auto Loans</h4>
+                                <ul>
+                                    <li>Secured by the vehicle, moderate interest rates</li>
+                                    <li>Terms typically 3-7 years</li>
+                                    <li>New car loans have lower rates than used car loans</li>
+                                    <li>Down payment can reduce EMI and total interest</li>
+                                    <li>Vehicle serves as collateral for the loan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>EMI Formula Breakdown</h4>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <strong>P:</strong> Principal loan amount
+                                </div>
+                                <div class="formula-item">
+                                    <strong>r:</strong> Monthly interest rate (Annual rate ÷ 12)
+                                </div>
+                                <div class="formula-item">
+                                    <strong>n:</strong> Number of monthly installments
+                                </div>
+                                <div class="formula-item">
+                                    <strong>EMI:</strong> Equated Monthly Installment
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Interest Rate Ranges</h4>
+                            <div class="rate-ranges">
+                                <div class="rate-item">
+                                    <span class="loan-type">Home Loans</span>
+                                    <span class="rate-range">6.5% - 9.5%</span>
+                                </div>
+                                <div class="rate-item">
+                                    <span class="loan-type">Auto Loans</span>
+                                    <span class="rate-range">7.0% - 12.0%</span>
+                                </div>
+                                <div class="rate-item">
+                                    <span class="loan-type">Personal Loans</span>
+                                    <span class="rate-range">10.0% - 24.0%</span>
+                                </div>
+                                <div class="rate-item">
+                                    <span class="loan-type">Business Loans</span>
+                                    <span class="rate-range">8.0% - 15.0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>EMI Planning Tips</h4>
+                            <ul class="tips-list">
+                                <li>Keep EMI below 40% of monthly income</li>
+                                <li>Compare offers from multiple lenders</li>
+                                <li>Consider prepayment options to save interest</li>
+                                <li>Factor in processing fees and other charges</li>
+                                <li>Choose tenure based on your financial goals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loan-mastery-section">
+                    <h3>Advanced EMI Strategies and Financial Planning Mastery</h3>
+                    <div class="mastery-content">
+                        <h4>Understanding EMI Components: Principal vs Interest Breakdown</h4>
+                        <p>Every EMI payment consists of two critical components: principal repayment and interest payment. In the early years of a loan, a larger portion goes toward interest, while in later years, more goes toward principal repayment. This is called the amortization schedule, and understanding it is crucial for effective loan management, tax planning, and financial optimization strategies.</p>
+
+                        <div class="emi-fundamentals">
+                            <h5>EMI Calculation Deep Dive and Mathematical Foundation</h5>
+                            <div class="concept-grid">
+                                <div class="concept-item">
+                                    <h6>The EMI Formula Explained in Detail</h6>
+                                    <p>EMI = P × r × (1+r)^n / ((1+r)^n - 1). This mathematical formula accounts for compound interest and ensures equal monthly payments throughout the loan tenure. 'P' represents the principal loan amount, 'r' is the monthly interest rate (annual rate ÷ 12), and 'n' is the total number of monthly payments. Understanding this formula helps in making informed borrowing decisions.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Interest Rate Impact Analysis</h6>
+                                    <p>Even a seemingly small 0.5% difference in interest rates can significantly impact your total payment over the loan tenure. For example, on a $200,000 loan over 20 years, the difference between 7% and 7.5% interest rates results in approximately $13,000 additional interest payment, demonstrating the importance of rate shopping and negotiation.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Loan Tenure Optimization Strategy</h6>
+                                    <p>Longer tenure reduces monthly EMI burden but increases total interest paid significantly. Shorter tenure increases EMI but saves substantial interest over time. The optimal choice depends on your current cash flow, future income expectations, investment opportunities, and overall financial goals and risk tolerance.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <h6>Prepayment Benefits and Strategies</h6>
+                                    <p>Making additional principal payments can dramatically reduce loan tenure and total interest paid. Even small prepayments in the early years have compounding benefits throughout the loan term due to the front-loaded interest structure of most loans. Strategic prepayment can save tens of thousands in interest.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Strategic Loan Management and Optimization Techniques</h4>
+                        <div class="advanced-strategies">
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-chart-line"></i> Advanced EMI Optimization Strategies</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Step-Up EMI Strategy for Career Growth</h6>
+                                        <p>Start with lower EMIs and gradually increase them annually based on expected salary growth. This strategy is particularly effective for young professionals in growth-oriented careers, allowing them to manage initial cash flow constraints while accelerating loan repayment as income increases, ultimately reducing total interest paid.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Bi-Weekly Payment Acceleration Method</h6>
+                                        <p>Instead of making 12 monthly payments, make 26 bi-weekly payments (half of monthly EMI every two weeks). This results in the equivalent of 13 monthly payments per year, significantly reducing loan tenure and interest. This method can reduce a 30-year mortgage to approximately 26 years.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Strategic Windfall Utilization</h6>
+                                        <p>Systematically apply bonuses, tax refunds, inheritance, or other windfalls toward loan principal. Applying these amounts toward principal in the early loan years maximizes interest savings due to the front-loaded interest structure. Even modest windfalls can result in substantial long-term savings.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="strategy-category">
+                                <h5><i class="fas fa-balance-scale"></i> Comprehensive Loan Comparison Framework</h5>
+                                <div class="strategy-examples">
+                                    <div class="example-item">
+                                        <h6>Total Cost of Borrowing Analysis</h6>
+                                        <p>Don't just compare EMIs; conduct comprehensive analysis including processing fees, insurance premiums, legal charges, and other associated costs. A loan with slightly higher EMI might result in lower total cost if ancillary fees are minimal. Create a detailed cost comparison spreadsheet for accurate evaluation.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Fixed vs Floating Rate Strategic Decision</h6>
+                                        <p>Fixed rates provide payment certainty and protection against rate increases but may be higher initially. Floating rates can benefit from interest rate cuts but carry uncertainty risk. Consider your risk tolerance, market interest rate trends, and loan tenure when making this critical decision.</p>
+                                    </div>
+                                    <div class="example-item">
+                                        <h6>Loan Features and Flexibility Evaluation</h6>
+                                        <p>Compare prepayment charges, part-payment options, loan transfer facilities, top-up loan availability, and moratorium periods. These features significantly impact long-term loan management flexibility and can provide substantial value during financial stress or opportunity periods.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loan-types-comprehensive">
+                    <h3>Comprehensive Guide to Loan Types and EMI Optimization</h3>
+                    <div class="loan-types-content">
+                        <h4>Home Loans: Mastering the Largest Financial Commitment</h4>
+                        <p>Home loans typically represent the largest and longest financial commitment for most individuals. Understanding the intricate details of home loan EMI calculations, tax benefits, repayment strategies, and market dynamics is crucial for long-term financial health and wealth building through real estate investment.</p>
+
+                        <div class="loan-type-details">
+                            <div class="loan-detail-category">
+                                <h5><i class="fas fa-home"></i> Home Loan Advanced Strategies</h5>
+                                <div class="detail-examples">
+                                    <div class="detail-item">
+                                        <h6>Tax Benefits Optimization and EMI Impact</h6>
+                                        <p>Home loan principal repayment qualifies for tax deduction under Section 80C (up to ₹1.5 lakh annually), while interest payment receives deduction under Section 24 (up to ₹2 lakh for self-occupied property, unlimited for rental property). These substantial tax benefits effectively reduce your net EMI burden and should be factored into affordability calculations.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Strategic Down Payment Planning</h6>
+                                        <p>Higher down payment reduces loan amount and monthly EMI but ties up significant liquidity. The optimal down payment strategy balances EMI affordability with maintaining adequate emergency funds and preserving capital for other investment opportunities. Consider opportunity cost of capital when determining down payment amount.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Joint Loan Benefits and Tax Optimization</h6>
+                                        <p>Joint home loans with spouse or family members can double available tax benefits and significantly improve loan eligibility based on combined income. Both applicants can claim individual tax deductions, effectively reducing the overall family tax burden while enabling larger loan amounts for better property options.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="loan-detail-category">
+                                <h5><i class="fas fa-user"></i> Personal Loan Strategic Management</h5>
+                                <div class="detail-examples">
+                                    <div class="detail-item">
+                                        <h6>High Interest Rate Impact and Mitigation</h6>
+                                        <p>Personal loans carry significantly higher interest rates (10-24% annually) due to their unsecured nature. Even relatively small loan amounts can result in substantial interest payments over time, making careful EMI planning and aggressive prepayment strategies crucial for minimizing total cost of borrowing.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Debt Consolidation Strategy and EMI Optimization</h6>
+                                        <p>Strategically use personal loans to consolidate high-interest credit card debt and multiple EMIs. While personal loan rates are high, they're typically significantly lower than credit card interest rates (25-40% annually), reducing overall monthly EMI burden and simplifying debt management through single payment.</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <h6>Prepayment Priority and Interest Savings</h6>
+                                        <p>Personal loans should be the highest priority for prepayment due to high interest rates and absence of tax benefits. Even modest prepayments can result in substantial interest savings and faster debt freedom. Consider personal loan prepayment before investing in low-yield instruments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emi-faq-section">
+                    <h3>Frequently Asked Questions About EMI Calculations and Loan Management</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>How does prepayment affect my EMI and loan tenure?</h4>
+                            <p>Prepayment reduces the outstanding principal amount, which can either reduce your EMI amount or loan tenure, depending on your lender's policy and your preference. Most borrowers choose to reduce tenure to save maximum interest. For example, a $10,000 prepayment on a $200,000 loan can reduce tenure by 2-3 years and save $30,000+ in interest.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What's the ideal EMI-to-income ratio for financial stability?</h4>
+                            <p>Financial experts recommend keeping total EMI obligations below 40% of gross monthly income for optimal financial health. This includes all loans - home, personal, auto, and credit cards. Maintaining this ratio ensures adequate cash flow for living expenses, emergency funds, and investment opportunities while avoiding financial stress.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Should I choose fixed or floating interest rates?</h4>
+                            <p>Fixed rates provide certainty and protection against rate increases but are typically higher initially. Floating rates can benefit from rate cuts but carry uncertainty. Choose fixed rates if you prefer predictable payments or expect rates to rise. Choose floating if you can handle payment variability and expect rates to fall or remain stable.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do processing fees and other charges affect loan cost?</h4>
+                            <p>Processing fees, legal charges, insurance premiums, and other costs can add 2-4% to your loan amount. These upfront costs effectively increase your interest rate. Always calculate the Annual Percentage Rate (APR) which includes all costs, not just the stated interest rate, for accurate loan comparison.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I reduce my EMI burden through loan restructuring?</h4>
+                            <p>Yes, many lenders offer loan restructuring options including tenure extension, EMI moratorium, or step-down EMI structures during financial difficulties. However, these typically increase total interest paid. Explore options like part-payment, loan transfer to lower-rate lenders, or income enhancement before considering restructuring.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do tax benefits affect the real cost of home loans?</h4>
+                            <p>Tax benefits can reduce the effective interest rate by 2-3% for taxpayers in higher brackets. Principal repayment (Section 80C) and interest payment (Section 24) deductions can save ₹46,800+ annually in taxes. Factor these savings into your EMI affordability calculations and loan vs rent decisions for accurate financial planning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">9</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="loan-emi-calculator.js"></script>
+</body>
+</html>
