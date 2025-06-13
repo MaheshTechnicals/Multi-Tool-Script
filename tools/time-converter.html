@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter - Convert 12h/24h Format, Time Zones & More | Multi-Tool Hub</title>
+    <meta name="description" content="Convert time between 12-hour and 24-hour formats, different time zones, and various time units. Free online time conversion tool with instant results for scheduling and international coordination.">
+    <meta name="keywords" content="time converter, 12 hour to 24 hour, 24 hour to 12 hour, time zone converter, time format converter, military time, AM PM converter, international time, UTC converter, GMT converter, time units, seconds to hours, minutes to hours, time calculation, world time zones">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    <meta property="og:title" content="Time Converter - Convert 12h/24h Format, Time Zones & More">
+    <meta property="og:description" content="Convert time between 12-hour and 24-hour formats, different time zones, and various time units with instant results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/time-converter.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Time Converter - Convert 12h/24h Format, Time Zones & More">
+    <meta name="twitter:description" content="Convert time between 12-hour and 24-hour formats, different time zones, and various time units.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/time-converter.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Time Converter Tool",
+        "description": "Convert time between 12-hour and 24-hour formats, different time zones, and various time units with instant results.",
+        "url": "https://multi-tool-hub.com/tools/time-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://multi-tool-hub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Converters",
+                "item": "https://multi-tool-hub.com/#converters"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Time Converter",
+                "item": "https://multi-tool-hub.com/tools/time-converter.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What's the difference between 12-hour and 24-hour time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "12-hour time uses AM/PM to distinguish morning and evening hours (1:00 PM), while 24-hour time runs continuously from 00:00 to 23:59 (13:00). Military and international contexts prefer 24-hour format."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why use UTC for international coordination?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "UTC (Coordinated Universal Time) is the global time standard that doesn't change with seasons or politics, making it perfect for international scheduling and technical applications."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#converters" class="nav-link">Converters</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#converters">Converters</a>
+                <span class="separator">/</span>
+                <span class="current">Time Converter</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Time Converter</h1>
+                    <p class="tool-subtitle">Convert between time formats and time zones with precision</p>
+                    <div class="tool-description">
+                        <p>Convert time between 12-hour and 24-hour formats, different time zones, and various time units. Perfect for international scheduling, military time conversion, and coordinating across different time systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="time-converter">
+                        <h3 class="options-title">
+                            <i class="fas fa-clock"></i>
+                            Time Conversion
+                        </h3>
+                        
+                        <div class="conversion-tabs">
+                            <button class="tab-btn active" data-mode="format">
+                                <i class="fas fa-clock"></i>
+                                Format
+                            </button>
+                            <button class="tab-btn" data-mode="timezone">
+                                <i class="fas fa-globe"></i>
+                                Time Zone
+                            </button>
+                            <button class="tab-btn" data-mode="units">
+                                <i class="fas fa-stopwatch"></i>
+                                Time Units
+                            </button>
+                        </div>
+
+                        <!-- Format Conversion -->
+                        <div class="tab-content active" id="formatTab">
+                            <h4>Time Format Conversion</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="timeInput" class="input-label">
+                                        <i class="fas fa-keyboard"></i>
+                                        Enter Time
+                                    </label>
+                                    <input type="time" id="timeInput" class="time-input">
+                                </div>
+                                <div class="input-group">
+                                    <label for="formatType" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Input Format
+                                    </label>
+                                    <select id="formatType" class="select-input">
+                                        <option value="24h">24-Hour (Military)</option>
+                                        <option value="12h">12-Hour (AM/PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="manual-input" style="display: none;">
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="manualTime" class="input-label">
+                                            <i class="fas fa-edit"></i>
+                                            Manual Time Entry
+                                        </label>
+                                        <input type="text" id="manualTime" class="text-input" placeholder="e.g., 2:30 PM or 14:30">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button id="convertFormat" class="btn btn-primary">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    Convert Format
+                                </button>
+                                <button id="useManual" class="btn btn-outline">
+                                    <i class="fas fa-edit"></i>
+                                    Manual Entry
+                                </button>
+                                <button id="currentTime" class="btn btn-outline">
+                                    <i class="fas fa-clock"></i>
+                                    Current Time
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Time Zone Conversion -->
+                        <div class="tab-content" id="timezoneTab">
+                            <h4>Time Zone Conversion</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="sourceTime" class="input-label">
+                                        <i class="fas fa-clock"></i>
+                                        Source Time
+                                    </label>
+                                    <input type="time" id="sourceTime" class="time-input">
+                                </div>
+                                <div class="input-group">
+                                    <label for="sourceTimezone" class="input-label">
+                                        <i class="fas fa-globe"></i>
+                                        From Time Zone
+                                    </label>
+                                    <select id="sourceTimezone" class="select-input">
+                                        <!-- Populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="targetTimezone" class="input-label">
+                                        <i class="fas fa-globe-americas"></i>
+                                        To Time Zone
+                                    </label>
+                                    <select id="targetTimezone" class="select-input">
+                                        <!-- Populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button id="convertTimezone" class="btn btn-primary">
+                                    <i class="fas fa-globe"></i>
+                                    Convert Time Zone
+                                </button>
+                                <button id="detectTimezone" class="btn btn-outline">
+                                    <i class="fas fa-location-arrow"></i>
+                                    Detect My Zone
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Time Units Conversion -->
+                        <div class="tab-content" id="unitsTab">
+                            <h4>Time Units Conversion</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="timeValue" class="input-label">
+                                        <i class="fas fa-keyboard"></i>
+                                        Time Value
+                                    </label>
+                                    <input type="number" id="timeValue" class="number-input" placeholder="Enter value" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="fromTimeUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        From Unit
+                                    </label>
+                                    <select id="fromTimeUnit" class="select-input">
+                                        <option value="seconds">Seconds</option>
+                                        <option value="minutes">Minutes</option>
+                                        <option value="hours">Hours</option>
+                                        <option value="days">Days</option>
+                                        <option value="weeks">Weeks</option>
+                                        <option value="months">Months</option>
+                                        <option value="years">Years</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="toTimeUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        To Unit
+                                    </label>
+                                    <select id="toTimeUnit" class="select-input">
+                                        <option value="seconds">Seconds</option>
+                                        <option value="minutes" selected>Minutes</option>
+                                        <option value="hours">Hours</option>
+                                        <option value="days">Days</option>
+                                        <option value="weeks">Weeks</option>
+                                        <option value="months">Months</option>
+                                        <option value="years">Years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button id="convertUnits" class="btn btn-primary">
+                                    <i class="fas fa-stopwatch"></i>
+                                    Convert Units
+                                </button>
+                                <button id="clearUnits" class="btn btn-secondary">
+                                    <i class="fas fa-eraser"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Conversion Results
+                    </h3>
+                    
+                    <div class="time-results" id="timeResults">
+                        <div class="no-content">
+                            <i class="fas fa-clock"></i>
+                            <p>Select a conversion type and enter time values to see results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Complete Time Converter - All Time Formats and Zones</h2>
+                        <p>Our comprehensive time converter handles all your time conversion needs, from simple format changes between 12-hour and 24-hour systems to complex time zone calculations and time unit conversions. Perfect for international business, travel planning, military applications, and everyday scheduling.</p>
+
+                        <h3>Time Conversion Features</h3>
+                        <div class="time-features">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-clock"></i> Format Conversion</h4>
+                                <p>Convert between 12-hour (AM/PM) and 24-hour (military) time formats instantly. Essential for international communication and military applications.</p>
+                                <ul class="feature-details">
+                                    <li><strong>12-Hour Format:</strong> 1:00 PM, 11:30 AM</li>
+                                    <li><strong>24-Hour Format:</strong> 13:00, 23:30</li>
+                                    <li><strong>Military Time:</strong> 1300 hours, 2330 hours</li>
+                                </ul>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-globe"></i> Time Zone Conversion</h4>
+                                <p>Convert time between different time zones worldwide. Perfect for scheduling international meetings and coordinating global activities.</p>
+                                <ul class="feature-details">
+                                    <li><strong>Major Time Zones:</strong> UTC, EST, PST, GMT, CET</li>
+                                    <li><strong>Daylight Saving:</strong> Automatic DST adjustments</li>
+                                    <li><strong>Global Coverage:</strong> All world time zones supported</li>
+                                </ul>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-stopwatch"></i> Time Unit Conversion</h4>
+                                <p>Convert between different time units from seconds to years. Useful for calculations, project planning, and time analysis.</p>
+                                <ul class="feature-details">
+                                    <li><strong>Small Units:</strong> Seconds, Minutes, Hours</li>
+                                    <li><strong>Large Units:</strong> Days, Weeks, Months, Years</li>
+                                    <li><strong>Precision:</strong> Accurate calculations with decimal support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Common Time Conversion Use Cases</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>International Business</h4>
+                                <p>Schedule meetings across time zones, coordinate with global teams, and manage international project timelines with accurate time conversions.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Travel Planning</h4>
+                                <p>Calculate arrival times, plan itineraries across time zones, and avoid confusion when traveling internationally.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Military Operations</h4>
+                                <p>Convert between civilian and military time formats for operational planning, communications, and coordination.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Event Coordination</h4>
+                                <p>Schedule global events, webinars, and conferences with accurate time zone conversions for all participants.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Project Management</h4>
+                                <p>Convert time units for project planning, calculate durations, and manage timelines across different measurement systems.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Educational Purposes</h4>
+                                <p>Learn time concepts, practice time zone calculations, and understand different time measurement systems.</p>
+                            </div>
+                        </div>
+
+                        <h3>Time Format Standards</h3>
+                        <div class="time-standards">
+                            <h4>12-Hour Format (AM/PM)</h4>
+                            <p>The 12-hour clock divides the day into two periods: AM (ante meridiem - before midday) and PM (post meridiem - after midday). Commonly used in the United States and other English-speaking countries.</p>
+
+                            <h4>24-Hour Format (Military Time)</h4>
+                            <p>The 24-hour clock runs from 00:00 (midnight) to 23:59, eliminating the need for AM/PM designations. Used worldwide in military, aviation, healthcare, and many international contexts.</p>
+
+                            <h4>Time Zone Abbreviations</h4>
+                            <p>Common time zone abbreviations include UTC (Coordinated Universal Time), GMT (Greenwich Mean Time), EST (Eastern Standard Time), PST (Pacific Standard Time), and many others representing different regions worldwide.</p>
+                        </div>
+
+                        <h3>Advanced Time Conversion Capabilities</h3>
+                        <div class="features-grid">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-sync-alt"></i> Multi-Format Support</h4>
+                                <p>Seamlessly convert between 12-hour AM/PM format and 24-hour military time, with support for manual entry and automatic detection of current time.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-world"></i> Global Time Zones</h4>
+                                <p>Convert time across major world time zones with automatic daylight saving time adjustments and accurate offset calculations for international coordination.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-stopwatch"></i> Time Unit Precision</h4>
+                                <p>Convert between all time units from seconds to years with mathematical precision, perfect for project planning, scientific calculations, and time analysis.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-mobile-alt"></i> Smart Detection</h4>
+                                <p>Automatically detect your local time zone and current time, with intelligent parsing of various time input formats for maximum convenience.</p>
+                            </div>
+                        </div>
+
+                        <h3>Time Conversion Best Practices</h3>
+                        <div class="best-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-check-circle"></i> International Scheduling</h4>
+                                <p>When scheduling international meetings, always specify the time zone and consider daylight saving time changes. Use UTC as a reference point for global coordination.</p>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-check-circle"></i> Military Time Usage</h4>
+                                <p>24-hour format eliminates AM/PM confusion and is essential for military, aviation, healthcare, and international business communications.</p>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-check-circle"></i> Time Zone Awareness</h4>
+                                <p>Always verify time zone abbreviations as they can be ambiguous (EST vs EDT). When possible, use full time zone names or UTC offsets.</p>
+                            </div>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h4>What's the difference between 12-hour and 24-hour time?</h4>
+                                <p>12-hour time uses AM/PM to distinguish morning and evening hours (1:00 PM), while 24-hour time runs continuously from 00:00 to 23:59 (13:00). Military and international contexts prefer 24-hour format.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>How do I handle daylight saving time?</h4>
+                                <p>Our converter automatically accounts for standard daylight saving time rules. However, always verify critical time conversions during DST transition periods as rules vary by region.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Why use UTC for international coordination?</h4>
+                                <p>UTC (Coordinated Universal Time) is the global time standard that doesn't change with seasons or politics, making it perfect for international scheduling and technical applications.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Can I convert historical times?</h4>
+                                <p>Yes, our time format converter works for any time value. However, be aware that time zone rules and daylight saving time practices have changed throughout history.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Time Conversion Examples</h4>
+                            <div class="conversion-examples">
+                                <div class="example-item">
+                                    <span class="example-from">2:30 PM</span>
+                                    <span class="example-arrow">→</span>
+                                    <span class="example-to">14:30</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-from">23:45</span>
+                                    <span class="example-arrow">→</span>
+                                    <span class="example-to">11:45 PM</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-from">1 hour</span>
+                                    <span class="example-arrow">→</span>
+                                    <span class="example-to">3600 seconds</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-from">1 day</span>
+                                    <span class="example-arrow">→</span>
+                                    <span class="example-to">24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Time Zone Facts</h4>
+                            <ul class="facts-list">
+                                <li><strong>UTC:</strong> Universal time standard</li>
+                                <li><strong>GMT:</strong> Greenwich Mean Time reference</li>
+                                <li><strong>DST:</strong> Daylight Saving Time adjustments</li>
+                                <li><strong>24 Zones:</strong> World divided into time zones</li>
+                                <li><strong>±12 Hours:</strong> Maximum time difference</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Time Unit Conversions</h4>
+                            <div class="unit-conversions">
+                                <div class="unit-item">
+                                    <strong>1 minute</strong> = 60 seconds
+                                </div>
+                                <div class="unit-item">
+                                    <strong>1 hour</strong> = 60 minutes
+                                </div>
+                                <div class="unit-item">
+                                    <strong>1 day</strong> = 24 hours
+                                </div>
+                                <div class="unit-item">
+                                    <strong>1 week</strong> = 7 days
+                                </div>
+                                <div class="unit-item">
+                                    <strong>1 year</strong> ≈ 365.25 days
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="time-converter.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

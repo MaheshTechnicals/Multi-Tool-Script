@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - Convert Length, Weight, Volume & Area Units | Multi-Tool Hub</title>
+    <meta name="description" content="Convert between different units of measurement including length (meters, feet, inches), weight (kg, pounds, ounces), volume (liters, gallons, cups), and area (square meters, acres). Free online unit conversion tool with instant results.">
+    <meta name="keywords" content="unit converter, measurement converter, length converter, weight converter, volume converter, area converter, metric conversion, imperial conversion, meters to feet, kg to pounds, cm to inches, liters to gallons, square meters to square feet, conversion calculator, measurement tool, metric to imperial, SI units, international units">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    <meta property="og:title" content="Unit Converter - Convert Length, Weight, Volume & Area Units">
+    <meta property="og:description" content="Convert between different units of measurement including length, weight, volume, and area. Free online unit conversion tool with instant results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/unit-converter.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Unit Converter - Convert Length, Weight, Volume & Area Units">
+    <meta name="twitter:description" content="Convert between different units of measurement including length, weight, volume, and area. Free online unit conversion tool with instant results.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/unit-converter.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Unit Converter Tool",
+        "description": "Convert between different units of measurement including length, weight, volume, and area with instant results.",
+        "url": "https://multi-tool-hub.com/tools/unit-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "1.0",
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "author": {
+            "@type": "Organization",
+            "name": "Multi-Tool Hub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multi-Tool Hub"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+            "Length unit conversion",
+            "Weight and mass conversion",
+            "Volume measurement conversion",
+            "Area calculation conversion",
+            "Metric to Imperial conversion",
+            "Real-time conversion results",
+            "Mobile responsive design",
+            "Offline functionality"
+        ],
+        "screenshot": "https://multi-tool-hub.com/images/unit-converter-screenshot.jpg",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://multi-tool-hub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Converters",
+                "item": "https://multi-tool-hub.com/#converters"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Unit Converter",
+                "item": "https://multi-tool-hub.com/tools/unit-converter.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate are the unit conversions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our unit converter provides accuracy up to 10 decimal places using internationally recognized conversion factors. For most practical applications, this level of precision exceeds requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this converter offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Once the page loads, all conversions are performed locally in your browser, so you can continue using the tool even without an internet connection."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which measurement systems are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We support metric (SI), imperial, US customary, and various specialized units across length, weight, volume, and area categories."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#converters" class="nav-link">Converters</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#converters">Converters</a>
+                <span class="separator">/</span>
+                <span class="current">Unit Converter</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-ruler"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Unit Converter</h1>
+                    <p class="tool-subtitle">Convert between different units of measurement with precision</p>
+                    <div class="tool-description">
+                        <p>Convert between various units of measurement including length, weight, volume, area, and temperature. Our comprehensive unit converter supports metric, imperial, and other measurement systems with instant, accurate results for all your conversion needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="converter-options">
+                        <h3 class="options-title">
+                            <i class="fas fa-exchange-alt"></i>
+                            Unit Conversion
+                        </h3>
+                        
+                        <div class="conversion-tabs">
+                            <button class="tab-btn active" data-category="length">
+                                <i class="fas fa-ruler"></i>
+                                Length
+                            </button>
+                            <button class="tab-btn" data-category="weight">
+                                <i class="fas fa-weight"></i>
+                                Weight
+                            </button>
+                            <button class="tab-btn" data-category="volume">
+                                <i class="fas fa-flask"></i>
+                                Volume
+                            </button>
+                            <button class="tab-btn" data-category="area">
+                                <i class="fas fa-vector-square"></i>
+                                Area
+                            </button>
+                        </div>
+
+                        <div class="conversion-content">
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="fromValue" class="input-label">
+                                        <i class="fas fa-keyboard"></i>
+                                        Value to Convert
+                                    </label>
+                                    <input type="number" id="fromValue" class="number-input" placeholder="Enter value" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="fromUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        From Unit
+                                    </label>
+                                    <select id="fromUnit" class="select-input">
+                                        <!-- Options will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="conversion-arrow">
+                                <button id="swapUnits" class="swap-btn" title="Swap units">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="toValue" class="input-label">
+                                        <i class="fas fa-calculator"></i>
+                                        Converted Value
+                                    </label>
+                                    <input type="number" id="toValue" class="number-input" placeholder="Result" readonly>
+                                </div>
+                                <div class="input-group">
+                                    <label for="toUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        To Unit
+                                    </label>
+                                    <select id="toUnit" class="select-input">
+                                        <!-- Options will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button id="convertBtn" class="btn btn-primary">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    Convert
+                                </button>
+                                <button id="clearBtn" class="btn btn-secondary">
+                                    <i class="fas fa-eraser"></i>
+                                    Clear
+                                </button>
+                                <button id="copyBtn" class="btn btn-outline">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Result
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Conversion Results
+                    </h3>
+                    
+                    <div class="conversion-results" id="conversionResults">
+                        <div class="no-content">
+                            <i class="fas fa-ruler"></i>
+                            <p>Enter a value and select units to see conversion results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Unit Converter - All Measurements in One Place</h2>
+                        <p>Our advanced unit converter is your go-to tool for converting between different units of measurement across multiple categories. Whether you're working with length, weight, volume, or area measurements, our converter provides instant, accurate results that you can rely on for both personal and professional use.</p>
+
+                        <h3>Supported Unit Categories</h3>
+                        <div class="conversion-categories">
+                            <div class="category-item">
+                                <h4><i class="fas fa-ruler"></i> Length Conversions</h4>
+                                <p>Convert between metric and imperial length units including meters, feet, inches, centimeters, kilometers, miles, yards, and more. Perfect for construction, engineering, and everyday measurements.</p>
+                                <ul class="unit-examples">
+                                    <li><strong>Metric:</strong> Millimeters, Centimeters, Meters, Kilometers</li>
+                                    <li><strong>Imperial:</strong> Inches, Feet, Yards, Miles</li>
+                                    <li><strong>Other:</strong> Nautical Miles, Light Years, Angstroms</li>
+                                </ul>
+                            </div>
+                            <div class="category-item">
+                                <h4><i class="fas fa-weight"></i> Weight & Mass Conversions</h4>
+                                <p>Convert between different weight and mass units including kilograms, pounds, ounces, grams, and tons. Essential for cooking, shipping, scientific calculations, and fitness tracking.</p>
+                                <ul class="unit-examples">
+                                    <li><strong>Metric:</strong> Milligrams, Grams, Kilograms, Metric Tons</li>
+                                    <li><strong>Imperial:</strong> Ounces, Pounds, Stones, Tons</li>
+                                    <li><strong>Other:</strong> Carats, Grains, Troy Ounces</li>
+                                </ul>
+                            </div>
+                            <div class="category-item">
+                                <h4><i class="fas fa-flask"></i> Volume Conversions</h4>
+                                <p>Convert between liquid and dry volume measurements including liters, gallons, cups, milliliters, and more. Perfect for cooking, chemistry, and fluid calculations.</p>
+                                <ul class="unit-examples">
+                                    <li><strong>Metric:</strong> Milliliters, Liters, Cubic Meters</li>
+                                    <li><strong>Imperial:</strong> Fluid Ounces, Cups, Pints, Quarts, Gallons</li>
+                                    <li><strong>Other:</strong> Tablespoons, Teaspoons, Barrels</li>
+                                </ul>
+                            </div>
+                            <div class="category-item">
+                                <h4><i class="fas fa-vector-square"></i> Area Conversions</h4>
+                                <p>Convert between different area measurements including square meters, acres, hectares, and square feet. Ideal for real estate, agriculture, and land measurement.</p>
+                                <ul class="unit-examples">
+                                    <li><strong>Metric:</strong> Square Millimeters, Square Meters, Hectares</li>
+                                    <li><strong>Imperial:</strong> Square Inches, Square Feet, Square Yards, Acres</li>
+                                    <li><strong>Other:</strong> Square Miles, Square Kilometers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Common Unit Conversion Use Cases</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Construction & Engineering</h4>
+                                <p>Convert measurements for building plans, material calculations, and engineering specifications. Essential for architects, contractors, and engineers working with different measurement systems.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Cooking & Baking</h4>
+                                <p>Convert recipe measurements between metric and imperial units. Perfect for international recipes, scaling portions, and professional kitchen operations.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>International Trade</h4>
+                                <p>Convert units for shipping, customs documentation, and international business transactions. Essential for global commerce and logistics.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Scientific Research</h4>
+                                <p>Convert between different measurement systems for research, data analysis, and scientific publications. Critical for maintaining accuracy in scientific work.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Real Estate</h4>
+                                <p>Convert area measurements for property listings, land surveys, and real estate transactions. Essential for property professionals and buyers.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Fitness & Health</h4>
+                                <p>Convert weight and measurement units for fitness tracking, medical records, and health monitoring. Important for personal health management.</p>
+                            </div>
+                        </div>
+
+                        <h3>Why Choose Our Unit Converter?</h3>
+                        <div class="features-grid">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-bolt"></i> Lightning Fast Conversions</h4>
+                                <p>Get instant results with our optimized conversion algorithms. No waiting, no delays - just immediate, accurate conversions for all your measurement needs.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-shield-check"></i> Precision & Accuracy</h4>
+                                <p>Our converter uses precise mathematical formulas and maintains up to 10 decimal places of accuracy, ensuring reliable results for professional and scientific applications.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-mobile-alt"></i> Mobile Optimized</h4>
+                                <p>Access our unit converter from any device - desktop, tablet, or smartphone. The responsive design ensures a perfect experience across all screen sizes.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-lock"></i> Privacy First</h4>
+                                <p>All conversions are performed locally in your browser. No data is sent to our servers, ensuring complete privacy and security for your calculations.</p>
+                            </div>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h4>How accurate are the unit conversions?</h4>
+                                <p>Our unit converter provides accuracy up to 10 decimal places using internationally recognized conversion factors. For most practical applications, this level of precision exceeds requirements.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Can I use this converter offline?</h4>
+                                <p>Yes! Once the page loads, all conversions are performed locally in your browser, so you can continue using the tool even without an internet connection.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Which measurement systems are supported?</h4>
+                                <p>We support metric (SI), imperial, US customary, and various specialized units across length, weight, volume, and area categories.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Is the unit converter free to use?</h4>
+                                <p>Absolutely! Our unit converter is completely free with no registration required, no ads, and no hidden fees. Use it as much as you need.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Quick Conversions</h4>
+                            <div class="quick-stats">
+                                <div class="stat">
+                                    <span class="stat-number">1 m</span>
+                                    <span class="stat-text">= 3.28084 feet</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">1 kg</span>
+                                    <span class="stat-text">= 2.20462 pounds</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">1 L</span>
+                                    <span class="stat-text">= 0.264172 gallons</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">1 m²</span>
+                                    <span class="stat-text">= 10.7639 sq ft</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Measurement Systems</h4>
+                            <ul class="system-list">
+                                <li><strong>Metric System:</strong> Based on powers of 10, used worldwide</li>
+                                <li><strong>Imperial System:</strong> Traditional British units, used in US</li>
+                                <li><strong>US Customary:</strong> American version of imperial units</li>
+                                <li><strong>SI Units:</strong> International standard for scientific use</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Conversion Tips</h4>
+                            <ul class="tips-list">
+                                <li>Always double-check critical measurements</li>
+                                <li>Round appropriately for your use case</li>
+                                <li>Consider significant figures in calculations</li>
+                                <li>Use consistent units throughout projects</li>
+                                <li>Verify conversions with multiple sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="unit-converter.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

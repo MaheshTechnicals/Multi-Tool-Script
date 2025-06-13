@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Calculator - Calculate Speed, Distance, Time & Velocity | Multi-Tool Hub</title>
+    <meta name="description" content="Calculate speed, distance, and time using the fundamental physics formula. Convert between different speed units (mph, km/h, m/s) and solve motion problems with our comprehensive speed calculator.">
+    <meta name="keywords" content="speed calculator, distance time speed, velocity calculator, mph to kmh, speed conversion, physics calculator, motion calculator, travel time calculator, kmh to mph, meters per second, feet per second, pace calculator, running speed, cycling speed, physics formulas, kinematics calculator">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    <meta property="og:title" content="Speed Calculator - Calculate Speed, Distance, Time & Velocity">
+    <meta property="og:description" content="Calculate speed, distance, and time using physics formulas. Convert between different speed units and solve motion problems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/speed-calculator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Speed Calculator - Calculate Speed, Distance, Time & Velocity">
+    <meta name="twitter:description" content="Calculate speed, distance, and time using physics formulas. Convert between different speed units.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/speed-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Speed Calculator Tool",
+        "description": "Calculate speed, distance, and time using physics formulas. Convert between different speed units and solve motion problems.",
+        "url": "https://multi-tool-hub.com/tools/speed-calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://multi-tool-hub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Converters",
+                "item": "https://multi-tool-hub.com/#converters"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Speed Calculator",
+                "item": "https://multi-tool-hub.com/tools/speed-calculator.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What's the difference between speed and velocity?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Speed is a scalar quantity (magnitude only) while velocity is a vector (magnitude and direction). Our calculator computes speed - the rate of distance covered over time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which speed units are most commonly used?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "km/h and mph are common for vehicles, m/s is the SI standard for scientific work, and ft/s is used in some engineering applications. Choose based on your specific needs."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#converters" class="nav-link">Converters</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#converters">Converters</a>
+                <span class="separator">/</span>
+                <span class="current">Speed Calculator</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Speed Calculator</h1>
+                    <p class="tool-subtitle">Calculate speed, distance, and time with precision</p>
+                    <div class="tool-description">
+                        <p>Calculate speed, distance, and time using fundamental physics formulas. Convert between different speed units and solve motion problems for travel, sports, physics, and engineering applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="speed-calculator">
+                        <h3 class="options-title">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Speed Calculations
+                        </h3>
+                        
+                        <div class="calculation-tabs">
+                            <button class="tab-btn active" data-calculate="speed">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Calculate Speed
+                            </button>
+                            <button class="tab-btn" data-calculate="distance">
+                                <i class="fas fa-route"></i>
+                                Calculate Distance
+                            </button>
+                            <button class="tab-btn" data-calculate="time">
+                                <i class="fas fa-clock"></i>
+                                Calculate Time
+                            </button>
+                        </div>
+
+                        <!-- Calculate Speed -->
+                        <div class="tab-content active" id="speedTab">
+                            <h4>Calculate Speed (Speed = Distance ÷ Time)</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="speedDistance" class="input-label">
+                                        <i class="fas fa-route"></i>
+                                        Distance
+                                    </label>
+                                    <input type="number" id="speedDistance" class="number-input" placeholder="Enter distance" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="speedDistanceUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Distance Unit
+                                    </label>
+                                    <select id="speedDistanceUnit" class="select-input">
+                                        <option value="km">Kilometers</option>
+                                        <option value="mi">Miles</option>
+                                        <option value="m">Meters</option>
+                                        <option value="ft">Feet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="speedTime" class="input-label">
+                                        <i class="fas fa-clock"></i>
+                                        Time
+                                    </label>
+                                    <input type="number" id="speedTime" class="number-input" placeholder="Enter time" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="speedTimeUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Time Unit
+                                    </label>
+                                    <select id="speedTimeUnit" class="select-input">
+                                        <option value="h">Hours</option>
+                                        <option value="min">Minutes</option>
+                                        <option value="s">Seconds</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Calculate Distance -->
+                        <div class="tab-content" id="distanceTab">
+                            <h4>Calculate Distance (Distance = Speed × Time)</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="distanceSpeed" class="input-label">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Speed
+                                    </label>
+                                    <input type="number" id="distanceSpeed" class="number-input" placeholder="Enter speed" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="distanceSpeedUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Speed Unit
+                                    </label>
+                                    <select id="distanceSpeedUnit" class="select-input">
+                                        <option value="kmh">km/h</option>
+                                        <option value="mph">mph</option>
+                                        <option value="ms">m/s</option>
+                                        <option value="fts">ft/s</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="distanceTime" class="input-label">
+                                        <i class="fas fa-clock"></i>
+                                        Time
+                                    </label>
+                                    <input type="number" id="distanceTime" class="number-input" placeholder="Enter time" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="distanceTimeUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Time Unit
+                                    </label>
+                                    <select id="distanceTimeUnit" class="select-input">
+                                        <option value="h">Hours</option>
+                                        <option value="min">Minutes</option>
+                                        <option value="s">Seconds</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Calculate Time -->
+                        <div class="tab-content" id="timeTab">
+                            <h4>Calculate Time (Time = Distance ÷ Speed)</h4>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="timeDistance" class="input-label">
+                                        <i class="fas fa-route"></i>
+                                        Distance
+                                    </label>
+                                    <input type="number" id="timeDistance" class="number-input" placeholder="Enter distance" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="timeDistanceUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Distance Unit
+                                    </label>
+                                    <select id="timeDistanceUnit" class="select-input">
+                                        <option value="km">Kilometers</option>
+                                        <option value="mi">Miles</option>
+                                        <option value="m">Meters</option>
+                                        <option value="ft">Feet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="timeSpeed" class="input-label">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Speed
+                                    </label>
+                                    <input type="number" id="timeSpeed" class="number-input" placeholder="Enter speed" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="timeSpeedUnit" class="input-label">
+                                        <i class="fas fa-list"></i>
+                                        Speed Unit
+                                    </label>
+                                    <select id="timeSpeedUnit" class="select-input">
+                                        <option value="kmh">km/h</option>
+                                        <option value="mph">mph</option>
+                                        <option value="ms">m/s</option>
+                                        <option value="fts">ft/s</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="calculateBtn" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                            <button id="clearBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i>
+                                Clear All
+                            </button>
+                            <button id="copyBtn" class="btn btn-outline">
+                                <i class="fas fa-copy"></i>
+                                Copy Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Calculation Results
+                    </h3>
+                    
+                    <div class="speed-results" id="speedResults">
+                        <div class="no-content">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <p>Enter values to calculate speed, distance, or time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Comprehensive Speed Calculator - Physics Made Simple</h2>
+                        <p>Our advanced speed calculator uses the fundamental physics relationship between speed, distance, and time to solve motion problems with precision. Whether you're calculating travel times, analyzing sports performance, or solving physics homework, our tool provides instant, accurate results with multiple unit conversions.</p>
+
+                        <h3>Speed Calculation Fundamentals</h3>
+                        <div class="physics-formulas">
+                            <div class="formula-item">
+                                <h4><i class="fas fa-tachometer-alt"></i> Speed Formula</h4>
+                                <div class="formula-display">Speed = Distance ÷ Time</div>
+                                <p>Calculate how fast an object is moving by dividing the distance traveled by the time taken. Essential for travel planning, sports analysis, and physics calculations.</p>
+                            </div>
+                            <div class="formula-item">
+                                <h4><i class="fas fa-route"></i> Distance Formula</h4>
+                                <div class="formula-display">Distance = Speed × Time</div>
+                                <p>Determine how far an object travels by multiplying its speed by the time of travel. Perfect for trip planning and navigation calculations.</p>
+                            </div>
+                            <div class="formula-item">
+                                <h4><i class="fas fa-clock"></i> Time Formula</h4>
+                                <div class="formula-display">Time = Distance ÷ Speed</div>
+                                <p>Calculate how long it takes to travel a certain distance at a given speed. Ideal for scheduling and time management.</p>
+                            </div>
+                        </div>
+
+                        <h3>Supported Units and Conversions</h3>
+                        <div class="unit-categories">
+                            <div class="unit-category">
+                                <h4>Distance Units</h4>
+                                <ul class="unit-list">
+                                    <li><strong>Kilometers (km):</strong> Metric system, used worldwide</li>
+                                    <li><strong>Miles (mi):</strong> Imperial system, used in US and UK</li>
+                                    <li><strong>Meters (m):</strong> Base metric unit for shorter distances</li>
+                                    <li><strong>Feet (ft):</strong> Imperial unit for shorter distances</li>
+                                </ul>
+                            </div>
+                            <div class="unit-category">
+                                <h4>Speed Units</h4>
+                                <ul class="unit-list">
+                                    <li><strong>km/h:</strong> Kilometers per hour, common for vehicles</li>
+                                    <li><strong>mph:</strong> Miles per hour, used in US and UK</li>
+                                    <li><strong>m/s:</strong> Meters per second, scientific standard</li>
+                                    <li><strong>ft/s:</strong> Feet per second, engineering applications</li>
+                                </ul>
+                            </div>
+                            <div class="unit-category">
+                                <h4>Time Units</h4>
+                                <ul class="unit-list">
+                                    <li><strong>Hours (h):</strong> Standard for long-distance travel</li>
+                                    <li><strong>Minutes (min):</strong> Medium-duration activities</li>
+                                    <li><strong>Seconds (s):</strong> Short-duration measurements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Speed Calculator Applications</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Travel Planning</h4>
+                                <p>Calculate travel times for road trips, estimate arrival times, and plan routes with accurate speed and distance calculations.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Sports Performance</h4>
+                                <p>Analyze running speeds, cycling performance, swimming times, and other athletic activities to track improvement and set goals.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Physics Education</h4>
+                                <p>Solve physics problems, understand motion concepts, and learn the relationship between speed, distance, and time.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Engineering Applications</h4>
+                                <p>Calculate velocities in mechanical systems, analyze motion in engineering projects, and solve technical problems.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Aviation & Maritime</h4>
+                                <p>Calculate flight times, ship speeds, navigation distances, and other transportation-related calculations.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Fitness Tracking</h4>
+                                <p>Monitor workout speeds, calculate pace for running or cycling, and track fitness progress over time.</p>
+                            </div>
+                        </div>
+
+                        <h3>Advanced Speed Calculation Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-calculator"></i> Three-Way Calculations</h4>
+                                <p>Calculate any variable (speed, distance, or time) when you know the other two. Our intelligent calculator automatically determines what you need based on your inputs.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-exchange-alt"></i> Universal Unit Support</h4>
+                                <p>Convert between metric and imperial units seamlessly. Support for km/h, mph, m/s, ft/s and all major distance and time units for maximum flexibility.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-chart-line"></i> Real-Time Results</h4>
+                                <p>Get instant calculations as you type with live unit conversions. See results in multiple units simultaneously for comprehensive analysis.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-graduation-cap"></i> Educational Value</h4>
+                                <p>Perfect for learning physics concepts, understanding motion relationships, and solving homework problems with step-by-step formula explanations.</p>
+                            </div>
+                        </div>
+
+                        <h3>Physics Behind Speed Calculations</h3>
+                        <div class="physics-explanation">
+                            <div class="physics-section">
+                                <h4>The Fundamental Relationship</h4>
+                                <p>Speed, distance, and time are related by the fundamental equation: Speed = Distance ÷ Time. This relationship forms the basis of kinematics and is essential for understanding motion in physics.</p>
+                            </div>
+                            <div class="physics-section">
+                                <h4>Average vs. Instantaneous Speed</h4>
+                                <p>Our calculator computes average speed over a given distance and time. Instantaneous speed (velocity at a specific moment) requires calculus and is different from average speed in accelerating motion.</p>
+                            </div>
+                            <div class="physics-section">
+                                <h4>Units and Dimensional Analysis</h4>
+                                <p>Speed units are always distance units divided by time units (km/h, m/s, mph). Understanding dimensional analysis helps verify calculation correctness and unit conversions.</p>
+                            </div>
+                        </div>
+
+                        <h3>Professional Applications</h3>
+                        <div class="professional-uses">
+                            <div class="use-category">
+                                <h4><i class="fas fa-plane"></i> Transportation Industry</h4>
+                                <p>Calculate fuel efficiency, trip planning, logistics optimization, and schedule management for aviation, shipping, trucking, and public transportation systems.</p>
+                            </div>
+                            <div class="use-category">
+                                <h4><i class="fas fa-running"></i> Sports & Athletics</h4>
+                                <p>Analyze performance metrics, track training progress, calculate pace for running and cycling, and optimize athletic performance across various sports disciplines.</p>
+                            </div>
+                            <div class="use-category">
+                                <h4><i class="fas fa-cogs"></i> Engineering & Manufacturing</h4>
+                                <p>Design mechanical systems, calculate conveyor speeds, analyze production rates, and optimize manufacturing processes with precise speed calculations.</p>
+                            </div>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h4>What's the difference between speed and velocity?</h4>
+                                <p>Speed is a scalar quantity (magnitude only) while velocity is a vector (magnitude and direction). Our calculator computes speed - the rate of distance covered over time.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>How accurate are the speed calculations?</h4>
+                                <p>Our calculator provides high precision results with up to 6 decimal places. For most practical applications, this exceeds the accuracy of real-world measurements.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Can I calculate acceleration with this tool?</h4>
+                                <p>This tool calculates constant speed scenarios. For acceleration calculations (change in velocity over time), you would need a specialized kinematics calculator.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Which speed units are most commonly used?</h4>
+                                <p>km/h and mph are common for vehicles, m/s is the SI standard for scientific work, and ft/s is used in some engineering applications. Choose based on your specific needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Speed Conversions</h4>
+                            <div class="speed-conversions">
+                                <div class="conversion-item">
+                                    <span class="conversion-from">1 m/s</span>
+                                    <span class="conversion-to">= 3.6 km/h</span>
+                                </div>
+                                <div class="conversion-item">
+                                    <span class="conversion-from">1 mph</span>
+                                    <span class="conversion-to">= 1.609 km/h</span>
+                                </div>
+                                <div class="conversion-item">
+                                    <span class="conversion-from">1 km/h</span>
+                                    <span class="conversion-to">= 0.278 m/s</span>
+                                </div>
+                                <div class="conversion-item">
+                                    <span class="conversion-from">1 ft/s</span>
+                                    <span class="conversion-to">= 0.305 m/s</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Common Speeds</h4>
+                            <div class="speed-examples">
+                                <div class="speed-example">
+                                    <strong>Walking:</strong> 5 km/h (3 mph)
+                                </div>
+                                <div class="speed-example">
+                                    <strong>Cycling:</strong> 20 km/h (12 mph)
+                                </div>
+                                <div class="speed-example">
+                                    <strong>City Driving:</strong> 50 km/h (31 mph)
+                                </div>
+                                <div class="speed-example">
+                                    <strong>Highway:</strong> 100 km/h (62 mph)
+                                </div>
+                                <div class="speed-example">
+                                    <strong>Commercial Jet:</strong> 900 km/h (560 mph)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Calculation Tips</h4>
+                            <ul class="tips-list">
+                                <li>Ensure units are consistent in calculations</li>
+                                <li>Consider average vs. instantaneous speed</li>
+                                <li>Account for acceleration and deceleration</li>
+                                <li>Use appropriate precision for your needs</li>
+                                <li>Verify results with real-world expectations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="speed-calculator.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

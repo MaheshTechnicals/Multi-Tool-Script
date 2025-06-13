@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter - Convert Celsius, Fahrenheit, Kelvin & More | Multi-Tool Hub</title>
+    <meta name="description" content="Convert temperatures between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales. Free online temperature conversion tool with instant results and detailed explanations for scientific and everyday use.">
+    <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, temperature conversion, celsius fahrenheit kelvin, temperature scales, scientific temperature, rankine converter, reaumur converter, absolute zero, boiling point, freezing point, weather temperature, cooking temperature">
+    <meta name="author" content="Multi-Tool Hub">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    <meta property="og:title" content="Temperature Converter - Convert Celsius, Fahrenheit, Kelvin & More">
+    <meta property="og:description" content="Convert temperatures between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales with instant results and detailed explanations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multi-tool-hub.com/tools/temperature-converter.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Temperature Converter - Convert Celsius, Fahrenheit, Kelvin & More">
+    <meta name="twitter:description" content="Convert temperatures between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales with instant results.">
+    <link rel="canonical" href="https://multi-tool-hub.com/tools/temperature-converter.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Temperature Converter Tool",
+        "description": "Convert temperatures between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales with instant results.",
+        "url": "https://multi-tool-hub.com/tools/temperature-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://multi-tool-hub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Converters",
+                "item": "https://multi-tool-hub.com/#converters"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Temperature Converter",
+                "item": "https://multi-tool-hub.com/tools/temperature-converter.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why are there different temperature scales?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Different temperature scales were developed for various purposes and regions. Celsius is based on water's properties, Fahrenheit was designed for human comfort ranges, and Kelvin starts at absolute zero for scientific calculations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which temperature scale is most accurate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All temperature scales are equally accurate when properly calibrated. The choice depends on your application - Kelvin for science, Celsius for most international use, and Fahrenheit in the United States."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="tool-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>Multi-Tool Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">All Tools</a></li>
+                    <li><a href="../index.html#converters" class="nav-link">Converters</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator">/</span>
+                <a href="../index.html#converters">Converters</a>
+                <span class="separator">/</span>
+                <span class="current">Temperature Converter</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-large">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <div class="tool-info">
+                    <h1 class="tool-title">Temperature Converter</h1>
+                    <p class="tool-subtitle">Convert between different temperature scales with precision</p>
+                    <div class="tool-description">
+                        <p>Convert temperatures between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales. Perfect for scientific calculations, weather analysis, cooking, and international temperature conversions with instant, accurate results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-content">
+                <div class="input-section">
+                    <div class="temperature-converter">
+                        <h3 class="options-title">
+                            <i class="fas fa-thermometer-half"></i>
+                            Temperature Conversion
+                        </h3>
+                        
+                        <div class="temperature-input-section">
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="tempValue" class="input-label">
+                                        <i class="fas fa-keyboard"></i>
+                                        Temperature Value
+                                    </label>
+                                    <input type="number" id="tempValue" class="number-input" placeholder="Enter temperature" step="any">
+                                </div>
+                                <div class="input-group">
+                                    <label for="fromScale" class="input-label">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        From Scale
+                                    </label>
+                                    <select id="fromScale" class="select-input">
+                                        <option value="celsius">Celsius (°C)</option>
+                                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                                        <option value="kelvin">Kelvin (K)</option>
+                                        <option value="rankine">Rankine (°R)</option>
+                                        <option value="reaumur">Réaumur (°Ré)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="conversion-arrow">
+                                <button id="swapScales" class="swap-btn" title="Swap temperature scales">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="resultValue" class="input-label">
+                                        <i class="fas fa-calculator"></i>
+                                        Converted Value
+                                    </label>
+                                    <input type="number" id="resultValue" class="number-input" placeholder="Result" readonly>
+                                </div>
+                                <div class="input-group">
+                                    <label for="toScale" class="input-label">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        To Scale
+                                    </label>
+                                    <select id="toScale" class="select-input">
+                                        <option value="celsius">Celsius (°C)</option>
+                                        <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+                                        <option value="kelvin">Kelvin (K)</option>
+                                        <option value="rankine">Rankine (°R)</option>
+                                        <option value="reaumur">Réaumur (°Ré)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button id="convertTemp" class="btn btn-primary">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    Convert
+                                </button>
+                                <button id="clearTemp" class="btn btn-secondary">
+                                    <i class="fas fa-eraser"></i>
+                                    Clear
+                                </button>
+                                <button id="copyTemp" class="btn btn-outline">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Result
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quick-conversions">
+                            <h4><i class="fas fa-bolt"></i> Quick Conversions</h4>
+                            <div class="quick-temp-grid">
+                                <button class="quick-temp-btn" data-temp="0" data-scale="celsius">
+                                    <span class="temp-value">0°C</span>
+                                    <span class="temp-desc">Freezing Point</span>
+                                </button>
+                                <button class="quick-temp-btn" data-temp="100" data-scale="celsius">
+                                    <span class="temp-value">100°C</span>
+                                    <span class="temp-desc">Boiling Point</span>
+                                </button>
+                                <button class="quick-temp-btn" data-temp="37" data-scale="celsius">
+                                    <span class="temp-value">37°C</span>
+                                    <span class="temp-desc">Body Temperature</span>
+                                </button>
+                                <button class="quick-temp-btn" data-temp="20" data-scale="celsius">
+                                    <span class="temp-value">20°C</span>
+                                    <span class="temp-desc">Room Temperature</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Temperature Results
+                    </h3>
+                    
+                    <div class="temperature-results" id="temperatureResults">
+                        <div class="no-content">
+                            <i class="fas fa-thermometer-half"></i>
+                            <p>Enter a temperature value to see conversions across all scales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Complete Temperature Converter - All Temperature Scales</h2>
+                        <p>Our comprehensive temperature converter supports all major temperature scales used worldwide. Whether you're working with scientific calculations, cooking recipes, weather data, or industrial applications, our tool provides instant, accurate conversions between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales.</p>
+
+                        <h3>Supported Temperature Scales</h3>
+                        <div class="temperature-scales">
+                            <div class="scale-item">
+                                <h4><i class="fas fa-thermometer-half"></i> Celsius (°C)</h4>
+                                <p>The most widely used temperature scale globally, based on the freezing point (0°C) and boiling point (100°C) of water at standard atmospheric pressure. Used in most countries and scientific applications.</p>
+                                <ul class="scale-details">
+                                    <li><strong>Freezing Point:</strong> 0°C</li>
+                                    <li><strong>Boiling Point:</strong> 100°C</li>
+                                    <li><strong>Absolute Zero:</strong> -273.15°C</li>
+                                    <li><strong>Usage:</strong> Worldwide standard, scientific research</li>
+                                </ul>
+                            </div>
+                            <div class="scale-item">
+                                <h4><i class="fas fa-thermometer-full"></i> Fahrenheit (°F)</h4>
+                                <p>Primarily used in the United States, based on a scale where water freezes at 32°F and boils at 212°F. Named after physicist Daniel Gabriel Fahrenheit.</p>
+                                <ul class="scale-details">
+                                    <li><strong>Freezing Point:</strong> 32°F</li>
+                                    <li><strong>Boiling Point:</strong> 212°F</li>
+                                    <li><strong>Absolute Zero:</strong> -459.67°F</li>
+                                    <li><strong>Usage:</strong> United States, some Caribbean countries</li>
+                                </ul>
+                            </div>
+                            <div class="scale-item">
+                                <h4><i class="fas fa-atom"></i> Kelvin (K)</h4>
+                                <p>The base unit of thermodynamic temperature in the International System of Units (SI). Starts at absolute zero, making it essential for scientific calculations.</p>
+                                <ul class="scale-details">
+                                    <li><strong>Freezing Point:</strong> 273.15 K</li>
+                                    <li><strong>Boiling Point:</strong> 373.15 K</li>
+                                    <li><strong>Absolute Zero:</strong> 0 K</li>
+                                    <li><strong>Usage:</strong> Scientific research, physics, chemistry</li>
+                                </ul>
+                            </div>
+                            <div class="scale-item">
+                                <h4><i class="fas fa-fire"></i> Rankine (°R)</h4>
+                                <p>An absolute temperature scale similar to Kelvin but using Fahrenheit-sized degrees. Used primarily in engineering applications in the United States.</p>
+                                <ul class="scale-details">
+                                    <li><strong>Freezing Point:</strong> 491.67°R</li>
+                                    <li><strong>Boiling Point:</strong> 671.67°R</li>
+                                    <li><strong>Absolute Zero:</strong> 0°R</li>
+                                    <li><strong>Usage:</strong> Engineering, thermodynamics</li>
+                                </ul>
+                            </div>
+                            <div class="scale-item">
+                                <h4><i class="fas fa-snowflake"></i> Réaumur (°Ré)</h4>
+                                <p>A historical temperature scale where water freezes at 0°Ré and boils at 80°Ré. Rarely used today but still found in some European contexts.</p>
+                                <ul class="scale-details">
+                                    <li><strong>Freezing Point:</strong> 0°Ré</li>
+                                    <li><strong>Boiling Point:</strong> 80°Ré</li>
+                                    <li><strong>Absolute Zero:</strong> -218.52°Ré</li>
+                                    <li><strong>Usage:</strong> Historical, some European applications</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Temperature Conversion Applications</h3>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <h4>Scientific Research</h4>
+                                <p>Convert between Kelvin and Celsius for laboratory work, physics experiments, and chemical reactions. Essential for maintaining accuracy in scientific calculations.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>International Cooking</h4>
+                                <p>Convert oven temperatures between Celsius and Fahrenheit when following international recipes. Ensure perfect results regardless of the recipe's origin.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Weather Analysis</h4>
+                                <p>Convert weather data between different temperature scales for international weather reports, climate studies, and meteorological research.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Engineering Applications</h4>
+                                <p>Convert temperatures for HVAC systems, industrial processes, and engineering calculations that require specific temperature scales.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Medical Applications</h4>
+                                <p>Convert body temperatures and medical equipment readings between different scales for international medical standards and research.</p>
+                            </div>
+                            <div class="use-case">
+                                <h4>Educational Purposes</h4>
+                                <p>Learn and teach temperature conversions for physics, chemistry, and general science education with accurate, instant results.</p>
+                            </div>
+                        </div>
+
+                        <h3>Advanced Temperature Conversion Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-thermometer-three-quarters"></i> All Temperature Scales</h4>
+                                <p>Convert between all major temperature scales including Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur with scientific precision and instant results.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-calculator"></i> Scientific Accuracy</h4>
+                                <p>Our temperature converter uses precise mathematical formulas based on international standards, ensuring accuracy for scientific research and professional applications.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-clock"></i> Quick Reference Points</h4>
+                                <p>Access common temperature reference points like freezing point, boiling point, body temperature, and room temperature with one-click conversion buttons.</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-globe"></i> Universal Compatibility</h4>
+                                <p>Perfect for international collaboration, scientific research, cooking, weather analysis, and any application requiring temperature conversions.</p>
+                            </div>
+                        </div>
+
+                        <h3>Temperature Conversion Guide</h3>
+                        <div class="conversion-guide">
+                            <div class="guide-section">
+                                <h4>Understanding Temperature Scales</h4>
+                                <p>Temperature scales are systems for measuring thermal energy. Each scale has its own zero point and unit size, making conversions necessary when working across different systems or regions.</p>
+                            </div>
+                            <div class="guide-section">
+                                <h4>When to Use Each Scale</h4>
+                                <ul class="guide-list">
+                                    <li><strong>Celsius:</strong> Daily weather, cooking, most scientific work</li>
+                                    <li><strong>Fahrenheit:</strong> US weather reports, medical temperatures</li>
+                                    <li><strong>Kelvin:</strong> Scientific calculations, physics, chemistry</li>
+                                    <li><strong>Rankine:</strong> Engineering thermodynamics, US scientific work</li>
+                                    <li><strong>Réaumur:</strong> Historical contexts, some European applications</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h4>Why are there different temperature scales?</h4>
+                                <p>Different temperature scales were developed for various purposes and regions. Celsius is based on water's properties, Fahrenheit was designed for human comfort ranges, and Kelvin starts at absolute zero for scientific calculations.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Which temperature scale is most accurate?</h4>
+                                <p>All temperature scales are equally accurate when properly calibrated. The choice depends on your application - Kelvin for science, Celsius for most international use, and Fahrenheit in the United States.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Can I convert negative temperatures?</h4>
+                                <p>Yes! Our converter handles all temperature ranges, including negative values. This is especially useful for scientific applications and extreme weather conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="info-box">
+                            <h4>Common Temperatures</h4>
+                            <div class="temp-reference">
+                                <div class="temp-item">
+                                    <span class="temp-name">Absolute Zero</span>
+                                    <span class="temp-values">-273.15°C / -459.67°F / 0K</span>
+                                </div>
+                                <div class="temp-item">
+                                    <span class="temp-name">Water Freezes</span>
+                                    <span class="temp-values">0°C / 32°F / 273.15K</span>
+                                </div>
+                                <div class="temp-item">
+                                    <span class="temp-name">Room Temperature</span>
+                                    <span class="temp-values">20°C / 68°F / 293.15K</span>
+                                </div>
+                                <div class="temp-item">
+                                    <span class="temp-name">Body Temperature</span>
+                                    <span class="temp-values">37°C / 98.6°F / 310.15K</span>
+                                </div>
+                                <div class="temp-item">
+                                    <span class="temp-name">Water Boils</span>
+                                    <span class="temp-values">100°C / 212°F / 373.15K</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Conversion Formulas</h4>
+                            <div class="formula-list">
+                                <div class="formula-item">
+                                    <strong>°C to °F:</strong> (°C × 9/5) + 32
+                                </div>
+                                <div class="formula-item">
+                                    <strong>°F to °C:</strong> (°F - 32) × 5/9
+                                </div>
+                                <div class="formula-item">
+                                    <strong>°C to K:</strong> °C + 273.15
+                                </div>
+                                <div class="formula-item">
+                                    <strong>K to °C:</strong> K - 273.15
+                                </div>
+                                <div class="formula-item">
+                                    <strong>°F to °R:</strong> °F + 459.67
+                                </div>
+                                <div class="formula-item">
+                                    <strong>°C to °Ré:</strong> °C × 4/5
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Temperature Tips</h4>
+                            <ul class="tips-list">
+                                <li>Always specify the temperature scale in scientific work</li>
+                                <li>Use Kelvin for absolute temperature calculations</li>
+                                <li>Check recipe temperature units before cooking</li>
+                                <li>Consider altitude effects on boiling points</li>
+                                <li>Verify critical temperature conversions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#footerGradient1)"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#footerGradient2)"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
+                <defs>
+                    <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools"></i>
+                        <span>Multi-Tool Hub</span>
+                    </div>
+                    <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Tools</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="../index.html#tools"><i class="fas fa-tools"></i> All Tools</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="../index.html#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#image-tools"><i class="fas fa-image"></i> Image Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#text-tools"><i class="fas fa-font"></i> Text Tools <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#calculators"><i class="fas fa-calculator"></i> Calculators <span class="tool-count">6</span></a></li>
+                        <li><a href="../index.html#converters"><i class="fas fa-exchange-alt"></i> Converters <span class="tool-count">4</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4><i class="fas fa-rocket"></i> Features</h4>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-check-circle"></i> No Registration Required</li>
+                        <li><i class="fas fa-check-circle"></i> Works Offline</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
+                    </ul>
+
+                    <div class="social-section">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" aria-label="Reddit" title="Reddit">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
+                        <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#terms">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#privacy">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="temperature-converter.js"></script>
+    <script>
+        // Navigation functionality
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

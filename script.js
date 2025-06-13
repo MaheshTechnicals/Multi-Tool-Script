@@ -315,7 +315,7 @@ function openTool(toolId) {
     const tool = toolsData.find(t => t.id === toolId);
     if (tool) {
         // Check if the tool page exists, otherwise show coming soon message
-        const implementedTools = ['word-counter', 'case-converter', 'password-generator', 'lorem-generator', 'binary-converter', 'find-replace', 'image-compressor', 'image-resizer', 'image-cropper', 'format-converter', 'image-to-base64', 'color-picker', 'age-calculator', 'bmi-calculator', 'percentage-calculator', 'loan-emi-calculator', 'tip-calculator', 'date-calculator'];
+        const implementedTools = ['word-counter', 'case-converter', 'password-generator', 'lorem-generator', 'binary-converter', 'find-replace', 'image-compressor', 'image-resizer', 'image-cropper', 'format-converter', 'image-to-base64', 'color-picker', 'age-calculator', 'bmi-calculator', 'percentage-calculator', 'loan-emi-calculator', 'tip-calculator', 'date-calculator', 'unit-converter', 'temperature-converter', 'time-converter', 'speed-calculator'];
         if (implementedTools.includes(toolId)) {
             window.location.href = tool.page;
         } else {
