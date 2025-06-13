@@ -257,6 +257,7 @@ function initializeNavigation() {
 function initializeHeroAnimations() {
     // Typing animation
     const typingText = document.querySelector('.typing-text');
+    const cursor = document.querySelector('.cursor');
     if (typingText) {
         const text = typingText.getAttribute('data-text');
         typingText.textContent = '';
@@ -267,6 +268,14 @@ function initializeHeroAnimations() {
                 typingText.textContent += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, 100);
+            } else {
+                // Hide cursor after typing is complete
+                if (cursor) {
+                    setTimeout(() => {
+                        cursor.style.opacity = '0';
+                        cursor.style.visibility = 'hidden';
+                    }, 1000); // Wait 1 second after typing completes
+                }
             }
         };
 
