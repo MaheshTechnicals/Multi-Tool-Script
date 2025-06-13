@@ -40,16 +40,56 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-shapes">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+                <div class="floating-shape shape-5"></div>
+            </div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="container">
-                <h1 class="hero-title">Your Ultimate Digital Toolkit</h1>
-                <p class="hero-subtitle">Powerful utilities for images, text, calculations, and conversions - all in one place</p>
-                <a href="#tools" class="cta-button">
-                    <i class="fas fa-rocket"></i>
-                    Explore Tools
-                </a>
+                <h1 class="hero-title">
+                    <span class="typing-text" data-text="Your Ultimate Digital Toolkit"></span>
+                    <span class="cursor">|</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-up">Powerful utilities for images, text, calculations, and conversions - all in one place</p>
+                <div class="hero-stats animate-fade-up">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="20">0</span>
+                        <span class="stat-label">Tools</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Free</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1000">0</span>
+                        <span class="stat-label">+ Users</span>
+                    </div>
+                </div>
+                <div class="hero-actions animate-fade-up">
+                    <a href="#tools" class="cta-button primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Explore Tools</span>
+                        <div class="ripple"></div>
+                    </a>
+                    <a href="#about" class="cta-button secondary">
+                        <i class="fas fa-play"></i>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span class="scroll-text">Scroll to explore</span>
         </div>
     </section>
 
@@ -57,16 +97,49 @@
     <section class="search-section">
         <div class="container">
             <div class="search-container">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+                <div class="search-header">
+                    <h2 class="search-title">Find Your Perfect Tool</h2>
+                    <p class="search-subtitle">Search through our collection of powerful utilities</p>
                 </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All Tools</button>
-                    <button class="filter-btn" data-filter="image">Image</button>
-                    <button class="filter-btn" data-filter="text">Text</button>
-                    <button class="filter-btn" data-filter="calculator">Calculators</button>
-                    <button class="filter-btn" data-filter="converter">Converters</button>
+                <div class="search-box-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                        <button class="search-clear" id="searchClear" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-label">Filter by category:</div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>All Tools</span>
+                            <span class="filter-count">20</span>
+                        </button>
+                        <button class="filter-btn" data-filter="image">
+                            <i class="fas fa-image"></i>
+                            <span>Image</span>
+                            <span class="filter-count">6</span>
+                        </button>
+                        <button class="filter-btn" data-filter="text">
+                            <i class="fas fa-font"></i>
+                            <span>Text</span>
+                            <span class="filter-count">6</span>
+                        </button>
+                        <button class="filter-btn" data-filter="calculator">
+                            <i class="fas fa-calculator"></i>
+                            <span>Calculators</span>
+                            <span class="filter-count">6</span>
+                        </button>
+                        <button class="filter-btn" data-filter="converter">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Converters</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,9 +148,70 @@
     <!-- Tools Section -->
     <section class="tools-section" id="tools">
         <div class="container">
-            <h2 class="section-title">Available Tools</h2>
+            <div class="section-header">
+                <h2 class="section-title">Available Tools</h2>
+                <p class="section-subtitle">Discover our comprehensive collection of digital utilities</p>
+            </div>
+            <div class="tools-loading" id="toolsLoading" style="display: none;">
+                <div class="loading-skeleton">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
             <div class="tools-grid" id="toolsGrid">
                 <!-- Tools will be dynamically loaded here -->
+            </div>
+            <div class="tools-empty" id="toolsEmpty" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>No tools found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                    <button class="btn-reset" onclick="resetFilters()">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Multi-Tool Hub?</h2>
+                <p class="section-subtitle">Experience the power of professional-grade tools in your browser</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">All tools run locally in your browser for instant results without server delays</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">Your data never leaves your device. Complete privacy and security guaranteed</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mobile Ready</h3>
+                    <p class="feature-description">Fully responsive design that works perfectly on all devices and screen sizes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">Completely Free</h3>
+                    <p class="feature-description">No subscriptions, no hidden fees, no ads. Just powerful tools, forever free</p>
+                </div>
             </div>
         </div>
     </section>

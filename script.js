@@ -195,10 +195,13 @@ const toolsGrid = document.getElementById('toolsGrid');
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
+    initializeHeroAnimations();
     renderTools(toolsData);
     initializeSearch();
     initializeFilters();
     initializeSmoothScrolling();
+    initializeScrollAnimations();
+    initializeRippleEffect();
 });
 
 // Navigation functionality
@@ -220,6 +223,63 @@ function initializeNavigation() {
             navMenu.classList.remove('active');
         }
     });
+}
+
+// Hero animations
+function initializeHeroAnimations() {
+    // Typing animation
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+        const text = typingText.getAttribute('data-text');
+        typingText.textContent = '';
+
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                typingText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+
+        setTimeout(typeWriter, 500);
+    }
+
+    // Animated counters
+    const counters = document.querySelectorAll('.stat-number[data-count]');
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            updateCounter();
+        });
+    };
+
+    // Start counter animation after hero loads
+    setTimeout(animateCounters, 2000);
+
+    // Scroll indicator click
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function() {
+            document.querySelector('#tools').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
 }
 
 // Render tools grid
@@ -261,14 +321,52 @@ function createToolCard(tool) {
 
 // Search functionality
 function initializeSearch() {
+    const searchClear = document.getElementById('searchClear');
+
     toolSearch.addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase();
-        const filteredTools = toolsData.filter(tool => 
+
+        // Show/hide clear button
+        if (searchTerm.length > 0) {
+            searchClear.style.display = 'block';
+        } else {
+            searchClear.style.display = 'none';
+        }
+
+        // Filter tools
+        const filteredTools = toolsData.filter(tool =>
             tool.name.toLowerCase().includes(searchTerm) ||
             tool.description.toLowerCase().includes(searchTerm) ||
             tool.category.toLowerCase().includes(searchTerm)
         );
-        renderTools(filteredTools);
+
+        // Show loading state briefly for better UX
+        showLoadingState();
+        setTimeout(() => {
+            renderTools(filteredTools);
+            hideLoadingState();
+
+            // Show empty state if no results
+            if (filteredTools.length === 0 && searchTerm.length > 0) {
+                showEmptyState();
+            } else {
+                hideEmptyState();
+            }
+        }, 300);
+    });
+
+    // Clear search
+    searchClear.addEventListener('click', function() {
+        toolSearch.value = '';
+        searchClear.style.display = 'none';
+        renderTools(toolsData);
+        hideEmptyState();
+        toolSearch.focus();
+    });
+
+    // Search suggestions (basic implementation)
+    toolSearch.addEventListener('focus', function() {
+        // Could implement search suggestions here
     });
 }
 
@@ -356,6 +454,98 @@ function showComingSoonModal(toolName) {
         if (e.target === modal) {
             modal.remove();
         }
+    });
+}
+
+// Utility functions
+function showLoadingState() {
+    const loadingElement = document.getElementById('toolsLoading');
+    const gridElement = document.getElementById('toolsGrid');
+    if (loadingElement && gridElement) {
+        loadingElement.style.display = 'block';
+        gridElement.style.display = 'none';
+    }
+}
+
+function hideLoadingState() {
+    const loadingElement = document.getElementById('toolsLoading');
+    const gridElement = document.getElementById('toolsGrid');
+    if (loadingElement && gridElement) {
+        loadingElement.style.display = 'none';
+        gridElement.style.display = 'grid';
+    }
+}
+
+function showEmptyState() {
+    const emptyElement = document.getElementById('toolsEmpty');
+    if (emptyElement) {
+        emptyElement.style.display = 'block';
+    }
+}
+
+function hideEmptyState() {
+    const emptyElement = document.getElementById('toolsEmpty');
+    if (emptyElement) {
+        emptyElement.style.display = 'none';
+    }
+}
+
+function resetFilters() {
+    // Reset search
+    toolSearch.value = '';
+    document.getElementById('searchClear').style.display = 'none';
+
+    // Reset filter buttons
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector('[data-filter="all"]').classList.add('active');
+
+    // Show all tools
+    renderTools(toolsData);
+    hideEmptyState();
+}
+
+// Ripple effect for buttons
+function initializeRippleEffect() {
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.cta-button.primary')) {
+            const button = e.target.closest('.cta-button.primary');
+            const ripple = button.querySelector('.ripple');
+
+            if (ripple) {
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+
+                ripple.classList.add('animate');
+                setTimeout(() => ripple.classList.remove('animate'), 600);
+            }
+        }
+    });
+}
+
+// Scroll animations
+function initializeScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for scroll animations
+    document.querySelectorAll('.feature-card, .tool-card').forEach(el => {
+        observer.observe(el);
     });
 }
 
