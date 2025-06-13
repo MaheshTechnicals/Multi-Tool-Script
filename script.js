@@ -202,18 +202,29 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSmoothScrolling();
     initializeScrollAnimations();
     initializeRippleEffect();
+    initializeMobileOptimizations();
 });
 
-// Navigation functionality
+// Enhanced Navigation functionality
 function initializeNavigation() {
-    navToggle.addEventListener('click', function() {
+    navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         navMenu.classList.toggle('active');
+
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     });
 
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
@@ -221,6 +232,23 @@ function initializeNavigation() {
     document.addEventListener('click', function(e) {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 }
@@ -549,7 +577,79 @@ function initializeScrollAnimations() {
     });
 }
 
-// Header scroll effect
+// Mobile optimizations
+function initializeMobileOptimizations() {
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Add mobile class to body
+        document.body.classList.add('mobile-device');
+
+        // Optimize touch interactions
+        document.addEventListener('touchstart', function() {}, { passive: true });
+
+        // Prevent zoom on input focus (iOS)
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                const viewport = document.querySelector('meta[name="viewport"]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                }
+            });
+
+            input.addEventListener('blur', function() {
+                const viewport = document.querySelector('meta[name="viewport"]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                }
+            });
+        });
+
+        // Add touch feedback to buttons
+        const buttons = document.querySelectorAll('button, .tool-card, .feature-card, .filter-btn');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, { passive: true });
+
+            button.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            }, { passive: true });
+        });
+    }
+
+    // Handle orientation change
+    window.addEventListener('orientationchange', function() {
+        setTimeout(() => {
+            window.scrollTo(0, window.scrollY);
+        }, 500);
+    });
+
+    // Optimize scroll performance
+    let ticking = false;
+    function updateHeader() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(18, 18, 18, 0.98)';
+        } else {
+            header.style.background = 'rgba(18, 18, 18, 0.95)';
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+// Enhanced header scroll effect with performance optimization
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
@@ -557,4 +657,4 @@ window.addEventListener('scroll', function() {
     } else {
         header.style.background = 'rgba(18, 18, 18, 0.95)';
     }
-});
+}, { passive: true });
