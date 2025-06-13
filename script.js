@@ -299,14 +299,59 @@ function initializeHeroAnimations() {
     // Start counter animation after hero loads
     setTimeout(animateCounters, 2000);
 
-    // Scroll indicator click
+    // Enhanced scroll indicator interaction
     const scrollIndicator = document.querySelector('.scroll-indicator');
+    const scrollArrow = document.querySelector('.scroll-arrow');
+
     if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
-            document.querySelector('#tools').scrollIntoView({
-                behavior: 'smooth'
-            });
+        // Click handler for the entire scroll indicator
+        scrollIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            const toolsSection = document.querySelector('#tools');
+            if (toolsSection) {
+                toolsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
+
+        // Touch-friendly interaction for mobile
+        scrollIndicator.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            if (scrollArrow) {
+                scrollArrow.style.transform = 'scale(0.9)';
+            }
+        }, { passive: false });
+
+        scrollIndicator.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            if (scrollArrow) {
+                scrollArrow.style.transform = '';
+            }
+            const toolsSection = document.querySelector('#tools');
+            if (toolsSection) {
+                toolsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, { passive: false });
+
+        // Hide scroll indicator when user starts scrolling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    scrollIndicator.style.opacity = '';
+                    scrollIndicator.style.pointerEvents = '';
+                }, 1000);
+            }
+        }, { passive: true });
     }
 }
 
