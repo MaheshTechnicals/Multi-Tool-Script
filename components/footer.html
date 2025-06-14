@@ -7,17 +7,17 @@
             <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
             <defs>
                 <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                    <stop offset="0%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
                 </linearGradient>
                 <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    <stop offset="0%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
                 </linearGradient>
                 <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                    <stop offset="0%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
                 </linearGradient>
             </defs>
         </svg>
@@ -27,22 +27,22 @@
         <div class="footer-content">
             <div class="footer-section footer-brand-section">
                 <div class="footer-brand">
-                    <i class="fas fa-tools"></i>
-                    <span>Multi-Tool Hub</span>
+                    <i class="{{branding.logo.icon}}"></i>
+                    <span>{{site.title}}</span>
                 </div>
-                <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                <p class="footer-description">{{site.description}}</p>
                 <div class="footer-stats">
                     <div class="stat-item">
-                        <span class="stat-number">20+</span>
+                        <span class="stat-number" id="footer-tool-count">{{stats.totalTools}}</span>
                         <span class="stat-label">Tools</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">100%</span>
+                        <span class="stat-number" id="footer-satisfaction">{{stats.satisfaction}}</span>
                         <span class="stat-label">Free</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Ads</span>
+                        <span class="stat-number" id="footer-user-count">{{stats.users}}</span>
+                        <span class="stat-label">Users</span>
                     </div>
                 </div>
             </div>
@@ -73,22 +73,8 @@
 
                 <div class="social-section">
                     <h5>Connect With Us</h5>
-                    <div class="social-links">
-                        <a href="#" aria-label="GitHub" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" aria-label="Twitter" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" aria-label="Discord" title="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="#" aria-label="Reddit" title="Reddit">
-                            <i class="fab fa-reddit"></i>
-                        </a>
+                    <div class="social-links" id="footer-social-links">
+                        <!-- Social links will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -97,8 +83,8 @@
         <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <div class="copyright">
-                    <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
-                    <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                    <p>&copy; {{site.launchYear}} {{site.title}}. All rights reserved.</p>
+                    <p class="made-with">Made with <i class="fas fa-heart"></i> for productivity enthusiasts</p>
                 </div>
                 <div class="footer-bottom-links" id="footer-bottom-links">
                     <!-- Bottom links will be dynamically populated -->

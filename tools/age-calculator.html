@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="tool-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Manager for centralized site information -->
+    <script src="../js/siteManager.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -45,7 +47,7 @@
             <div class="nav-brand">
                 <a href="../index.html" class="logo">
                     <i class="fas fa-tools"></i>
-                    <span>Multi-Tool Hub</span>
+                    <span id="site-title">Multi-Tool Hub</span>
                 </a>
             </div>
             <nav class="nav-menu" id="navMenu">
@@ -392,10 +394,45 @@
     <script src="../components/footer.js"></script>
     <script src="age-calculator.js"></script>
     <script>
-        // Initialize footer for tool page
-        FooterComponent.init({
-            isHomePage: false
+        // Initialize page with site manager
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Wait for site manager to load
+                await window.siteManager.init();
+                
+                // Update page content with site data
+                updatePageContent();
+                
+                // Initialize footer component
+                await FooterComponent.init({
+                    isHomePage: false
+                });
+            } catch (error) {
+                console.error('Failed to initialize page:', error);
+            }
         });
+
+        function updatePageContent() {
+            // Update page title
+            const siteTitle = window.siteManager.get('site.title', 'Multi-Tool Hub');
+            document.title = document.title.replace('Multi-Tool Hub', siteTitle);
+            
+            // Update logo
+            const logoText = document.querySelector('.logo span');
+            if (logoText) logoText.textContent = siteTitle;
+            
+            const logoIcon = document.querySelector('.logo i');
+            if (logoIcon) {
+                const iconClass = window.siteManager.get('branding.logo.icon', 'fas fa-tools');
+                logoIcon.className = iconClass;
+            }
+            
+            // Update breadcrumb home link
+            const breadcrumbHome = document.querySelector('.breadcrumb a');
+            if (breadcrumbHome && breadcrumbHome.textContent.includes('Home')) {
+                breadcrumbHome.innerHTML = '<i class="fas fa-home"></i> ' + siteTitle;
+            }
+        }
     </script>
 </body>
 </html>

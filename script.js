@@ -193,7 +193,10 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const toolsGrid = document.getElementById('toolsGrid');
 
 // Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Initialize site manager and update page content
+    await initializeSiteContent();
+    
     // Only initialize homepage-specific features if elements exist
     if (toolsGrid) {
         renderTools(toolsData);
@@ -218,6 +221,165 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeRippleEffect();
     initializeMobileOptimizations();
 });
+
+/**
+ * Initialize site content using centralized site information
+ */
+async function initializeSiteContent() {
+    try {
+        // Wait for site manager to load
+        await window.siteManager.init();
+        
+        // Update page title and meta information
+        updatePageMeta();
+        
+        // Update navigation with site data
+        updateNavigationContent();
+        
+        // Update hero section with site data
+        updateHeroSection();
+        
+    } catch (error) {
+        console.error('Failed to initialize site content:', error);
+    }
+}
+
+/**
+ * Update page meta information
+ */
+function updatePageMeta() {
+    const siteTitle = window.siteManager.get('site.title', 'Multi-Tool Hub');
+    const siteDescription = window.siteManager.get('site.description', '');
+    
+    // Update page title
+    document.title = `${siteTitle} - ${window.siteManager.get('site.tagline', 'Your Ultimate Digital Toolkit')}`;
+    
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = 'description';
+        document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = siteDescription;
+}
+
+/**
+ * Update navigation with site data
+ */
+function updateNavigationContent() {
+    // Update logo text
+    const logoText = document.querySelector('.logo span');
+    if (logoText) {
+        logoText.textContent = window.siteManager.get('site.title', 'Multi-Tool Hub');
+    }
+    
+    // Update logo icon
+    const logoIcon = document.querySelector('.logo i');
+    if (logoIcon) {
+        const iconClass = window.siteManager.get('branding.logo.icon', 'fas fa-tools');
+        logoIcon.className = iconClass;
+    }
+}
+
+/**
+ * Update hero section with site data
+ */
+function updateHeroSection() {
+    // Update hero title
+    const heroTitle = document.querySelector('.typing-text');
+    if (heroTitle) {
+        const tagline = window.siteManager.get('site.tagline', 'Your Ultimate Digital Toolkit');
+        heroTitle.setAttribute('data-text', tagline);
+        heroTitle.textContent = tagline;
+    }
+    
+    // Update hero subtitle
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        heroSubtitle.textContent = window.siteManager.get('site.description', '');
+    }
+    
+    // Update stats
+    updateHeroStats();
+    
+    // Update features section
+    updateFeaturesSection();
+}
+
+/**
+ * Update hero statistics
+ */
+function updateHeroStats() {
+    const stats = [
+        { selector: '[data-count="20"]', path: 'stats.totalTools', suffix: '' },
+        { selector: '[data-count="100"]', path: 'stats.satisfaction', suffix: '' },
+        { selector: '[data-count="1000"]', path: 'stats.users', suffix: '' }
+    ];
+    
+    stats.forEach(stat => {
+        const element = document.querySelector(stat.selector);
+        if (element) {
+            const value = window.siteManager.get(stat.path, element.getAttribute('data-count'));
+            // Extract numeric value for counter animation
+            const numericValue = parseInt(value.toString().replace(/\D/g, '')) || parseInt(element.getAttribute('data-count'));
+            element.setAttribute('data-count', numericValue);
+        }
+    });
+}
+
+/**
+ * Update features section with site data
+ */
+function updateFeaturesSection() {
+    // Update section title
+    const featuresTitle = document.getElementById('features-title');
+    if (featuresTitle) {
+        const siteTitle = window.siteManager.get('site.title', 'Multi-Tool Hub');
+        featuresTitle.textContent = `Why Choose ${siteTitle}?`;
+    }
+    
+    // Update section subtitle
+    const featuresSubtitle = document.getElementById('features-subtitle');
+    if (featuresSubtitle) {
+        featuresSubtitle.textContent = 'Experience the power of professional-grade tools in your browser';
+    }
+    
+    // Load and render features
+    renderFeatures();
+}
+
+/**
+ * Render features from site data
+ */
+function renderFeatures() {
+    const featuresGrid = document.getElementById('featuresGrid');
+    if (!featuresGrid) return;
+    
+    const features = window.siteManager.get('features', []);
+    
+    if (features.length === 0) {
+        featuresGrid.innerHTML = `
+            <div class="no-features">
+                <p>No features available</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Generate feature cards HTML
+    const featuresHTML = features.map(feature => `
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="${feature.icon}"></i>
+            </div>
+            <h3 class="feature-title">${feature.title}</h3>
+            <p class="feature-description">${feature.description}</p>
+        </div>
+    `).join('');
+    
+    featuresGrid.innerHTML = featuresHTML;
+}
 
 // Enhanced Navigation functionality
 function initializeNavigation() {

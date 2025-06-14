@@ -2,19 +2,16 @@
  * Footer Component
  * Reusable footer component that can be dynamically loaded and configured
  * for different pages (home page vs tool pages)
+ * Now integrated with SiteManager for centralized site information
  */
 class FooterComponent {
     constructor() {
         this.config = {
             isHomePage: false,
             basePath: '',
-            toolCounts: {
-                image: 6,
-                text: 6,
-                calculators: 6,
-                converters: 4
-            }
+            toolCounts: null // Will be loaded from siteManager
         };
+        this.siteManager = window.siteManager;
     }
 
     /**
@@ -46,21 +43,43 @@ class FooterComponent {
         }
 
         try {
+            // Ensure site manager is loaded
+            await this.ensureSiteManagerLoaded();
+            
             // Load footer HTML template
             const footerHtml = await this.loadFooterTemplate();
             
             // Insert footer into container
             const container = document.getElementById('footer-container');
             if (container) {
-                container.innerHTML = footerHtml;
+                // Replace placeholders with site data
+                const processedHtml = this.siteManager.replacePlaceholders(footerHtml);
+                container.innerHTML = processedHtml;
                 
-                // Configure links after insertion
+                // Configure dynamic content after insertion
                 this.configureLinks();
+                this.configureSocialLinks();
+                this.updateStats();
             } else {
                 console.error('Footer container not found. Make sure to include <div id="footer-container"></div> in your HTML.');
             }
         } catch (error) {
             console.error('Failed to load footer component:', error);
+        }
+    }
+
+    /**
+     * Ensure site manager is loaded before proceeding
+     */
+    async ensureSiteManagerLoaded() {
+        if (!this.siteManager) {
+            console.error('SiteManager not found. Make sure to include siteManager.js before footer.js');
+            return;
+        }
+
+        // Wait for site manager to load if not already loaded
+        if (!this.siteManager.isLoaded) {
+            await this.siteManager.init();
         }
     }
 
@@ -85,7 +104,7 @@ class FooterComponent {
     }
 
     /**
-     * Configure footer links based on page type
+     * Configure footer links based on page type and site data
      */
     configureLinks() {
         this.configureQuickLinks();
@@ -94,45 +113,52 @@ class FooterComponent {
     }
 
     /**
-     * Configure quick navigation links
+     * Configure quick navigation links using site data
      */
     configureQuickLinks() {
         const quickLinksContainer = document.getElementById('footer-quick-links');
         if (!quickLinksContainer) return;
 
-        const links = this.config.isHomePage ? [
-            { href: '#home', icon: 'fas fa-home', text: 'Home' },
-            { href: '#tools', icon: 'fas fa-tools', text: 'All Tools' },
-            { href: '#about', icon: 'fas fa-info-circle', text: 'About Us' },
-            { href: '#contact', icon: 'fas fa-envelope', text: 'Contact' },
-            { href: '#privacy', icon: 'fas fa-shield-alt', text: 'Privacy Policy' }
-        ] : [
-            { href: this.config.basePath + 'index.html', icon: 'fas fa-home', text: 'Home' },
-            { href: this.config.basePath + 'index.html#tools', icon: 'fas fa-tools', text: 'All Tools' },
-            { href: this.config.basePath + 'index.html#about', icon: 'fas fa-info-circle', text: 'About Us' },
-            { href: this.config.basePath + 'index.html#contact', icon: 'fas fa-envelope', text: 'Contact' },
-            { href: this.config.basePath + 'index.html#privacy', icon: 'fas fa-shield-alt', text: 'Privacy Policy' }
-        ];
+        const quickLinks = this.siteManager.get('navigation.footer.quickLinks', []);
+        
+        const processedLinks = quickLinks.map(link => {
+            let href = link.href;
+            
+            // Adjust links for tool pages
+            if (!this.config.isHomePage && !href.startsWith('http') && !href.startsWith('mailto:')) {
+                if (href.startsWith('#')) {
+                    href = this.config.basePath + 'index.html' + href;
+                } else if (!href.includes('index.html')) {
+                    href = this.config.basePath + href;
+                }
+            }
+            
+            return {
+                ...link,
+                href: href
+            };
+        });
 
-        quickLinksContainer.innerHTML = links.map(link => 
-            `<li><a href="${link.href}"><i class="${link.icon}"></i> ${link.text}</a></li>`
+        quickLinksContainer.innerHTML = processedLinks.map(link => 
+            `<li><a href="${link.href}">${link.label}</a></li>`
         ).join('');
     }
 
     /**
-     * Configure tool category links
+     * Configure tool category links using site data
      */
     configureToolCategories() {
         const categoriesContainer = document.getElementById('footer-tool-categories');
         if (!categoriesContainer) return;
 
         const baseHref = this.config.isHomePage ? '#' : this.config.basePath + 'index.html#';
+        const toolCounts = this.siteManager.get('stats.categories', {});
         
         const categories = [
-            { href: baseHref + 'image-tools', icon: 'fas fa-image', text: 'Image Tools', count: this.config.toolCounts.image },
-            { href: baseHref + 'text-tools', icon: 'fas fa-font', text: 'Text Tools', count: this.config.toolCounts.text },
-            { href: baseHref + 'calculators', icon: 'fas fa-calculator', text: 'Calculators', count: this.config.toolCounts.calculators },
-            { href: baseHref + 'converters', icon: 'fas fa-exchange-alt', text: 'Converters', count: this.config.toolCounts.converters }
+            { href: baseHref + 'image-tools', icon: 'fas fa-image', text: 'Image Tools', count: toolCounts.image || 0 },
+            { href: baseHref + 'text-tools', icon: 'fas fa-font', text: 'Text Tools', count: toolCounts.text || 0 },
+            { href: baseHref + 'calculators', icon: 'fas fa-calculator', text: 'Calculators', count: toolCounts.calculators || 0 },
+            { href: baseHref + 'converters', icon: 'fas fa-exchange-alt', text: 'Converters', count: toolCounts.converters || 0 }
         ];
 
         categoriesContainer.innerHTML = categories.map(category => 
@@ -141,29 +167,78 @@ class FooterComponent {
     }
 
     /**
-     * Configure bottom footer links
+     * Configure bottom footer links using site data
      */
     configureBottomLinks() {
         const bottomLinksContainer = document.getElementById('footer-bottom-links');
         if (!bottomLinksContainer) return;
 
-        const links = this.config.isHomePage ? [
-            { href: '#terms', text: 'Terms of Service' },
-            { href: '#privacy', text: 'Privacy Policy' },
-            { href: '#cookies', text: 'Cookie Policy' }
-        ] : [
-            { href: this.config.basePath + 'index.html#terms', text: 'Terms of Service' },
-            { href: this.config.basePath + 'index.html#privacy', text: 'Privacy Policy' },
-            { href: this.config.basePath + 'index.html#cookies', text: 'Cookie Policy' }
-        ];
+        const legalLinks = this.siteManager.get('navigation.footer.legal', []);
+        
+        const processedLinks = legalLinks.map(link => {
+            let href = link.href;
+            
+            // Adjust links for tool pages
+            if (!this.config.isHomePage && !href.startsWith('http')) {
+                if (href.startsWith('/')) {
+                    href = this.config.basePath + href.substring(1);
+                } else {
+                    href = this.config.basePath + href;
+                }
+            }
+            
+            return {
+                ...link,
+                href: href
+            };
+        });
 
-        bottomLinksContainer.innerHTML = links.map((link, index) => 
-            `${index > 0 ? '<span class="separator">•</span>' : ''}<a href="${link.href}">${link.text}</a>`
+        bottomLinksContainer.innerHTML = processedLinks.map((link, index) => 
+            `${index > 0 ? '<span class="separator">•</span>' : ''}<a href="${link.href}">${link.label}</a>`
         ).join('');
     }
 
     /**
-     * Fallback inline footer template
+     * Configure social media links using site data
+     */
+    configureSocialLinks() {
+        const socialContainer = document.getElementById('footer-social-links');
+        if (!socialContainer) return;
+
+        const socialPlatforms = ['twitter', 'github', 'linkedin', 'facebook', 'instagram', 'youtube'];
+        const socialHtml = this.siteManager.generateSocialLinks(socialPlatforms);
+        
+        socialContainer.innerHTML = socialHtml;
+    }
+
+    /**
+     * Update footer statistics using site data
+     */
+    updateStats() {
+        // Update tool count
+        const toolCountElement = document.getElementById('footer-tool-count');
+        if (toolCountElement) {
+            const totalTools = this.siteManager.get('stats.totalTools', 20);
+            toolCountElement.textContent = totalTools;
+        }
+
+        // Update user count
+        const userCountElement = document.getElementById('footer-user-count');
+        if (userCountElement) {
+            const userCount = this.siteManager.get('stats.users', '1000+');
+            userCountElement.textContent = userCount;
+        }
+
+        // Update satisfaction rate
+        const satisfactionElement = document.getElementById('footer-satisfaction');
+        if (satisfactionElement) {
+            const satisfaction = this.siteManager.get('stats.satisfaction', '100%');
+            satisfactionElement.textContent = satisfaction;
+        }
+    }
+
+    /**
+     * Fallback inline footer template with placeholders
      * Used when the external template file cannot be loaded
      */
     getInlineFooterTemplate() {
@@ -177,17 +252,17 @@ class FooterComponent {
                     <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#footerGradient3)"></path>
                     <defs>
                         <linearGradient id="footerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="footerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="footerGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#00d4aa;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:{{branding.colors.secondary}};stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:{{branding.colors.primary}};stop-opacity:1" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -197,22 +272,22 @@ class FooterComponent {
                 <div class="footer-content">
                     <div class="footer-section footer-brand-section">
                         <div class="footer-brand">
-                            <i class="fas fa-tools"></i>
-                            <span>Multi-Tool Hub</span>
+                            <i class="{{branding.logo.icon}}"></i>
+                            <span>{{site.title}}</span>
                         </div>
-                        <p class="footer-description">Your ultimate collection of digital utilities and tools. Simplify your workflow with our comprehensive suite of web-based tools - all free, fast, and secure.</p>
+                        <p class="footer-description">{{site.description}}</p>
                         <div class="footer-stats">
                             <div class="stat-item">
-                                <span class="stat-number">20+</span>
+                                <span class="stat-number" id="footer-tool-count">{{stats.totalTools}}</span>
                                 <span class="stat-label">Tools</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">100%</span>
+                                <span class="stat-number" id="footer-satisfaction">{{stats.satisfaction}}</span>
                                 <span class="stat-label">Free</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">0</span>
-                                <span class="stat-label">Ads</span>
+                                <span class="stat-number" id="footer-user-count">{{stats.users}}</span>
+                                <span class="stat-label">Users</span>
                             </div>
                         </div>
                     </div>
@@ -220,46 +295,30 @@ class FooterComponent {
                     <div class="footer-section">
                         <h4><i class="fas fa-link"></i> Quick Links</h4>
                         <ul class="footer-links" id="footer-quick-links">
-                            <!-- Links will be dynamically populated -->
+                            <!-- Links will be populated by JavaScript -->
                         </ul>
                     </div>
 
                     <div class="footer-section">
-                        <h4><i class="fas fa-layer-group"></i> Tool Categories</h4>
+                        <h4><i class="fas fa-tools"></i> Tool Categories</h4>
                         <ul class="footer-links" id="footer-tool-categories">
-                            <!-- Tool categories will be dynamically populated -->
+                            <!-- Categories will be populated by JavaScript -->
                         </ul>
                     </div>
 
                     <div class="footer-section">
-                        <h4><i class="fas fa-rocket"></i> Features</h4>
-                        <ul class="footer-features">
-                            <li><i class="fas fa-check-circle"></i> No Registration Required</li>
-                            <li><i class="fas fa-check-circle"></i> Works Offline</li>
-                            <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
-                            <li><i class="fas fa-check-circle"></i> Privacy Focused</li>
-                            <li><i class="fas fa-check-circle"></i> Fast & Secure</li>
-                        </ul>
-
+                        <h4><i class="fas fa-heart"></i> Connect With Us</h4>
                         <div class="social-section">
-                            <h5>Connect With Us</h5>
-                            <div class="social-links">
-                                <a href="#" aria-label="GitHub" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" aria-label="Twitter" title="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="#" aria-label="Discord" title="Discord">
-                                    <i class="fab fa-discord"></i>
-                                </a>
-                                <a href="#" aria-label="Reddit" title="Reddit">
-                                    <i class="fab fa-reddit"></i>
-                                </a>
+                            <h5>Follow us on social media</h5>
+                            <div class="social-links" id="footer-social-links">
+                                <!-- Social links will be populated by JavaScript -->
                             </div>
+                        </div>
+                        <div class="footer-features">
+                            <li><i class="fas fa-bolt"></i> Lightning Fast</li>
+                            <li><i class="fas fa-shield-alt"></i> 100% Private</li>
+                            <li><i class="fas fa-gift"></i> Always Free</li>
+                            <li><i class="fas fa-mobile-alt"></i> Mobile Friendly</li>
                         </div>
                     </div>
                 </div>
@@ -267,24 +326,32 @@ class FooterComponent {
                 <div class="footer-bottom">
                     <div class="footer-bottom-content">
                         <div class="copyright">
-                            <p>&copy; 2024 Multi-Tool Hub. All rights reserved.</p>
-                            <p class="made-with">Made with <i class="fas fa-heart"></i> for developers and creators</p>
+                            <p>&copy; {{site.launchYear}} {{site.title}}. All rights reserved.</p>
+                            <p class="made-with">Made with <i class="fas fa-heart"></i> for productivity enthusiasts</p>
                         </div>
                         <div class="footer-bottom-links" id="footer-bottom-links">
-                            <!-- Bottom links will be dynamically populated -->
+                            <!-- Legal links will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>`;
+        </footer>
+        `;
     }
 
     /**
      * Update tool counts dynamically
-     * @param {Object} counts - New tool counts
+     * @param {Object} counts - Object with category counts
      */
     updateToolCounts(counts) {
-        this.config.toolCounts = { ...this.config.toolCounts, ...counts };
+        // Update site manager data
+        this.siteManager.updateSiteInfo({
+            stats: {
+                categories: counts
+            }
+        });
+        
+        // Reconfigure tool categories
         this.configureToolCategories();
     }
 }

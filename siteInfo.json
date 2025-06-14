@@ -1,0 +1,156 @@
+{
+  "site": {
+    "title": "MTOOLS",
+    "tagline": "Your Ultimate Digital Toolkit",
+    "description": "Powerful utilities for images, text, calculations, and conversions - all in one place",
+    "domain": "multi-tool-hub.com",
+    "url": "https://multi-tool-hub.com",
+    "email": "contact@multi-tool-hub.com",
+    "supportEmail": "support@multi-tool-hub.com",
+    "version": "1.0.0",
+    "launchYear": "2024"
+  },
+  "branding": {
+    "logo": {
+      "icon": "fas fa-tools",
+      "text": "MTOOLS"
+    },
+    "colors": {
+      "primary": "#4a9eff",
+      "secondary": "#00d4aa",
+      "gradient": "linear-gradient(135deg, #4a9eff 0%, #00d4aa 100%)"
+    }
+  },
+  "social": {
+    "twitter": {
+      "url": "https://twitter.com/multitoolhub",
+      "handle": "@multitoolhub",
+      "icon": "fab fa-twitter"
+    },
+    "github": {
+      "url": "https://github.com/multitoolhub",
+      "username": "multitoolhub",
+      "icon": "fab fa-github"
+    },
+    "linkedin": {
+      "url": "https://linkedin.com/company/multitoolhub",
+      "username": "multitoolhub",
+      "icon": "fab fa-linkedin"
+    },
+    "facebook": {
+      "url": "https://facebook.com/multitoolhub",
+      "username": "multitoolhub",
+      "icon": "fab fa-facebook"
+    },
+    "instagram": {
+      "url": "https://instagram.com/multitoolhub",
+      "username": "multitoolhub",
+      "icon": "fab fa-instagram"
+    },
+    "youtube": {
+      "url": "https://youtube.com/@multitoolhub",
+      "username": "@multitoolhub",
+      "icon": "fab fa-youtube"
+    }
+  },
+  "contact": {
+    "email": "contact@multi-tool-hub.com",
+    "support": "support@multi-tool-hub.com",
+    "business": "business@multi-tool-hub.com",
+    "phone": "+1 (555) 123-4567",
+    "address": {
+      "street": "123 Tech Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105",
+      "country": "USA"
+    }
+  },
+  "legal": {
+    "privacyPolicy": "/privacy-policy.html",
+    "termsOfService": "/terms-of-service.html",
+    "cookiePolicy": "/cookie-policy.html",
+    "disclaimer": "/disclaimer.html"
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home", "href": "#home", "icon": "fas fa-home" },
+      { "label": "Tools", "href": "#tools", "icon": "fas fa-tools" },
+      { "label": "Image", "href": "#image-tools", "icon": "fas fa-image" },
+      { "label": "Text", "href": "#text-tools", "icon": "fas fa-font" },
+      { "label": "Calculators", "href": "#calculators", "icon": "fas fa-calculator" },
+      { "label": "About", "href": "#about", "icon": "fas fa-info-circle" }
+    ],
+    "footer": {
+      "quickLinks": [
+        { "label": "Home", "href": "index.html" },
+        { "label": "All Tools", "href": "index.html#tools" },
+        { "label": "About Us", "href": "index.html#about" },
+        { "label": "Contact", "href": "mailto:contact@multi-tool-hub.com" }
+      ],
+      "legal": [
+        { "label": "Privacy Policy", "href": "/privacy-policy.html" },
+        { "label": "Terms of Service", "href": "/terms-of-service.html" },
+        { "label": "Cookie Policy", "href": "/cookie-policy.html" }
+      ]
+    }
+  },
+  "stats": {
+    "totalTools": 20,
+    "categories": {
+      "image": 6,
+      "text": 6,
+      "calculators": 6,
+      "converters": 4
+    },
+    "users": "1000+",
+    "satisfaction": "100%"
+  },
+  "features": [
+    {
+      "title": "Lightning Fast",
+      "description": "All tools run locally in your browser for instant results without server delays",
+      "icon": "fas fa-bolt"
+    },
+    {
+      "title": "100% Private",
+      "description": "Your data never leaves your device - complete privacy and security guaranteed",
+      "icon": "fas fa-shield-alt"
+    },
+    {
+      "title": "Always Free",
+      "description": "No subscriptions, no hidden fees - all tools are completely free to use forever",
+      "icon": "fas fa-gift"
+    },
+    {
+      "title": "Mobile Optimized",
+      "description": "Fully responsive design that works perfectly on all devices and screen sizes",
+      "icon": "fas fa-mobile-alt"
+    },
+    {
+      "title": "No Installation",
+      "description": "Access all tools directly in your browser - no downloads or installations required",
+      "icon": "fas fa-cloud"
+    },
+    {
+      "title": "Professional Grade",
+      "description": "Enterprise-quality tools with advanced features for professional workflows",
+      "icon": "fas fa-star"
+    }
+  ],
+  "seo": {
+    "keywords": [
+      "online tools",
+      "web utilities",
+      "image tools",
+      "text tools",
+      "calculators",
+      "converters",
+      "free tools",
+      "browser tools"
+    ],
+    "author": "Multi-Tool Hub Team",
+    "robots": "index, follow",
+    "language": "en-US"
+  }
+} 

@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Manager for centralized site information -->
+    <script src="js/siteManager.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -183,37 +185,13 @@
     <section class="features-section" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose Multi-Tool Hub?</h2>
-                <p class="section-subtitle">Experience the power of professional-grade tools in your browser</p>
+                <h2 class="section-title" id="features-title">Why Choose Multi-Tool Hub?</h2>
+                <p class="section-subtitle" id="features-subtitle">Experience the power of professional-grade tools in your browser</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="feature-title">Lightning Fast</h3>
-                    <p class="feature-description">All tools run locally in your browser for instant results without server delays</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="feature-title">Privacy First</h3>
-                    <p class="feature-description">Your data never leaves your device. Complete privacy and security guaranteed</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="feature-title">Mobile Ready</h3>
-                    <p class="feature-description">Fully responsive design that works perfectly on all devices and screen sizes</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3 class="feature-title">Completely Free</h3>
-                    <p class="feature-description">No subscriptions, no hidden fees, no ads. Just powerful tools, forever free</p>
+            <div class="features-grid" id="featuresGrid">
+                <!-- Features will be dynamically loaded here -->
+                <div class="features-loading">
+                    <div class="loading-text">Loading features...</div>
                 </div>
             </div>
         </div>
@@ -225,9 +203,31 @@
     <script src="script.js"></script>
     <script src="components/footer.js"></script>
     <script>
-        // Initialize footer for home page
-        FooterComponent.init({
-            isHomePage: true
+        // Initialize footer after site manager is ready
+        window.addEventListener('load', async function() {
+            try {
+                // Ensure site manager is initialized
+                if (window.siteManager && !window.siteManager.isLoaded) {
+                    await window.siteManager.init();
+                }
+                
+                // Initialize footer component
+                await FooterComponent.init({
+                    isHomePage: true
+                });
+                
+                console.log('✅ Homepage initialization complete');
+            } catch (error) {
+                console.error('Failed to initialize footer:', error);
+                // Fallback footer initialization
+                try {
+                    await FooterComponent.init({
+                        isHomePage: true
+                    });
+                } catch (fallbackError) {
+                    console.error('Fallback footer initialization also failed:', fallbackError);
+                }
+            }
         });
     </script>
 </body>
